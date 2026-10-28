@@ -1,16 +1,17 @@
 # Tadicoba
 
-**Ruang untuk progresmu.** Dashboard aktivitas harian dan pendamping belajar bahasa Jepang dalam satu website statis, dengan materi N5–N4 selama 45 hari, referensi kanji N5–N1, flashcard, cerita, dan rekap absensi belajar.
+**Ruang untuk progresmu.** Dashboard aktivitas harian dan pendamping belajar bahasa Jepang dalam satu website statis, dengan materi N5–N4 selama 45 hari, dasar hiragana/katakana, referensi kanji N5–N1, flashcard, cerita, dan rekap absensi belajar.
 
 [Buka website](https://tadipuhan.github.io/Dailyactivity/) · [Repository](https://github.com/Tadipuhan/Dailyactivity)
 
-> Dokumentasi untuk versi **Desain Terpadu**, diperbarui 28 Oktober 2026. Website dijalankan dari `index.html` tanpa instalasi atau proses build.
+> Dokumentasi untuk versi **Dasar Jepang**, dengan tampilan Desain Terpadu, diperbarui 28 Oktober 2026. Website dijalankan dari `index.html` tanpa instalasi atau proses build.
 
 ## Daftar isi
 
 - [Fitur utama](#fitur-utama)
 - [Desain dan navigasi](#desain-dan-navigasi)
 - [Mulai menggunakan](#mulai-menggunakan)
+- [Dasar Jepang](#dasar-jepang)
 - [Materi, latihan, dan absensi](#materi-latihan-dan-absensi)
 - [Kanji, kotoba, dan flashcard](#kanji-kotoba-dan-flashcard)
 - [Cerita dan audio](#cerita-dan-audio)
@@ -29,15 +30,16 @@
 | --- | --- |
 | Dashboard | Ringkasan agenda, progres latihan, grafik mingguan, status kehadiran, serta tombol lanjut belajar. |
 | Aktivitas harian | Menambah, mengedit, menghapus, dan menandai agenda selesai. |
+| Dasar Jepang | Hiragana, katakana, aturan membaca, audio perangkat, animasi goresan, serta latihan kana empat pilihan. |
 | Materi harian — Studio Fokus | Memilih **Day 1–45**, membaca materi, lalu mengerjakan **40 soal dengan 4 pilihan** per Day. Total **1.800 soal**. |
 | Rekap bulanan | Kalender kehadiran, jumlah percobaan latihan, waktu aktif, nilai, dan evaluasi bulanan. |
 | Kanji | Submenu dan tab **N5, N4, N3, N2, N1**, dengan kartu, pencarian, filter, penanda belajar, dan cetak. |
-| Kotoba N5–N4 | **424 kosakata pilihan** beserta bacaan dan arti. |
+| Kotoba N5–N4 | **424 kosakata pilihan** beserta bacaan, arti, dan pilihan cetak. |
 | Flashcard | **670 kartu unik N5–N4**, mencakup kanji dan kotoba dengan empat pilihan jawaban serta umpan balik langsung. |
 | Cerita | Tiga cerita orisinal, pilihan versi N5/N4, furigana, terjemahan per paragraf, dan audio sesuai dukungan perangkat. |
 | Tema | **Terang, Gelap, atau Sistem**, dengan pilihan tema tersimpan di browser. |
 | Personalisasi | Nama panggilan, sapaan sesuai waktu, jam berjalan, dan hitung mundur ke **5 Desember 2026 pukul 00.00** menurut waktu perangkat. |
-| Print / PDF | Materi dan soal per Day atau seluruh 45 Day; kanji lengkap atau dipisah per kelompok. |
+| Print / PDF | Materi dan soal per Day atau seluruh 45 Day; kanji dan kotoba lengkap atau dipisah per kelompok. |
 
 ## Desain dan navigasi
 
@@ -57,13 +59,46 @@ Logo T ungu, tipografi, tombol, dan bentuk kartu digunakan secara konsisten. Ilu
 1. Buka website atau file `index.html`.
 2. Isi nama panggilan saat pertama masuk. Nama dapat diubah melalui **Ubah nama**; di HP, buka **Menu** terlebih dahulu.
 3. Sesuaikan agenda melalui **Aktivitas harian**.
-4. Buka **Materi harian**, pilih Day, dan baca materinya.
-5. Tekan **Kerjakan 40 soal**, jawab semuanya, lalu kirim untuk melihat penilaian dan mencatat kehadiran.
-6. Ulangi materi melalui **Kanji**, **Kotoba**, **Flashcard**, atau **Cerita**.
-7. Lihat perkembangan pada **Dashboard** dan **Rekap bulanan**.
-8. Cadangkan hasil belajar secara berkala melalui ekspor JSON.
+4. Jika baru belajar, buka **Dasar Jepang** terlebih dahulu. Menu ini opsional; materi Day 1 tetap dapat langsung dibuka.
+5. Buka **Materi harian**, pilih Day, dan baca materinya.
+6. Tekan **Kerjakan 40 soal**, jawab semuanya, lalu kirim untuk melihat penilaian dan mencatat kehadiran.
+7. Ulangi materi melalui **Kanji**, **Kotoba**, **Flashcard**, atau **Cerita**.
+8. Lihat perkembangan pada **Dashboard** dan **Rekap bulanan**.
+9. Cadangkan hasil belajar secara berkala melalui ekspor JSON.
 
 Pilihan tema ada pada bagian atas website. Mode **Sistem** mengikuti preferensi terang/gelap perangkat.
+
+## Dasar Jepang
+
+Menu **Dasar Jepang** berada sebelum Materi harian pada sidebar. Di HP, buka menu navigasi untuk menemukannya. Tautan pengantar juga tersedia pada Day 1. Tidak ada syarat kelulusan kana untuk membuka materi harian.
+
+### Hiragana dan katakana
+
+- **46 huruf dasar per aksara**, disusun dalam tabel bunyi.
+- **25 bentuk dakuten/handakuten per aksara** dan **33 gabungan yōon per aksara**.
+- Pilihan untuk menampilkan atau menyembunyikan romaji pada tabel; preferensi disimpan di browser.
+- Klik huruf untuk membuka bacaan, catatan, contoh kata jika tersedia, audio, dan urutan goresan.
+- Pada gabungan seperti きゃ, animasi ditampilkan per komponen huruf, termasuk kana kecil.
+
+Animasi memakai jalur goresan vektor yang disematkan dalam HTML. Gunakan kontrol langkah, putar/jeda, ulangi, kecepatan, dan nomor goresan untuk mengamati penulisannya. Animasi membantu mengenali urutan; tetap berlatih menulis sendiri.
+
+### Aturan membaca
+
+Materi ringkas mencakup penggunaan kedua aksara, bunyi dasar, shi/chi/tsu/fu, dakuten dan handakuten, kana kecil ゃ・ゅ・ょ, っ kecil, vokal panjang, bacaan partikel は・へ・を, serta huruf yang bentuknya mirip.
+
+### Latihan kana
+
+1. Pilih hiragana, katakana, atau keduanya.
+2. Pilih jenis latihan: huruf ke bacaan, bacaan ke huruf, atau kata ke bacaan.
+3. Pilih **10 atau 20 soal**, lalu mulai.
+4. Jawab dari **empat pilihan** untuk mendapatkan umpan balik langsung.
+5. Tinjau nilai dan huruf yang perlu diulang pada akhir sesi.
+
+Tombol **Cek awal · 10 soal** menyediakan pemeriksaan singkat dengan kedua aksara. Latihan mengambil huruf dasar; contoh kata dapat memuat gabungan bunyi dan vokal panjang yang dibahas pada aturan membaca.
+
+Ringkasan **20 sesi terakhir** disimpan pada perangkat. Latihan kana **tidak mencatat absensi** dan tidak menggantikan latihan 40 soal per Day. Riwayat kana belum termasuk ekspor/pemulihan JSON utama.
+
+Audio menggunakan suara Jepang dari perangkat melalui Web Speech API. Jika suara Jepang tidak tersedia, tombol audio dinonaktifkan dan latihan tetap dapat dikerjakan melalui teks. Ketersediaan serta kualitas suara bergantung pada browser dan perangkat.
 
 ## Materi, latihan, dan absensi
 
@@ -91,7 +126,7 @@ Tombol cadangan dan tautan pengulangan tersedia pada **Materi harian → Alat be
 | N2 | 367 | Inggris | Belum dilengkapi contoh kalimat seperti N5–N3. |
 | N1 | 1.232 | Inggris | Belum dilengkapi contoh kalimat seperti N5–N3. |
 
-Kartu menampilkan karakter, arti, onyomi, kunyomi, romaji, jumlah goresan, dan penanda belajar. Format arti N3 memakai pemisah **“·”**, mengikuti N4/N5. Beberapa bacaan kamus pada level lanjutan menggunakan tanda titik untuk memisahkan bagian kanji dan okurigana.
+Kartu menampilkan karakter, arti, onyomi, kunyomi, romaji, jumlah goresan, dan penanda belajar. Tombol animasi pada **seluruh level N5–N1** membuka urutan goresan dengan kontrol langkah, putar/jeda, ulangi, kecepatan, dan nomor goresan. Data vektor disematkan dalam HTML sehingga animasi tidak memerlukan pengambilan data dari server. Pemutaran dimulai atas tindakan pengguna. Format arti N3 memakai pemisah **“·”**, mengikuti N4/N5. Beberapa bacaan kamus pada level lanjutan menggunakan tanda titik untuk memisahkan bagian kanji dan okurigana.
 
 Gunakan submenu **Kanji** atau tab level untuk berpindah halaman. Pencarian, filter kelompok, status, dan pilihan jumlah kartu per halaman membantu meninjau daftar. N3–N1 dikelompokkan berdasarkan jumlah goresan.
 
@@ -149,6 +184,10 @@ Pada level kanji yang dipilih, klik **Print / PDF**, kemudian pilih:
 
 Tata letak kanji memakai **tiga kolom pada kertas A4**. Kartu N5/N4/N3 menyertakan contoh kalimat dan contoh kata. Kartu N2/N1 mengikuti data yang tersedia pada level tersebut. Filter dan pagination layar tidak membatasi isi cetakan.
 
+### Kotoba N5–N4
+
+Buka **Kotoba → Print / PDF**. Pilih seluruh N5–N4, N5 saja, atau N4 saja; masing-masing tersedia dalam urutan penuh atau dipisah per kelompok. Cetakan berbentuk tabel nomor, level, kata, bacaan, dan arti. Pada mode kelompok, setiap kelompok dimulai pada halaman baru. Pilihan cetak mencakup seluruh data sesuai mode, bukan hanya halaman atau hasil filter yang sedang terlihat.
+
 ### Mencetak atau menyimpan sebagai PDF
 
 1. Pilih isi, lalu klik **Buka pratinjau cetak**.
@@ -161,7 +200,7 @@ Lembar memakai bingkai dark Tadicoba yang berulang pada tiap halaman. Tema gelap
 
 ## Penyimpanan dan cadangan
 
-Tadicoba memakai **localStorage browser**, tanpa database server. Nama panggilan, tema, agenda, draf, hasil latihan, absensi, penanda kanji/kotoba, dan progres flashcard disimpan pada perangkat yang digunakan.
+Tadicoba memakai **localStorage browser**, tanpa database server. Nama panggilan, tema, agenda, draf, hasil latihan, absensi, penanda kanji/kotoba, dan progres flashcard, preferensi romaji, dan ringkasan latihan kana disimpan pada perangkat yang digunakan.
 
 **Nama panggilan bukan akun login.** Mengganti nama tidak membuat profil data baru. Pada browser dan alamat website yang sama, penyimpanan tetap sama.
 
@@ -181,7 +220,7 @@ Untuk memulihkan, pilih **Pulihkan hasil** atau **Pulihkan progres** pada fitur 
 
 Riwayat latihan digabung berdasarkan ID percobaan agar tidak berganda. Tanggal absensi asli dipertahankan; impor tidak membuat kehadiran baru pada hari impor. Draf yang ikut diekspor belum dimuat kembali oleh pemulihan riwayat saat ini.
 
-**Cadangan progres belajar belum mencakup penanda N3/N2/N1.** Kedua cadangan juga belum mencakup seluruh data seperti agenda, nama, dan tema. Penanda N3–N1 tetap tersimpan pada browser asal, tetapi belum dapat dipindahkan melalui dua fitur cadangan tersebut.
+**Cadangan progres belajar belum mencakup penanda N3/N2/N1.** Kedua cadangan juga belum mencakup seluruh data seperti agenda, nama, tema, preferensi romaji, dan riwayat latihan kana. Penanda N3–N1 tetap tersimpan pada browser asal, tetapi belum dapat dipindahkan melalui dua fitur cadangan tersebut.
 
 ## Menjalankan secara lokal
 
@@ -221,7 +260,7 @@ Rujukan: [pengaturan sumber publikasi GitHub Pages](https://docs.github.com/en/p
 ## Memperbarui website
 
 1. Cadangkan hasil dan progres yang didukung terlebih dahulu.
-2. Unduh HTML Tadicoba terbaru, misalnya `Tadicoba-Desain-Terpadu.html`.
+2. Unduh HTML Tadicoba terbaru, misalnya `Tadicoba-Dasar-Jepang.html`.
 3. Ubah namanya menjadi **`index.html`**.
 4. Ganti `index.html` lama di folder utama repository dan unggah README terbaru bila diperlukan.
 5. Commit perubahan, lalu periksa deployment pada tab **Actions**.
@@ -297,10 +336,12 @@ Setiap Day dilengkapi materi, kosakata pendukung, bacaan pendek, 40 soal dengan 
 ## Teknologi dan atribusi
 
 - **HTML, CSS, dan JavaScript** untuk antarmuka serta logika; **SVG** untuk grafik dan ikon.
-- **localStorage** untuk penyimpanan lokal; **Web Speech API** untuk pembacaan cerita; dialog cetak browser untuk printer/PDF.
+- **localStorage** untuk penyimpanan lokal; **Web Speech API** untuk audio kana dan pembacaan cerita; dialog cetak browser untuk printer/PDF.
 - [Japan Foundation — Irodori](https://www.irodori.jpf.go.jp/) dan [TUFS — modul tata bahasa Jepang](https://www.coelang.tufs.ac.jp/mt/ja/gmod/) sebagai rujukan pendalaman pola. Susunan materi dan soal dashboard dibuat tersendiri.
 - [KANJIDIC2 / EDRDG](https://www.edrdg.org/wiki/index.php/KANJIDIC_Project), melalui [kanji-data](https://github.com/sepTN/kanji-data), untuk referensi bacaan, arti dasar, jumlah goresan, dan pengelompokan level lanjutan. Data mengikuti atribusi/lisensi sumber, termasuk [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 - [KanaMastery — N4 Kanji](https://kanamastery.com/jlpt/n4/kanji) sebagai rujukan daftar N4 yang digunakan sebelumnya.
+- [KanjiVG](https://kanjivg.tagaini.net/) — data jalur dan urutan goresan kana/kanji, © Ulrich Apel dan kontributor, berlisensi [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Data diadaptasi untuk pemutaran SVG; atribusi dan salinan lisensi disertakan dalam HTML. Lisensi ini berlaku pada data terkait, bukan otomatis seluruh proyek.
+- [Marugoto — Hiragana](https://a1.marugotoweb.jp/en/hiragana.php), [Katakana](https://a1.marugotoweb.jp/en/katakana.php), dan [Irodori — sumber belajar](https://www.irodori.jpf.go.jp/en/resources.html) untuk rujukan dasar aksara dan membaca.
 - **Noto Sans JP** untuk font Jepang yang disematkan; informasi lisensi font tersedia di HTML.
 - Logo dan bingkai cetak memakai identitas **Tadicoba**. Cerita, contoh latihan, serta padanan Indonesia disusun untuk pembelajaran Tadicoba.
 
