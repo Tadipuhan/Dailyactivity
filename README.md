@@ -4,10 +4,11 @@
 
 [Buka website](https://tadipuhan.github.io/Dailyactivity/) · [Repository](https://github.com/Tadipuhan/Dailyactivity)
 
-> Dokumentasi untuk versi **Dasar Jepang + Nao**, dengan tampilan Desain Terpadu, diperbarui **29 Oktober 2026**. Website dijalankan dari `index.html` tanpa instalasi atau proses build.
+> Dokumentasi untuk versi **Kotoba Menu N5–N1**, dengan Dasar Jepang, Nao, dan tampilan Desain Terpadu, diperbarui **1 November 2026**. Website dijalankan dari `index.html` tanpa instalasi atau proses build.
 
 ## Daftar isi
 
+- [Pembaruan 1 November 2026](#pembaruan-1-november-2026)
 - [Pembaruan 29 Oktober 2026](#pembaruan-29-oktober-2026)
 - [Fitur utama](#fitur-utama)
 - [Desain dan navigasi](#desain-dan-navigasi)
@@ -25,6 +26,18 @@
 - [Pemecahan masalah](#pemecahan-masalah)
 - [Materi Day 1–45](#materi-day-145)
 - [Teknologi dan atribusi](#teknologi-dan-atribusi)
+
+## Pembaruan 1 November 2026
+
+- Mengubah arti **367 kartu kanji N2** dan **1.232 kartu kanji N1** menjadi bahasa Indonesia, dengan padanan ringkas dan pemisah “·” seperti N5–N3. Label bahasa, pencarian, dan cetak ikut disesuaikan.
+- Menambahkan cakupan kotoba **N3, N2, dan N1**, masing-masing **100 kata pilihan awal** dengan bacaan kana, arti Indonesia, dan kelompok tema. Daftar ini belum mencakup seluruh kosakata ketiga level.
+- Menggabungkan 28 kata yang sudah ada dengan label level tambahan, sehingga tidak membuat baris duplikat. Total kini **696 kata unik**.
+- Mengubah sidebar menjadi **Kotoba ⌄**, yang membuka submenu **Kotoba N5, N4, N3, N2, dan N1** seperti menu Kanji. Memilih level langsung membuka halaman dengan filter level tersebut serta mengosongkan filter pencarian dan penanda.
+- Memperluas filter dan data flashcard untuk kotoba N5–N1. Kartu kanji pada flashcard tetap mencakup N5–N4.
+- Memperluas cetak kotoba menjadi **12 mode**: gabungan N5–N1 atau satu dari lima level, masing-masing dalam mode gabungan kelompok atau dipisah per kelompok.
+- Mempertahankan ID kata lama dan kunci penyimpanan progres agar penanda yang sudah tersimpan tetap dapat digunakan pada alamat situs yang sama.
+
+**Pemeriksaan pembaruan ini:** sintaks JavaScript, jumlah dan keunikan data, keluaran tabel 12 mode cetak, serta logika buka-tutup submenu, pemilihan level, dan status aktif telah diperiksa. Tampilan visual dan dialog cetak browser versi ini belum diuji langsung. Pembaruan file tidak berarti website GitHub Pages sudah diperbarui.
 
 ## Pembaruan 29 Oktober 2026
 
@@ -49,8 +62,8 @@
 | Materi harian — Studio Fokus | Memilih **Day 1–45**, membaca materi, lalu mengerjakan **40 soal dengan 4 pilihan** per Day. Total **1.800 soal**. |
 | Rekap bulanan | Kalender kehadiran, jumlah percobaan latihan, waktu aktif, nilai, dan evaluasi bulanan. |
 | Kanji | Submenu dan tab **N5, N4, N3, N2, N1**, dengan kartu, pencarian, filter, penanda belajar, dan cetak. |
-| Kotoba N5–N4 | **424 kosakata pilihan** beserta bacaan, arti, dan pilihan cetak. |
-| Flashcard | **670 kartu unik N5–N4**, mencakup kanji dan kotoba dengan empat pilihan jawaban serta umpan balik langsung. |
+| Kotoba | Submenu buka-tutup **N5–N1**, **696 kata unik**, bacaan kana, arti Indonesia, kelompok tema, penanda belajar, dan cetak. |
+| Flashcard | Kanji N5–N4 dan kotoba N5–N1, dengan filter level, empat pilihan jawaban, dan umpan balik langsung. |
 | Cerita | Tiga cerita orisinal, pilihan versi N5/N4, furigana, terjemahan per paragraf, dan audio sesuai dukungan perangkat. |
 | Maskot Nao | Pendamping chibi dengan reaksi kontekstual, bubble dialog, kedipan, gerak mulut, arah pandang pointer, serta pengaturan suara dan gerakan. |
 | Latar Jepang | Sidebar S01 Torii dan background B05 Kumo, disematkan langsung dalam HTML. |
@@ -143,18 +156,34 @@ Tombol cadangan dan tautan pengulangan tersedia pada **Materi harian → Alat be
 | N5 | 103 | Indonesia | Kalimat Jepang, bacaan kana, terjemahan Indonesia, dan contoh kata. |
 | N4 | 166 | Indonesia | Kalimat Jepang, bacaan kana, terjemahan Indonesia, dan contoh kata. |
 | N3 | 367 | Indonesia | Kalimat Jepang, bacaan kana, terjemahan Indonesia, dan contoh kata pada seluruh kartu. |
-| N2 | 367 | Inggris | Belum dilengkapi contoh kalimat seperti N5–N3. |
-| N1 | 1.232 | Inggris | Belum dilengkapi contoh kalimat seperti N5–N3. |
+| N2 | 367 | Indonesia | Belum dilengkapi contoh kalimat seperti N5–N3. |
+| N1 | 1.232 | Indonesia | Belum dilengkapi contoh kalimat seperti N5–N3. |
 
-Kartu menampilkan karakter, arti, onyomi, kunyomi, romaji, jumlah goresan, dan penanda belajar. Tombol animasi pada **seluruh level N5–N1** membuka urutan goresan dengan kontrol langkah, putar/jeda, ulangi, kecepatan, dan nomor goresan. Data vektor disematkan dalam HTML sehingga animasi tidak memerlukan pengambilan data dari server. Pemutaran dimulai atas tindakan pengguna. Format arti N3 memakai pemisah **“·”**, mengikuti N4/N5. Beberapa bacaan kamus pada level lanjutan menggunakan tanda titik untuk memisahkan bagian kanji dan okurigana.
+Kartu menampilkan karakter, arti, onyomi, kunyomi, romaji, jumlah goresan, dan penanda belajar. Tombol animasi pada **seluruh level N5–N1** membuka urutan goresan dengan kontrol langkah, putar/jeda, ulangi, kecepatan, dan nomor goresan. Data vektor disematkan dalam HTML sehingga animasi tidak memerlukan pengambilan data dari server. Pemutaran dimulai atas tindakan pengguna. Format arti N3–N1 memakai pemisah **“·”**, mengikuti N4/N5. Beberapa bacaan kamus pada level lanjutan menggunakan tanda titik untuk memisahkan bagian kanji dan okurigana.
 
 Gunakan submenu **Kanji** atau tab level untuk berpindah halaman. Pencarian, filter kelompok, status, dan pilihan jumlah kartu per halaman membantu meninjau daftar. N3–N1 dikelompokkan berdasarkan jumlah goresan.
 
 Daftar ini merupakan **referensi belajar pilihan, bukan daftar resmi lengkap JLPT**. Penetapan level dapat berbeda dari sumber atau buku lain, dan sebagian karakter dapat muncul pada beberapa level. Makna kanji serta bacaannya dapat berubah sesuai kata dan konteks.
 
+### Kotoba N5–N1
+
+Klik **Kotoba ⌄** pada sidebar untuk membuka atau menutup submenu, lalu pilih level. Di HP, buka **Menu** terlebih dahulu. Pilihan level, pencarian kata/kana/arti, dan filter penanda juga tersedia pada halaman Kotoba. Gunakan **Hapus filter** untuk kembali ke semua level.
+
+| Level | Jumlah kata yang berlabel level tersebut | Cakupan |
+| --- | ---: | --- |
+| N5 | 188 | Daftar pilihan yang sudah tersedia. |
+| N4 | 250 | Daftar pilihan yang sudah tersedia. |
+| N3 | 100 | Paket awal pilihan; belum seluruh kosakata N3. |
+| N2 | 100 | Paket awal pilihan; belum seluruh kosakata N2. |
+| N1 | 100 | Paket awal pilihan; belum seluruh kosakata N1. |
+
+Total **696 kata unik**. Jumlah per level tidak dapat langsung dijumlahkan sebagai jumlah kata unik, karena satu kata dapat memiliki beberapa label level. Kata yang sama dengan bacaan sama menggunakan satu baris dan satu penanda belajar. Setiap baris berisi kata, bacaan kana, arti Indonesia, kelompok tema, dan penanda **Baru / Ragu atau ulangi / Lancar**.
+
+Pengelompokan merupakan panduan belajar Tadicoba, bukan penetapan level resmi JLPT. Kata dapat dipelajari lebih awal atau lebih akhir pada buku lain. Daftar baru tidak mengubah materi harian 45 hari menjadi kursus N3–N1.
+
 ### Flashcard
 
-Flashcard saat ini mencakup **N5–N4**, bukan N3–N1. Pilih level, jenis materi, kelompok kartu, arah latihan, dan jumlah kartu per sesi, lalu tekan **Mulai / acak sesi**.
+Flashcard mencakup **kanji N5–N4 dan kotoba N5–N1**. Filter N3–N1 saat ini berisi kotoba; belum ada kartu kanji lanjutan pada kumpulan flashcard. Pilih level, jenis materi, kelompok kartu, arah latihan, dan jumlah kartu per sesi, lalu tekan **Mulai / acak sesi**.
 
 Jawaban salah dijadwalkan ulang besok; jawaban benar empat hari kemudian. Penilaian langsung menunjukkan jawaban yang benar dan progres tersimpan pada browser.
 
@@ -253,9 +282,9 @@ Pada level kanji yang dipilih, klik **Print / PDF**, kemudian pilih:
 
 Tata letak kanji memakai **tiga kolom pada kertas A4**. Kartu N5/N4/N3 menyertakan contoh kalimat dan contoh kata. Kartu N2/N1 mengikuti data yang tersedia pada level tersebut. Filter dan pagination layar tidak membatasi isi cetakan.
 
-### Kotoba N5–N4
+### Kotoba N5–N1
 
-Buka **Kotoba → Print / PDF**. Pilih seluruh N5–N4, N5 saja, atau N4 saja; masing-masing tersedia dalam urutan penuh atau dipisah per kelompok. Cetakan berbentuk tabel nomor, level, kata, bacaan, dan arti. Pada mode kelompok, setiap kelompok dimulai pada halaman baru. Pilihan cetak mencakup seluruh data sesuai mode, bukan hanya halaman atau hasil filter yang sedang terlihat.
+Buka **Kotoba → pilih level → Print / PDF**. Tersedia **12 pilihan**: gabungan seluruh N5–N1, atau N5/N4/N3/N2/N1 saja; masing-masing tersedia dalam urutan penuh atau dipisah per kelompok. Kata berlabel beberapa level hanya dicetak sekali pada mode gabungan. N3–N1 mencetak seluruh kata pilihan yang tersedia saat ini, masing-masing 100 kata, bukan seluruh kosakata level JLPT. Cetakan berbentuk tabel nomor, level, kata, bacaan, dan arti. Pada mode kelompok, setiap kelompok dimulai pada halaman baru. Pilihan cetak mencakup seluruh data sesuai mode, bukan hanya halaman atau hasil filter yang sedang terlihat.
 
 ### Mencetak atau menyimpan sebagai PDF
 
@@ -289,7 +318,7 @@ Untuk memulihkan, pilih **Pulihkan hasil** atau **Pulihkan progres** pada fitur 
 
 Riwayat latihan digabung berdasarkan ID percobaan agar tidak berganda. Tanggal absensi asli dipertahankan; impor tidak membuat kehadiran baru pada hari impor. Draf yang ikut diekspor belum dimuat kembali oleh pemulihan riwayat saat ini.
 
-**Cadangan progres belajar belum mencakup penanda N3/N2/N1.** Kedua cadangan juga belum mencakup seluruh data seperti agenda, nama, tema, preferensi romaji, riwayat latihan kana, dan pengaturan Nao. Penanda N3–N1 tetap tersimpan pada browser asal, tetapi belum dapat dipindahkan melalui dua fitur cadangan tersebut.
+**Cadangan progres belajar belum mencakup penanda kanji N3/N2/N1.** Penanda kotoba N5–N1 dan progres flashcard terkait sudah termasuk cadangan progres belajar. Kedua cadangan juga belum mencakup seluruh data seperti agenda, nama, tema, preferensi romaji, riwayat latihan kana, dan pengaturan Nao. Penanda kanji N3–N1 tetap tersimpan pada browser asal, tetapi belum dapat dipindahkan melalui dua fitur cadangan tersebut.
 
 ## Menjalankan secara lokal
 
@@ -299,7 +328,7 @@ Riwayat latihan digabung berdasarkan ID percobaan agar tidak berganda. Tanggal a
 
 Tidak diperlukan Python, Node.js, database, API key, atau proses build untuk menjalankan dashboard. Fitur inti tersedia di HTML; suara Jepang untuk materi dan suara Indonesia untuk Nao tetap bergantung pada perangkat.
 
-HTML memuat CSS, JavaScript, materi, font Jepang, logo, bingkai cetak, sprite Nao, serta gambar Torii dan Kumo. Gambar dan sprite tidak memerlukan berkas terpisah; rekaman pengisi suara khusus belum disertakan. Aset utama tidak perlu diunggah satu per satu. Beberapa utilitas/ikon lama memakai CDN, tetapi pemeriksaan fitur inti dilakukan juga dengan permintaan eksternal diblokir.
+HTML memuat CSS, JavaScript, materi, font Jepang, logo, bingkai cetak, sprite Nao, serta gambar Torii dan Kumo. Gambar dan sprite tidak memerlukan berkas terpisah; rekaman pengisi suara khusus belum disertakan. Aset utama tidak perlu diunggah satu per satu. Beberapa utilitas/ikon lama memakai CDN, sehingga ketersediaan utilitas tersebut dapat memerlukan koneksi internet.
 
 ### Struktur repository
 
@@ -329,7 +358,7 @@ Rujukan: [pengaturan sumber publikasi GitHub Pages](https://docs.github.com/en/p
 ## Memperbarui website
 
 1. Cadangkan hasil dan progres yang didukung terlebih dahulu.
-2. Unduh HTML Tadicoba terbaru, yaitu `Tadicoba-Dasar-Jepang-Nao.html`.
+2. Unduh HTML Tadicoba terbaru, yaitu `Tadicoba-Kotoba-Menu.html`.
 3. Ubah namanya menjadi **`index.html`**.
 4. Ganti `index.html` lama di folder utama repository dan unggah README terbaru bila diperlukan.
 5. Commit perubahan, lalu periksa deployment pada tab **Actions**.
