@@ -1,454 +1,275 @@
 # Tadicoba
 
-**Ruang untuk progresmu.** Dashboard aktivitas harian dan pendamping belajar bahasa Jepang dalam satu website statis, dengan materi N5–N4 selama 45 hari, dasar hiragana/katakana, referensi kanji N5–N1, flashcard, cerita, dan rekap absensi belajar.
+**Satu ruang, dua perjalanan.** Website belajar mandiri Bahasa Jepang dan Bahasa Inggris dengan materi, latihan, kosakata, cerita, serta pendamping belajar **Nao**.
 
-[Buka website](https://tadipuhan.github.io/Dailyactivity/) · [Repository](https://github.com/Tadipuhan/Dailyactivity)
+Antarmuka menggunakan Bahasa Indonesia. Pilihan Jepang atau Inggris menentukan **bahasa yang dipelajari**, bukan bahasa antarmuka.
 
-> Dokumentasi untuk versi **Kotoba Menu N5–N1**, dengan Dasar Jepang, Nao, dan tampilan Desain Terpadu, diperbarui **1 November 2026**. Website dijalankan dari `index.html` tanpa instalasi atau proses build.
+> Dokumentasi versi dua bahasa, diperbarui 2 November 2026. Aplikasi berjalan sebagai website statis berbasis HTML, CSS, dan JavaScript. Progres tersimpan di browser; belum ada akun atau sinkronisasi cloud.
 
-## Daftar isi
+## Ringkasan
 
-- [Pembaruan 1 November 2026](#pembaruan-1-november-2026)
-- [Pembaruan 29 Oktober 2026](#pembaruan-29-oktober-2026)
-- [Fitur utama](#fitur-utama)
-- [Desain dan navigasi](#desain-dan-navigasi)
-- [Mulai menggunakan](#mulai-menggunakan)
-- [Dasar Jepang](#dasar-jepang)
-- [Materi, latihan, dan absensi](#materi-latihan-dan-absensi)
-- [Kanji, kotoba, dan flashcard](#kanji-kotoba-dan-flashcard)
-- [Maskot Nao dan pengaturan suara](#maskot-nao-dan-pengaturan-suara)
-- [Cerita dan audio](#cerita-dan-audio)
-- [Print dan simpan PDF](#print-dan-simpan-pdf)
-- [Penyimpanan dan cadangan](#penyimpanan-dan-cadangan)
-- [Menjalankan secara lokal](#menjalankan-secara-lokal)
-- [Publikasi melalui GitHub Pages](#publikasi-melalui-github-pages)
-- [Memperbarui website](#memperbarui-website)
-- [Pemecahan masalah](#pemecahan-masalah)
-- [Materi Day 1–45](#materi-day-145)
-- [Teknologi dan atribusi](#teknologi-dan-atribusi)
-
-## Pembaruan 1 November 2026
-
-- Mengubah arti **367 kartu kanji N2** dan **1.232 kartu kanji N1** menjadi bahasa Indonesia, dengan padanan ringkas dan pemisah “·” seperti N5–N3. Label bahasa, pencarian, dan cetak ikut disesuaikan.
-- Menambahkan cakupan kotoba **N3, N2, dan N1**, masing-masing **100 kata pilihan awal** dengan bacaan kana, arti Indonesia, dan kelompok tema. Daftar ini belum mencakup seluruh kosakata ketiga level.
-- Menggabungkan 28 kata yang sudah ada dengan label level tambahan, sehingga tidak membuat baris duplikat. Total kini **696 kata unik**.
-- Mengubah sidebar menjadi **Kotoba ⌄**, yang membuka submenu **Kotoba N5, N4, N3, N2, dan N1** seperti menu Kanji. Memilih level langsung membuka halaman dengan filter level tersebut serta mengosongkan filter pencarian dan penanda.
-- Memperluas filter dan data flashcard untuk kotoba N5–N1. Kartu kanji pada flashcard tetap mencakup N5–N4.
-- Memperluas cetak kotoba menjadi **12 mode**: gabungan N5–N1 atau satu dari lima level, masing-masing dalam mode gabungan kelompok atau dipisah per kelompok.
-- Mempertahankan ID kata lama dan kunci penyimpanan progres agar penanda yang sudah tersimpan tetap dapat digunakan pada alamat situs yang sama.
-
-**Pemeriksaan pembaruan ini:** sintaks JavaScript, jumlah dan keunikan data, keluaran tabel 12 mode cetak, serta logika buka-tutup submenu, pemilihan level, dan status aktif telah diperiksa. Tampilan visual dan dialog cetak browser versi ini belum diuji langsung. Pembaruan file tidak berarti website GitHub Pages sudah diperbarui.
-
-## Pembaruan 29 Oktober 2026
-
-- Menambahkan **Nao**, maskot chibi interaktif dengan latar transparan, bubble dialog oval ringkas tanpa label nama, kedipan, gerak mulut, dan arah pandang mengikuti pointer.
-- Menyesuaikan posisi mata dan mulut terhadap kemiringan wajah pada setiap pose; memperbaiki area kedip dan posisi mulut pada reaksi salah.
-- Mengunci skala gambar dan titik acuan wajah saat berganti reaksi. Perubahan teks bubble tidak mengubah posisi karakter.
-- Menghubungkan reaksi Nao dengan navigasi menu, hasil jawaban flashcard, dan penyelesaian latihan harian.
-- Menambahkan pengaturan suara, kurangi gerakan, sembunyikan, dan tampilkan kembali Nao; preferensinya disimpan di browser.
-- Mengatur gaya suara **anak perempuan ekspresif berbahasa Indonesia**, dengan variasi nada, tempo, dan jeda per reaksi. Suara tetap berasal dari perangkat, belum berupa rekaman pengisi suara khusus.
-- Menerapkan ilustrasi **S01 Torii** pada sidebar dan **B05 Kumo** pada latar halaman; keduanya tertanam dalam HTML.
-- Memperbaiki gambar latar yang tidak muncul dengan mengganti variabel CSS berisi data gambar besar menjadi deklarasi `background-image` langsung, serta menyesuaikan skala motif Kumo.
-
-**Status pemeriksaan:** sintaks JavaScript dan data kedua gambar telah diperiksa. Tampilan serta interaksi versi terbaru belum terverifikasi melalui browser pengujian. Dokumentasi ini tidak menyatakan pembaruan sudah diunggah ke GitHub Pages.
-
-## Fitur utama
-
-| Menu / fitur | Kegunaan |
+| Bagian | Cakupan |
 | --- | --- |
-| Dashboard | Ringkasan agenda, progres latihan, grafik mingguan, status kehadiran, serta tombol lanjut belajar. |
-| Aktivitas harian | Menambah, mengedit, menghapus, dan menandai agenda selesai. |
-| Dasar Jepang | Hiragana, katakana, aturan membaca, audio perangkat, animasi goresan, serta latihan kana empat pilihan. |
-| Materi harian — Studio Fokus | Memilih **Day 1–45**, membaca materi, lalu mengerjakan **40 soal dengan 4 pilihan** per Day. Total **1.800 soal**. |
-| Rekap bulanan | Kalender kehadiran, jumlah percobaan latihan, waktu aktif, nilai, dan evaluasi bulanan. |
-| Kanji | Submenu dan tab **N5, N4, N3, N2, N1**, dengan kartu, pencarian, filter, penanda belajar, dan cetak. |
-| Kotoba | Submenu buka-tutup **N5–N1**, **696 kata unik**, bacaan kana, arti Indonesia, kelompok tema, penanda belajar, dan cetak. |
-| Flashcard | Kanji N5–N4 dan kotoba N5–N1, dengan filter level, empat pilihan jawaban, dan umpan balik langsung. |
-| Cerita | Tiga cerita orisinal, pilihan versi N5/N4, furigana, terjemahan per paragraf, dan audio sesuai dukungan perangkat. |
-| Maskot Nao | Pendamping chibi dengan reaksi kontekstual, bubble dialog, kedipan, gerak mulut, arah pandang pointer, serta pengaturan suara dan gerakan. |
-| Latar Jepang | Sidebar S01 Torii dan background B05 Kumo, disematkan langsung dalam HTML. |
-| Tema | **Terang, Gelap, atau Sistem**, dengan pilihan tema tersimpan di browser. |
-| Personalisasi | Nama panggilan, sapaan sesuai waktu, jam berjalan, dan hitung mundur ke **5 Desember 2026 pukul 00.00** menurut waktu perangkat. |
-| Print / PDF | Materi dan soal per Day atau seluruh 45 Day; kanji dan kotoba lengkap atau dipisah per kelompok. |
+| Bahasa Jepang | Rencana belajar 45 hari, dasar kana, materi N5–N4, latihan, referensi kanji dan kotoba pilihan N5–N1. |
+| Bahasa Inggris | A1–B1: 21 modul, 245 entri kosakata, 189 soal modul, serta 15 cerita sepanjang 1.000 kata dengan 75 soal pemahaman. Seluruh cerita A1 dilengkapi 25 ilustrasi per bab. |
+| Latihan berbicara | Lima kalimat per bahasa dengan mikrofon, contoh audio, dan penanda kecocokan transkrip. |
+| Nao | Maskot 2D: versi ungu untuk Jepang dan versi sage berambut putih untuk Inggris. |
+| Penyimpanan | Data lokal pada browser/perangkat yang digunakan, dengan fitur cadangan yang tersedia di aplikasi. |
 
-## Desain dan navigasi
-
-| Bagian | Arah desain |
-| --- | --- |
-| Dashboard | Dashboard klasik dengan ringkasan progres dan tindakan belajar utama. |
-| Materi harian | Studio Fokus: daftar Day 1–45, area materi, serta tombol latihan dan cetak. |
-| Kanji | Kartu yang menonjolkan karakter, arti, bacaan, dan contoh jika tersedia. |
-| Daftar cerita | Portal cerita berbentuk kartu; klik kartu untuk masuk ke bacaan. |
-| HP dan tablet | Tata letak adaptif, menu navigasi buka-tutup, dan navigasi bawah pada layar lebih kecil. |
-| Tema gelap | Warna latar, teks, tombol, formulir, dan kartu disesuaikan untuk tampilan gelap; motif Kumo diberi lapisan warna gelap. |
-| Sidebar | S01 Torii: gerbang torii, cahaya bulan, kabut ungu, dan lampion, dengan lapisan gelap untuk keterbacaan menu. |
-| Background | B05 Kumo: awan Jepang bernuansa lavender dengan skala motif yang tetap saat halaman memanjang. |
-| Nao | Karakter transparan di sudut layar, dengan dialog ringkas dan ukuran lebih kecil pada HP. |
-
-Logo T ungu, tipografi, tombol, dan bentuk kartu digunakan secara konsisten. Ilustrasi cerita menjadi pelengkap, sementara materi dan tombol belajar tetap menjadi fokus. Versi sebelum penambahan Nao dan latar Jepang telah diperiksa pada lebar **320–1920 piksel**. Perubahan terbaru masih memerlukan pemeriksaan visual di desktop dan HP.
+Materi merupakan sarana latihan mandiri. Menyelesaikan paket bukan sertifikasi CEFR, skor resmi JLPT, atau jaminan kelulusan.
 
 ## Mulai menggunakan
 
-1. Buka website atau file `index.html`.
-2. Isi nama panggilan saat pertama masuk. Nama dapat diubah melalui **Ubah nama**; di HP, buka **Menu** terlebih dahulu.
-3. Sesuaikan agenda melalui **Aktivitas harian**.
-4. Jika baru belajar, buka **Dasar Jepang** terlebih dahulu. Menu ini opsional; materi Day 1 tetap dapat langsung dibuka.
-5. Buka **Materi harian**, pilih Day, dan baca materinya.
-6. Tekan **Kerjakan 40 soal**, jawab semuanya, lalu kirim untuk melihat penilaian dan mencatat kehadiran.
-7. Ulangi materi melalui **Kanji**, **Kotoba**, **Flashcard**, atau **Cerita**.
-8. Lihat perkembangan pada **Dashboard** dan **Rekap bulanan**.
-9. Cadangkan hasil belajar secara berkala melalui ekspor JSON.
+1. Buka website, lalu pilih **Bahasa Jepang** atau **Bahasa Inggris**.
+2. Pengguna Jepang melanjutkan melalui intro Shōji menuju dashboard.
+3. Pengguna Inggris masuk ke dashboard **Sage Study**. Tutorial Nao menjelaskan urutan belajar untuk pemula dan dapat dibuka kembali melalui menu.
+4. Pada Inggris, pilih **A1, A2, atau B1** di sidebar. Pelajari materi sebelum mengerjakan latihan.
+5. Simpan cadangan progres secara berkala melalui menu yang tersedia.
 
-Pilihan tema ada pada bagian atas website. Mode **Sistem** mengikuti preferensi terang/gelap perangkat.
+Pilihan terakhir diingat untuk tombol **Lanjutkan** pada halaman pemilih. Gunakan **Ganti pelajaran** untuk kembali memilih bahasa.
 
-## Dasar Jepang
+## Bahasa Jepang
 
-Menu **Dasar Jepang** berada sebelum Materi harian pada sidebar. Di HP, buka menu navigasi untuk menemukannya. Tautan pengantar juga tersedia pada Day 1. Tidak ada syarat kelulusan kana untuk membuka materi harian.
+- Materi harian **Day 1–45**, berfokus pada penguatan N5 dan persiapan N4.
+- **40 soal pilihan ganda per hari**, dengan empat pilihan dan pembahasan; total 1.800 soal.
+- Dasar **hiragana dan katakana**, aturan membaca, bantuan audio, serta latihan kana.
+- Referensi **kanji N5–N1**, termasuk bacaan, arti, pencarian, filter, serta contoh atau urutan goresan sesuai data yang tersedia.
+- **Kotoba pilihan N5–N1**, dengan submenu level yang dapat dibuka dan ditutup.
+- Flashcard, penanda belajar, ringkasan aktivitas, dan rekap progres.
+- Tiga cerita dengan pilihan versi N5/N4, furigana, terjemahan, serta audio sesuai dukungan perangkat.
+- Cetak materi, soal, kanji, atau kotoba melalui fitur yang tersedia; pilih **Simpan sebagai PDF** pada dialog cetak browser bila diperlukan.
 
-### Hiragana dan katakana
+Daftar level lanjutan adalah referensi pilihan dan tidak boleh dianggap sebagai seluruh daftar kosakata resmi JLPT. Ketersediaan data berbeda pada setiap entri.
 
-- **46 huruf dasar per aksara**, disusun dalam tabel bunyi.
-- **25 bentuk dakuten/handakuten per aksara** dan **33 gabungan yōon per aksara**.
-- Pilihan untuk menampilkan atau menyembunyikan romaji pada tabel; preferensi disimpan di browser.
-- Klik huruf untuk membuka bacaan, catatan, contoh kata jika tersedia, audio, dan urutan goresan.
-- Pada gabungan seperti きゃ, animasi ditampilkan per komponen huruf, termasuk kana kecil.
+## Bahasa Inggris — Sage Study
 
-Animasi memakai jalur goresan vektor yang disematkan dalam HTML. Gunakan kontrol langkah, putar/jeda, ulangi, kecepatan, dan nomor goresan untuk mengamati penulisannya. Animasi membantu mengenali urutan; tetap berlatih menulis sendiri.
+Dashboard menggunakan warna sage, ivory, dan hijau gelap. Pada laptop, area aplikasi mengikuti tinggi layar; sidebar memiliki scroll sendiri jika menu melebihi ruang. Materi panjang dapat digulir di area konten. Pada layar kecil, susunan menyesuaikan ruang yang tersedia.
 
-### Aturan membaca
+### Urutan belajar untuk pemula
 
-Materi ringkas mencakup penggunaan kedua aksara, bunyi dasar, shi/chi/tsu/fu, dakuten dan handakuten, kana kecil ゃ・ゅ・ょ, っ kecil, vokal panjang, bacaan partikel は・へ・を, serta huruf yang bentuknya mirip.
+1. **Alfabet & membaca:** kenali 26 huruf, nama huruf, perbedaan nama dan bunyi, serta contoh pengucapan.
+2. **Verbs:** pelajari `be`, kata kerja tindakan, dan contoh kalimat sederhana.
+3. **Materi & latihan:** mulai dari Day 1, lalu lanjutkan secara bertahap hingga Day 7.
+4. **Kosakata:** pelajari arti dan ulangi kata dari modul yang dipelajari.
+5. **Cerita:** pilih bacaan sesuai level, baca satu bab, dengarkan, lalu gunakan ringkasan Indonesia untuk memeriksa alur dan jawab soal pemahaman.
+6. **Latihan berbicara:** dengarkan contoh dan ucapkan kalimat melalui mikrofon.
 
-### Latihan kana
+Satu modul boleh dikerjakan dalam beberapa sesi. Tujuh modul per level bukan janji menguasai seluruh kompetensi level itu dalam tujuh hari. Paket ini merupakan latihan terstruktur; tugas menulis dan berbicara diperiksa mandiri.
 
-1. Pilih hiragana, katakana, atau keduanya.
-2. Pilih jenis latihan: huruf ke bacaan, bacaan ke huruf, atau kata ke bacaan.
-3. Pilih **10 atau 20 soal**, lalu mulai.
-4. Jawab dari **empat pilihan** untuk mendapatkan umpan balik langsung.
-5. Tinjau nilai dan huruf yang perlu diulang pada akhir sesi.
+### Menu
 
-Tombol **Cek awal · 10 soal** menyediakan pemeriksaan singkat dengan kedua aksara. Latihan mengambil huruf dasar; contoh kata dapat memuat gabungan bunyi dan vokal panjang yang dibahas pada aturan membaca.
-
-Ringkasan **20 sesi terakhir** disimpan pada perangkat. Latihan kana **tidak mencatat absensi** dan tidak menggantikan latihan 40 soal per Day. Riwayat kana belum termasuk ekspor/pemulihan JSON utama.
-
-Audio menggunakan suara Jepang dari perangkat melalui Web Speech API. Jika suara Jepang tidak tersedia, tombol audio dinonaktifkan dan latihan tetap dapat dikerjakan melalui teks. Ketersediaan serta kualitas suara bergantung pada browser dan perangkat.
-
-## Materi, latihan, dan absensi
-
-- Seluruh **Day 1–45** sudah memiliki materi dan latihan.
-- Setiap Day berisi **40 soal dengan empat pilihan jawaban**. Nilai dan pembahasan ditampilkan setelah pengiriman.
-- Draf pilihan jawaban disimpan pada browser agar dapat dilanjutkan.
-- Kehadiran tercatat setelah seluruh **40 jawaban dikirim**, meskipun nilainya belum mencapai target.
-- Satu tanggal dihitung sebagai **satu hari hadir**; beberapa latihan pada hari yang sama tetap tersimpan sebagai percobaan terpisah.
-- Nilai **≥80%** menandai Day tuntas sebagai target pribadi, bukan standar kelulusan resmi JLPT.
-- Tanggal kehadiran mengikuti **tanggal perangkat saat jawaban dikirim**, bukan waktu server.
-- Membaca materi, mencetak, menandai kanji, membaca cerita, dan mengerjakan flashcard tidak menggantikan absensi 40 soal.
-- Waktu belajar dalam rekap berasal dari waktu aktif latihan yang tersimpan pada pengiriman, bukan seluruh waktu membuka website.
-
-Tombol cadangan dan tautan pengulangan tersedia pada **Materi harian → Alat belajar & cadangan**.
-
-## Kanji, kotoba, dan flashcard
-
-### Cakupan kartu kanji
-
-| Level | Jumlah kartu | Bahasa arti | Contoh penggunaan |
-| --- | ---: | --- | --- |
-| N5 | 103 | Indonesia | Kalimat Jepang, bacaan kana, terjemahan Indonesia, dan contoh kata. |
-| N4 | 166 | Indonesia | Kalimat Jepang, bacaan kana, terjemahan Indonesia, dan contoh kata. |
-| N3 | 367 | Indonesia | Kalimat Jepang, bacaan kana, terjemahan Indonesia, dan contoh kata pada seluruh kartu. |
-| N2 | 367 | Indonesia | Belum dilengkapi contoh kalimat seperti N5–N3. |
-| N1 | 1.232 | Indonesia | Belum dilengkapi contoh kalimat seperti N5–N3. |
-
-Kartu menampilkan karakter, arti, onyomi, kunyomi, romaji, jumlah goresan, dan penanda belajar. Tombol animasi pada **seluruh level N5–N1** membuka urutan goresan dengan kontrol langkah, putar/jeda, ulangi, kecepatan, dan nomor goresan. Data vektor disematkan dalam HTML sehingga animasi tidak memerlukan pengambilan data dari server. Pemutaran dimulai atas tindakan pengguna. Format arti N3–N1 memakai pemisah **“·”**, mengikuti N4/N5. Beberapa bacaan kamus pada level lanjutan menggunakan tanda titik untuk memisahkan bagian kanji dan okurigana.
-
-Gunakan submenu **Kanji** atau tab level untuk berpindah halaman. Pencarian, filter kelompok, status, dan pilihan jumlah kartu per halaman membantu meninjau daftar. N3–N1 dikelompokkan berdasarkan jumlah goresan.
-
-Daftar ini merupakan **referensi belajar pilihan, bukan daftar resmi lengkap JLPT**. Penetapan level dapat berbeda dari sumber atau buku lain, dan sebagian karakter dapat muncul pada beberapa level. Makna kanji serta bacaannya dapat berubah sesuai kata dan konteks.
-
-### Kotoba N5–N1
-
-Klik **Kotoba ⌄** pada sidebar untuk membuka atau menutup submenu, lalu pilih level. Di HP, buka **Menu** terlebih dahulu. Pilihan level, pencarian kata/kana/arti, dan filter penanda juga tersedia pada halaman Kotoba. Gunakan **Hapus filter** untuk kembali ke semua level.
-
-| Level | Jumlah kata yang berlabel level tersebut | Cakupan |
-| --- | ---: | --- |
-| N5 | 188 | Daftar pilihan yang sudah tersedia. |
-| N4 | 250 | Daftar pilihan yang sudah tersedia. |
-| N3 | 100 | Paket awal pilihan; belum seluruh kosakata N3. |
-| N2 | 100 | Paket awal pilihan; belum seluruh kosakata N2. |
-| N1 | 100 | Paket awal pilihan; belum seluruh kosakata N1. |
-
-Total **696 kata unik**. Jumlah per level tidak dapat langsung dijumlahkan sebagai jumlah kata unik, karena satu kata dapat memiliki beberapa label level. Kata yang sama dengan bacaan sama menggunakan satu baris dan satu penanda belajar. Setiap baris berisi kata, bacaan kana, arti Indonesia, kelompok tema, dan penanda **Baru / Ragu atau ulangi / Lancar**.
-
-Pengelompokan merupakan panduan belajar Tadicoba, bukan penetapan level resmi JLPT. Kata dapat dipelajari lebih awal atau lebih akhir pada buku lain. Daftar baru tidak mengubah materi harian 45 hari menjadi kursus N3–N1.
-
-### Flashcard
-
-Flashcard mencakup **kanji N5–N4 dan kotoba N5–N1**. Filter N3–N1 saat ini berisi kotoba; belum ada kartu kanji lanjutan pada kumpulan flashcard. Pilih level, jenis materi, kelompok kartu, arah latihan, dan jumlah kartu per sesi, lalu tekan **Mulai / acak sesi**.
-
-Jawaban salah dijadwalkan ulang besok; jawaban benar empat hari kemudian. Penilaian langsung menunjukkan jawaban yang benar dan progres tersimpan pada browser.
-
-## Maskot Nao dan pengaturan suara
-
-Nao tampil sebagai pendamping di sudut layar. Klik karakter untuk mendapatkan petunjuk umum; klik **×** pada bubble untuk menutup dialog dan menghentikan ucapannya. Label nama di atas bubble dihilangkan.
-
-### Reaksi dan animasi
-
-Enam pose yang tersedia adalah **netral, menyapa, berpikir, senang, bingung, dan merayakan**. Pemakaiannya mengikuti tindakan yang sudah dihubungkan, bukan percakapan AI bebas.
-
-| Pemicu | Respons |
+| Menu | Isi |
 | --- | --- |
-| Memilih menu navigasi yang terhubung | Dialog singkat sesuai konteks halaman, misalnya materi, kanji, atau cerita. |
-| Menjawab flashcard dengan benar | Ekspresi senang dan informasi kata, bacaan, serta artinya. |
-| Menjawab flashcard dengan salah | Ekspresi bingung dan jawaban yang benar beserta bacaan serta artinya. |
-| Menyelesaikan pengiriman latihan harian | Reaksi merayakan dan ajakan meninjau pembahasan. |
-| Mengklik Nao | Pose berpikir dan petunjuk belajar umum. |
+| Dashboard | Level aktif, modul terakhir, progres tujuh modul pada level tersebut, tutorial, dan akses latihan. |
+| Pilihan level | A1, A2, B1 di sidebar; pilihan terakhir diingat dan progres disimpan terpisah. |
+| Alfabet & membaca | Huruf, bantuan fonetik, contoh audio, pola bunyi, tekanan kata, serta beberapa akhiran umum. |
+| Verbs | 30 kata kerja dasar, bentuk V1/V2/V3/-ing, arti, contoh, pola negatif dan pertanyaan, serta latihan mandiri. |
+| Referensi tenses | Dua belas bentuk tense/aspect yang umum diajarkan, dengan pola dan contoh; materi lanjutan berfungsi sebagai referensi. |
+| Cerita | Lima cerita per level; setiap cerita 1.000 kata Inggris, lima bab, ringkasan Indonesia, kosakata, audio, dan lima soal berpembahasan. |
+| Tutorial Nao | Panduan mulai belajar untuk pemula. |
+| Materi & latihan | A1: 7 modul × 15 kosakata/15 soal. A2 dan B1: masing-masing 7 modul × 10 kosakata/6 soal. |
+| Kosakata | Tabel kosakata dengan filter Day. |
+| Hasil & cadangan | Riwayat latihan dan cadangan JSON khusus level Inggris yang aktif; cadangan level berbeda ditolak. |
+| Latihan berbicara | Sesi lima kalimat dasar menggunakan mikrofon; belum dibedakan menjadi paket A2 dan B1. |
 
-Integrasi ini belum mencakup respons khusus pada setiap tombol atau setiap soal kana. Jawaban Nao disiapkan dalam kode berdasarkan pemicu dan data latihan; tidak memerlukan API percakapan.
+Referensi tenses tidak menjadikan semua bentuk continuous cocok untuk semua verb. Perhatikan penjelasan penggunaan dan pengecualian di materi.
 
-- Gambar karakter memiliki latar transparan.
-- Posisi kedip dan mulut mengikuti koordinat serta kemiringan wajah tiap pose.
-- Skala gambar dan titik acuan wajah dibuat tetap saat pergantian reaksi.
-- Pupil mengikuti pointer pada area halaman, kemudian kembali ke posisi netral saat pointer keluar.
-- Gerak mulut mengikuti waktu pemutaran suara, atau durasi teks saat suara dimatikan. Animasi ini belum merupakan sinkronisasi bibir per fonem.
+### Cakupan dan jumlah materi
 
-### Pengaturan Nao
+| Level | Modul | Entri kosakata modul | Soal modul | Cerita | Soal cerita |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| A1 | 7 | 105 | 105 | 5 | 25 |
+| A2 | 7 | 70 | 42 | 5 | 25 |
+| B1 | 7 | 70 | 42 | 5 | 25 |
+| **Total Inggris** | **21** | **245** | **189** | **15** | **75** |
 
-Buka **Pengaturan** di bawah karakter:
+Jumlah kosakata merupakan entri dalam modul, bukan jumlah kata unik seluruh website. Soal cerita terpisah dari soal modul.
 
-| Kontrol | Fungsi |
-| --- | --- |
-| Suara Nao · anak perempuan | Mengaktifkan ucapan bahasa Indonesia dengan gaya suara anak perempuan yang ekspresif. |
-| Kurangi gerakan | Mengurangi animasi wajah dan arah pandang; juga mengikuti preferensi kurangi gerakan dari perangkat. |
-| Sembunyikan Nao | Menyembunyikan karakter dan dialog serta menghentikan ucapannya. |
-| Tampilkan Nao | Memunculkan kembali karakter setelah disembunyikan. |
+### Materi A2 dan B1
 
-Suara tidak otomatis aktif pada pemakaian pertama. Gaya anak perempuan menjadi setelan bawaan saat suara diaktifkan; pilihan aktif/nonaktif pengguna tetap disimpan.
+| Modul | A2 | B1 |
+| --- | --- | --- |
+| 1 | Rutinitas, kegiatan sementara & pengaturan waktu | Narasi, urutan waktu & kebiasaan dahulu |
+| 2 | Bercerita tentang perjalanan & kejadian lampau | Hasil, durasi & perubahan sampai sekarang |
+| 3 | Pengalaman & hasil dengan present perfect | Kemungkinan, hipotesis & pemecahan masalah |
+| 4 | Rencana, prediksi & keputusan | Passive voice, proses & layanan |
+| 5 | Belanja, jumlah & membandingkan pilihan | Reported speech & pertanyaan tidak langsung |
+| 6 | Saran, kewajiban & permintaan sopan | Opini, alasan & deskripsi terhubung |
+| 7 | Email praktis, rencana bersyarat & review | Email kerja, keluhan & proyek akhir |
 
-### Cara kerja suara
+Setiap modul baru mencakup tujuan komunikasi, penjelasan Indonesia, pola dan contoh, dialog, bacaan beserta terjemahan, tombol audio bacaan, tugas produktif, serta soal dengan pembahasan. Nilai minimal 80% dengan seluruh soal modul diperlukan untuk penanda tuntas. Ketuntasan pilihan ganda tidak membuktikan seluruh keterampilan CEFR.
 
-**Bahasa ucapan Nao tetap Indonesia, sesuai isi bubble.** Nuansa anime/chibi diterapkan melalui prioritas pemilihan suara serta variasi nada, tempo, dan jeda: lebih ceria saat benar, lebih lembut saat salah, serta penasaran saat memberi petunjuk.
+### Daftar cerita A1–B1
 
-HTML mengutamakan suara anak perempuan Indonesia jika tersedia, kemudian suara perempuan Indonesia, dan memakai suara Indonesia lain sebagai pilihan terakhir. Pemilihan berdasarkan bahasa serta nama suara dari browser; informasi usia dan gender tidak selalu tersedia atau dapat dipastikan.
+| No. | A1 | A2 | B1 |
+| --- | --- | --- | --- |
+| 1 | A New Friend | The Bag at the Bus Stop | A Mistake Worth Reporting |
+| 2 | Ben’s Morning | A Different Saturday | The Shop That Repaired Things |
+| 3 | At the Fruit Shop | The Room Booking | A Quieter Way to Lead |
+| 4 | A Rainy Afternoon | The Recipe for Everyone | The Journey They Did Not Plan |
+| 5 | Our Picnic Plan | Rain on the Walking Trip | The Notice on the Library Door |
 
-**Belum ada rekaman MP3/WAV atau pengisi suara khusus yang tertanam.** Suara masih menggunakan `speechSynthesis` / Web Speech API, sehingga hasil antarperangkat dapat berbeda dan tidak dijamin menyerupai pengisi suara anime. Jika suara Indonesia belum tersedia, aktifkan suara Indonesia di pengaturan perangkat. Beberapa mesin suara memerlukan internet.
+### Membaca cerita 1.000 kata
 
-Audio Nao terpisah dari audio Jepang pada kana dan cerita. Pengaturan gaya suara Nao tidak mengubah suara pembacaan cerita atau huruf Jepang.
+- Setiap cerita berisi **tepat 1.000 kata bahasa Inggris**, sehingga totalnya 15.000 kata cerita.
+- Hitungan mengikuti pemisahan spasi pada teks cerita. Judul, nomor bab, ringkasan, kosakata, tombol, dan soal tidak dihitung. Aplikasi pengolah kata lain bisa mempunyai aturan berbeda untuk tanda hubung atau apostrof.
+- Setiap cerita dibagi menjadi **lima bab** dengan tombol navigasi dan audio per bab. Pembagian mengikuti paragraf; panjang setiap bab tidak harus sama.
+- Tombol audio seluruh cerita tetap tersedia. Jika pembacaan panjang berhenti karena dukungan suara/browser, gunakan audio per bab.
+- Tingkat kesulitan dibedakan melalui kalimat, kosakata, dan pengembangan alur; jumlah kata bukan ukuran tunggal level. A1 tetap menggunakan bahasa yang lebih sederhana.
+- Bagian Indonesia adalah **ringkasan alur**, bukan terjemahan lengkap setiap kalimat. Label di aplikasi menyatakan perbedaan ini.
+- Setiap cerita memiliki kosakata bantuan, lima soal pemahaman beserta jawaban dan pembahasan, serta tugas menulis/berbicara mandiri.
+- Nilai cerita ditampilkan untuk sesi membaca dan **belum disimpan dalam riwayat nilai modul**.
 
-Preferensi Nao disimpan pada kunci localStorage `tadicoba-nao-settings-v1`. Preferensi ini belum termasuk cadangan JSON utama. Nao disembunyikan saat mencetak.
+**Alur membaca yang disarankan:** pilih level → buka cerita → baca satu bab tanpa ringkasan → dengarkan contoh → lanjutkan bab berikutnya → cek ringkasan jika diperlukan → kerjakan soal → periksa alasan jawaban. Satu cerita boleh dibagi ke beberapa sesi.
 
-## Cerita dan audio
+### Ilustrasi cerita A1
 
-Daftar cerita menampilkan tiga kartu:
+Seluruh **5 cerita A1** menggunakan gaya ilustrasi anime keseharian yang mengikuti tema **Sage Study**. Setiap cerita memiliki **5 ilustrasi**, satu untuk masing-masing bab, sehingga tersedia **25 ilustrasi**.
 
-1. **Kucing Kecil dan Payung Biru** — kebaikan dan persahabatan.
-2. **Kelinci dan Roti Bulan** — berbagi dan kerja sama.
-3. **Hari-hari Sebuah Benih Kecil** — kesabaran dan merawat.
+| Cerita A1 | Ilustrasi |
+| --- | ---: |
+| A New Friend | 5 bab × 1 gambar |
+| Ben’s Morning | 5 bab × 1 gambar |
+| At the Fruit Shop | 5 bab × 1 gambar |
+| A Rainy Afternoon | 5 bab × 1 gambar |
+| Our Picnic Plan | 5 bab × 1 gambar |
 
-Setiap cerita mempunyai versi **N5 dan N4**, masing-masing delapan paragraf. Kata yang berada di luar daftar kanji versi terpilih ditampilkan dalam kana.
+- Adegan gambar mengikuti kejadian pada bab terkait, dengan keterangan singkat dan teks alternatif.
+- Pada layar lebar, teks berada di kiri dan ilustrasi di kanan. Panel gambar menggunakan posisi sticky selama ruang gulir bab memungkinkan.
+- Pada viewport hingga 1.000 px, susunan menjadi vertikal: teks di atas dan gambar di bawah.
+- Ilustrasi bersifat statis; tidak memiliki animasi adegan atau sinkronisasi dengan narasi.
+- Gambar berformat **WebP**, disematkan langsung dalam HTML, dan menggunakan lazy loading. Folder gambar tambahan tidak diperlukan untuk menjalankan file unduhan.
+- Lazy loading menunda pemuatan elemen gambar; karena data gambar berada dalam HTML, ukuran unduhan HTML tetap mencakup seluruh aset.
+- Ilustrasi per bab saat ini tersedia untuk **A1**. Cerita A2 dan B1 tetap menyediakan teks, audio, ringkasan, kosakata, dan soal.
 
-- Klik kartu untuk membaca, lalu gunakan **Semua cerita** untuk kembali ke daftar.
-- Buka/tutup terjemahan Indonesia di bawah setiap paragraf.
-- Gunakan jendela **Pengaturan baca** untuk memilih versi kanji N5/N4 dan mengaktifkan atau mematikan furigana.
-- Pada HP, panel pengaturan menyesuaikan layar dan ditempatkan di atas navigasi bawah.
-- Dengarkan seluruh cerita atau satu paragraf melalui kontrol audio pada bacaan.
+Ilustrasi dibuat dengan bantuan AI untuk menggambarkan cerita. Rincian visual bersifat pendukung; gunakan teks bacaan sebagai acuan jawaban soal.
 
-Audio memakai **Web Speech API** dan suara Jepang yang tersedia pada browser/perangkat. Pilihan laki-laki/perempuan hanya dapat digunakan sesuai ketersediaan suara; jika tidak ditemukan, pilih suara Jepang dari daftar perangkat. Pilihan gender bukan pengubahan nada suara untuk meniru gender. Kecepatan baca juga dapat disesuaikan.
+## Nao dan animasi
 
-Jika suara Jepang belum tersedia, aktifkan atau unduh suara Jepang di pengaturan perangkat, lalu tekan **Muat ulang suara**. Sebagian suara memerlukan internet. Cerita tetap dapat dibaca tanpa audio.
+Nao menjadi pendamping belajar 2D dan identitas visual Tadicoba.
 
-## Print dan simpan PDF
+- **Jepang:** rambut lavender, mata ungu, hoodie gelap, serta headphone beraksen ungu.
+- **Inggris:** rambut putih, mata hijau, hoodie sage, dan headphone hijau.
+- Pose Inggris: **Menyapa** saat masuk, **Bersandar** saat standby, dan **Menjelaskan** saat menu disorot atau dipilih.
+- Pergantian pose menggunakan crossfade dan easing.
+- Mata berkedip, mulut bergerak sesekali, dan rambut diberi gerakan ringan. Mata pada dashboard Inggris mengikuti pointer pada perangkat yang mendukungnya.
+- Gerakan menyesuaikan preferensi **reduced motion** perangkat/browser.
 
-### Materi dan soal
+Gerakan mulut dekoratif tidak otomatis merupakan lip sync dengan seluruh audio. Model 3D bukan bagian dari website ini.
 
-Buka **Materi harian → Print / PDF**. Tersedia enam mode:
+## Latihan berbicara dan mikrofon
 
-| Mode | Isi |
-| --- | --- |
-| Materi saja per Day | Materi satu hari yang dipilih. |
-| Soal saja per Day | 40 soal beserta bacaan satu hari. |
-| Materi dan soal per Day | Materi serta 40 soal satu hari. |
-| Full materi 45 Day | Seluruh materi Day 1–45. |
-| Full soal 45 Day | Seluruh 1.800 soal beserta bacaan. |
-| Full materi dan soal 45 Day | Seluruh materi dan soal Day 1–45. |
+1. Buka **Latihan berbicara** pada bahasa yang dipilih.
+2. Dengarkan contoh dengan tombol audio.
+3. Tekan tombol mikrofon dan berikan izin akses.
+4. Baca satu kalimat dengan suara jelas.
+5. Setelah pengenalan selesai, periksa bagian hijau dan merah, lalu ulangi atau lanjutkan.
 
-Soal dicetak tanpa kunci dan tanpa jawaban pengguna. Setiap Day dimulai pada halaman baru; pada paket gabungan, bagian soal juga dimulai pada halaman baru.
+**Hijau dan merah menunjukkan kecocokan hasil transkripsi dengan kalimat target, bukan penilaian bunyi atau aksen secara fonetis.** Pengenalan suara bisa keliru meskipun pengguna membaca dengan benar. Pada Jepang, pembandingan menggunakan normalisasi kana.
 
-### Kanji
+Fitur menggunakan `SpeechRecognition` atau `webkitSpeechRecognition`, bila tersedia. Dukungan browser berbeda. Halaman harus berjalan dalam secure context; gunakan **HTTPS atau localhost** untuk pengujian mikrofon. Layanan pengenalan suara dapat memerlukan internet dan dapat memproses audio melalui layanan browser. Tidak ada jaminan fitur mikrofon bekerja offline.
 
-Pada level kanji yang dipilih, klik **Print / PDF**, kemudian pilih:
+Nilai sesi berbicara tidak boleh disamakan dengan hasil latihan pilihan ganda; hasil sesi mikrofon belum disimpan sebagai riwayat progres permanen.
 
-- **Full level** — seluruh kartu dalam urutan nomor asli.
-- **Full level — pisah per pengelompokan** — setiap kelompok dimulai pada halaman baru.
+## Audio
 
-Tata letak kanji memakai **tiga kolom pada kertas A4**. Kartu N5/N4/N3 menyertakan contoh kalimat dan contoh kata. Kartu N2/N1 mengikuti data yang tersedia pada level tersebut. Filter dan pagination layar tidak membatasi isi cetakan.
-
-### Kotoba N5–N1
-
-Buka **Kotoba → pilih level → Print / PDF**. Tersedia **12 pilihan**: gabungan seluruh N5–N1, atau N5/N4/N3/N2/N1 saja; masing-masing tersedia dalam urutan penuh atau dipisah per kelompok. Kata berlabel beberapa level hanya dicetak sekali pada mode gabungan. N3–N1 mencetak seluruh kata pilihan yang tersedia saat ini, masing-masing 100 kata, bukan seluruh kosakata level JLPT. Cetakan berbentuk tabel nomor, level, kata, bacaan, dan arti. Pada mode kelompok, setiap kelompok dimulai pada halaman baru. Pilihan cetak mencakup seluruh data sesuai mode, bukan hanya halaman atau hasil filter yang sedang terlihat.
-
-### Mencetak atau menyimpan sebagai PDF
-
-1. Pilih isi, lalu klik **Buka pratinjau cetak**.
-2. Tunggu dokumen siap dan klik **Cetak / Simpan PDF**.
-3. Pilih printer atau **Save as PDF / Simpan sebagai PDF** pada dialog browser.
-4. Gunakan **A4**, skala **100%**, dan matikan header/footer browser agar bingkai sesuai desain.
-5. Periksa pratinjau dan jumlah halaman sebelum mencetak paket penuh.
-
-Lembar memakai bingkai dark Tadicoba yang berulang pada tiap halaman. Tema gelap website tidak mengubah kertas menjadi berlatar gelap. Jika popup diblokir, pratinjau ditampilkan di dalam dashboard. Ketersediaan printer dan ekspor PDF mengikuti browser/perangkat.
+Pembacaan contoh menggunakan `speechSynthesis` dan suara yang tersedia di browser/sistem operasi. Bahasa, pilihan suara, dan kualitasnya bergantung pada perangkat. Contoh audio dapat dipakai tanpa menyalakan mikrofon bila dukungan pembacaan suara tersedia.
 
 ## Penyimpanan dan cadangan
 
-Tadicoba memakai **localStorage browser**, tanpa database server. Nama panggilan, tema, agenda, draf, hasil latihan, absensi, penanda kanji/kotoba, dan progres flashcard, preferensi romaji, dan ringkasan latihan kana, serta preferensi Nao disimpan pada perangkat yang digunakan.
+- Progres Jepang dan Inggris menggunakan penyimpanan yang terpisah. Di Inggris, A1, A2, dan B1 juga mempunyai progres sendiri.
+- Berpindah level menyimpan progres level sebelumnya dan memuat level tujuan. Draf serta riwayat A1 lama tetap dapat dibaca.
+- Cadangan JSON mencakup level aktif; pulihkan pada level yang sama. Cadangan A1 tidak dapat dipakai untuk menimpa A2 atau B1.
+- Data disimpan menggunakan `localStorage`; belum ada login, server aplikasi, atau database online.
+- Browser, profil, perangkat, dan alamat situs yang berbeda mempunyai ruang penyimpanan berbeda.
+- Menghapus data situs atau berpindah alamat dapat membuat progres lama tidak terbaca.
+- Buat cadangan melalui fitur aplikasi sebelum mengganti perangkat, browser, atau alamat hosting. Impor cadangan pada bagian bahasa yang sesuai.
+- Unduhan file HTML baru tidak memindahkan progres ke perangkat lain secara otomatis.
 
-**Nama panggilan bukan akun login.** Mengganti nama tidak membuat profil data baru. Pada browser dan alamat website yang sama, penyimpanan tetap sama.
+Kunci penyimpanan Inggris yang digunakan:
 
-- Data laptop dan HP **belum tersinkron otomatis**.
-- Menghapus data situs/browser dapat menghapus progres.
-- File lokal, GitHub Pages, dan custom domain dapat memakai ruang penyimpanan berbeda.
-- Memperbarui HTML pada alamat website yang sama umumnya mempertahankan data, selama penyimpanan situs dan kunci datanya tidak dihapus atau diganti.
-
-### Cakupan cadangan JSON
-
-| Fitur | Data yang dicadangkan | Lokasi |
-| --- | --- | --- |
-| Cadangkan hasil (JSON) | Hasil jawaban, riwayat percobaan, serta tanggal absensi; ekspor juga menyertakan draf. | Materi harian → Alat belajar & cadangan. |
-| Cadangkan progres belajar | Penanda N5/N4, kotoba, dan progres flashcard. | Flashcard. |
-
-Untuk memulihkan, pilih **Pulihkan hasil** atau **Pulihkan progres** pada fitur yang sesuai, lalu pilih JSON yang sebelumnya diekspor dari fitur tersebut.
-
-Riwayat latihan digabung berdasarkan ID percobaan agar tidak berganda. Tanggal absensi asli dipertahankan; impor tidak membuat kehadiran baru pada hari impor. Draf yang ikut diekspor belum dimuat kembali oleh pemulihan riwayat saat ini.
-
-**Cadangan progres belajar belum mencakup penanda kanji N3/N2/N1.** Penanda kotoba N5–N1 dan progres flashcard terkait sudah termasuk cadangan progres belajar. Kedua cadangan juga belum mencakup seluruh data seperti agenda, nama, tema, preferensi romaji, riwayat latihan kana, dan pengaturan Nao. Penanda kanji N3–N1 tetap tersimpan pada browser asal, tetapi belum dapat dipindahkan melalui dua fitur cadangan tersebut.
+| Kunci | Kegunaan |
+| --- | --- |
+| `tadicoba-english-a1-v1` | Modul, draf jawaban, dan riwayat A1. |
+| `tadicoba-english-a2-v1` | Modul, draf jawaban, dan riwayat A2. |
+| `tadicoba-english-b1-v1` | Modul, draf jawaban, dan riwayat B1. |
+| `tadicoba-english-level-v1` | Level Inggris terakhir yang dipilih. |
+| `tadicoba-last-course-v1` | Pilihan bahasa terakhir. |
+| `tadicoba-en-nao-guide-v1` | Penanda tutorial awal Nao sudah dilihat. |
 
 ## Menjalankan secara lokal
 
-1. Unduh atau clone repository.
-2. Pastikan file dashboard bernama **`index.html`**.
-3. Buka file itu dengan browser modern.
+Gunakan file HTML versi pilihan sebagai `index.html`. File inti menggabungkan antarmuka, logika, materi, serta aset yang disematkan; tidak memerlukan instalasi npm atau proses build. Versi dengan 25 ilustrasi A1 berukuran sekitar **34,9 MB** (33,2 MiB); waktu pembukaan awal bergantung pada koneksi dan perangkat.
 
-Tidak diperlukan Python, Node.js, database, API key, atau proses build untuk menjalankan dashboard. Fitur inti tersedia di HTML; suara Jepang untuk materi dan suara Indonesia untuk Nao tetap bergantung pada perangkat.
+Struktur minimal:
 
-HTML memuat CSS, JavaScript, materi, font Jepang, logo, bingkai cetak, sprite Nao, serta gambar Torii dan Kumo. Gambar dan sprite tidak memerlukan berkas terpisah; rekaman pengisi suara khusus belum disertakan. Aset utama tidak perlu diunggah satu per satu. Beberapa utilitas/ikon lama memakai CDN, sehingga ketersediaan utilitas tersebut dapat memerlukan koneksi internet.
+```text
+Tadicoba/
+├── index.html
+└── README.md
+```
 
-### Struktur repository
+Membuka HTML langsung dapat dipakai untuk melihat materi, tetapi fitur tertentu berbeda dukungannya pada alamat `file://`. Untuk pengujian lokal yang lebih konsisten:
 
-| File | Keterangan |
-| --- | --- |
-| `index.html` | Dashboard, tampilan, logika, data belajar, dan aset utama. |
-| `README.md` | Dokumentasi proyek. |
+```bash
+cd Tadicoba
+python -m http.server 8000 --bind 127.0.0.1
+```
 
-Banyak menu ditampilkan melalui perpindahan bagian dalam **satu HTML**; tidak diperlukan file HTML terpisah untuk setiap menu.
+Pada Windows, jika perintah `python` tidak tersedia, gunakan `py -m http.server 8000 --bind 127.0.0.1`. Kemudian buka `http://localhost:8000`.
 
-## Publikasi melalui GitHub Pages
+## Hosting
 
-Untuk repository `Tadipuhan/Dailyactivity`:
+Aplikasi dapat ditempatkan pada hosting statis yang menyajikan HTML melalui HTTPS. Untuk GitHub Pages, gunakan berkas `index.html` pada folder sumber publikasi repository dan aktifkan Pages sesuai pengaturan repository tersebut.
 
-1. Unggah **`index.html`** dan **`README.md`** ke folder utama repository.
-2. Buka **Settings → Pages**.
-3. Pada bagian publikasi, pilih **Deploy from a branch**.
-4. Pilih branch **main**, folder **/ (root)**, lalu simpan.
-5. Tunggu deployment selesai, kemudian buka alamat GitHub Pages.
+Jika yang tampil justru teks kode, pastikan yang dibuka adalah alamat website hasil publikasi, bukan halaman raw atau pratinjau kode di repository. Pastikan pula nama file benar-benar berakhiran `.html`, bukan `.html.txt`.
 
-Alamat website: **https://tadipuhan.github.io/Dailyactivity/**
+Saat mengganti `index.html`, selesaikan seluruh konflik merge. Jangan biarkan baris `<<<<<<< HEAD`, `=======`, atau `>>>>>>>` berada dalam kode hasil penggabungan. Penanda konflik dapat membuat JavaScript gagal dijalankan dan tombol pilihan bahasa tidak merespons. Periksa sumber publikasi yang aktif dan tunggu deployment selesai sebelum menguji ulang.
 
-Nama tampilan **Tadicoba** tidak mengharuskan nama repository berubah. Pastikan nama file halaman utama tepat `index.html`, bukan `index.html.txt` atau nama HTML unduhan yang belum diganti.
+Simpan progres sebelum memindahkan situs ke domain/alamat lain. README ini tidak menyatakan bahwa file terbaru sudah dipublikasikan ke hosting.
 
-Rujukan: [pengaturan sumber publikasi GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) dan [file halaman awal GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+## Mengubah isi aplikasi
 
-## Memperbarui website
+1. Buat salinan HTML sebelum mengedit.
+2. Cari bagian data atau fungsi yang ingin diubah; hindari mengganti semua teks dengan pola yang terlalu umum.
+3. Materi Inggris menggunakan `a1Lessons` dan `levelBanks`; `lessons` mengacu pada level aktif. Cerita panjang disimpan pada `gradedStoryBanks`; setiap cerita memiliki `text`, `translation` (ringkasan), `chapters`, `wordCount`, `words`, `task`, dan `qs`. Cerita A1 juga mempunyai `chapterImages`, berupa lima objek `src` (data URL WebP) dan `alt` yang mengikuti urutan `chapters`. Kosakata verb serta panduan tenses berada pada struktur terpisah.
+4. Pertahankan kunci penyimpanan agar progres pengguna tetap terbaca. Perubahan struktur data memerlukan migrasi.
+5. Periksa pemilihan bahasa dan level, progres lama, seluruh menu, Nao, cetak, serta ekspor/impor cadangan setelah perubahan. Untuk cerita, pastikan gabungan bab sama dengan teks utuh, jumlah kata sesuai, dan jawaban masih didukung bacaan. Periksa kecocokan lima gambar dengan urutan bab A1, teks alternatif, serta susunan pada laptop dan ponsel.
+6. Uji ulang fitur mikrofon melalui HTTPS/localhost dan browser target.
 
-1. Cadangkan hasil dan progres yang didukung terlebih dahulu.
-2. Unduh HTML Tadicoba terbaru, yaitu `Tadicoba-Kotoba-Menu.html`.
-3. Ubah namanya menjadi **`index.html`**.
-4. Ganti `index.html` lama di folder utama repository dan unggah README terbaru bila diperlukan.
-5. Commit perubahan, lalu periksa deployment pada tab **Actions**.
-6. Setelah selesai, muat ulang website. Gunakan hard refresh jika browser masih menampilkan versi lama.
-
-Jika memakai Git lokal, ambil perubahan remote sebelum mengirim pembaruan. Jika terjadi konflik, selesaikan konflik terlebih dahulu; jangan memakai force push sebagai cara rutin mengatasi penolakan push.
+HTML juga memuat template cetak dalam JavaScript. Penggantian global `</html>` atau `</body>` bisa merusak template tersebut. Aset base64 membuat file cukup besar; jangan mengubah blok aset jika tidak diperlukan.
 
 ## Pemecahan masalah
 
-| Masalah | Yang diperiksa |
+| Kendala | Pemeriksaan |
 | --- | --- |
-| Yang terbuka halaman repository, bukan dashboard | Buka alamat `github.io` pada bagian publikasi, bukan halaman daftar file GitHub. |
-| Website menampilkan README atau tidak menemukan halaman | Periksa keberadaan `index.html` pada branch dan folder sumber Pages. |
-| Update belum terlihat | Pastikan deployment berhasil dan muat ulang tanpa cache. |
-| Progres hilang setelah pindah HP/browser/domain | Penyimpanan terpisah; pulihkan cadangan yang didukung pada perangkat tujuan. |
-| Nama berubah tetapi hasil latihan tetap sama | Nama hanya personalisasi tampilan, bukan pemisahan akun. |
-| N2/N1 masih berbahasa Inggris | Terjemahan Indonesia dan contoh lengkap baru tersedia untuk N5/N4/N3. |
-| Audio tidak tersedia | Periksa dukungan browser, suara Jepang perangkat, dan daftar suara pada halaman cerita. |
-| Nao tidak terlihat | Klik **Tampilkan Nao** jika sebelumnya disembunyikan; pastikan HTML terbaru sudah digunakan. |
-| Nao tidak bersuara | Aktifkan **Pengaturan → Suara Nao · anak perempuan**, periksa volume, dan ketersediaan suara Indonesia perangkat. |
-| Suara Nao berbeda di HP dan komputer | Versi ini memakai mesin suara perangkat, belum rekaman pengisi suara khusus yang seragam. |
-| Sidebar atau background masih polos | Pastikan memakai HTML terbaru dengan gambar latar langsung, bukan versi lama yang menyimpan data gambar besar dalam variabel CSS. Jika sudah dipublikasikan, periksa deployment dan muat ulang tanpa cache. |
-| Print tidak membuka popup | Gunakan pratinjau di dalam dashboard atau izinkan popup untuk situs ini. |
-
-## Materi Day 1–45
-
-| Day | Fokus |
-| --- | --- |
-| 1 | N5 ke N4 |
-| 2 | Kata Kerja |
-| 3 | Permintaan dan Aturan |
-| 4 | Lampau dan Pengalaman |
-| 5 | Kata sifat dan perbandingan |
-| 6 | Keberadaan, posisi, dan jumlah |
-| 7 | Keinginan, niat, dan rencana |
-| 8 | Kemampuan dan hobi |
-| 9 | Alasan dan urutan kegiatan |
-| 10 | Review terpadu Day 1–9 |
-| 11 | Bentuk biasa, pendapat, dan kutipan |
-| 12 | Kewajiban, larangan, dan tidak perlu |
-| 13 | Memberi, menerima, dan bantuan |
-| 14 | Saran, penjelasan, dan dugaan |
-| 15 | Sedang berlangsung, keadaan, dan perubahan |
-| 16 | Mencoba, persiapan, dan penyelesaian |
-| 17 | Syarat と・たら・ば dan konsesi ても |
-| 18 | Tampaknya, kabar, dan rencana yang diharapkan |
-| 19 | Klausa penjelas, nominalisasi, dan kegiatan bersamaan |
-| 20 | Review terpadu Day 11–19 |
-| 21 | Niat, keputusan, dan ketetapan |
-| 22 | Tujuan, manfaat, dan pemakaian alat |
-| 23 | Kebiasaan dan perubahan kemampuan |
-| 24 | Bentuk pasif dan sudut pandang |
-| 25 | Menyuruh, membiarkan, dan meminta izin |
-| 26 | Mulai, selesai, berlebihan, dan kemudahan |
-| 27 | Waktu とき・間 dan tahap kegiatan |
-| 28 | Pertanyaan di dalam kalimat |
-| 29 | Permintaan sopan dan bahasa layanan |
-| 30 | Review terpadu Day 21–29 |
-| 31 | Keadaan hasil dan persiapan |
-| 32 | Pergerakan dan perubahan ていく・てくる |
-| 33 | Alasan majemuk dan hasil yang berlawanan |
-| 34 | Memilih syarat と・ば・たら・なら |
-| 35 | Batas, jumlah, dan perbandingan |
-| 36 | Permintaan, harapan, dan bantuan |
-| 37 | Dugaan dan bukti dalam konteks |
-| 38 | Membaca pengumuman dan jadwal |
-| 39 | Instruksi kerja, urutan, dan keselamatan |
-| 40 | Review makna dan hubungan antarkalimat |
-| 41 | Review potensial, pasif, dan kausatif |
-| 42 | Penguatan bacaan kanji dan kosakata |
-| 43 | Susunan kalimat dan klausa penjelas |
-| 44 | Bacaan pesan, rujukan, dan kesimpulan |
-| 45 | Review akhir 45 hari |
-
-Setiap Day dilengkapi materi, kosakata pendukung, bacaan pendek, 40 soal dengan empat pilihan, serta pembahasan setelah pengiriman. Total tersedia **1.800 soal**.
+| Tombol bahasa tidak merespons | Periksa error JavaScript, penanda konflik merge, dan pastikan deployment menggunakan `index.html` terbaru yang utuh. |
+| Cerita masih pendek atau hanya A1 | Periksa apakah file versi 15 cerita sudah dipublikasikan, pilih level sidebar, lalu muat ulang tanpa cache. |
+| Gambar cerita A1 belum terlihat | Pastikan versi dengan 25 ilustrasi sudah dipublikasikan, pilih A1, buka cerita, dan gulir ke bab terkait. Pada layar kecil, gambar berada di bawah teks bab. |
+| Pembukaan awal lambat | HTML memuat seluruh aset, sekitar 34,9 MB. Tunggu unduhan selesai; lazy loading gambar tidak mengurangi ukuran HTML yang ditransfer. |
+| Cadangan Inggris ditolak | Cocokkan level aktif dengan level pada cadangan. Data level lain tidak diterima untuk mencegah penimpaan. |
+| Mikrofon tidak aktif | Periksa secure context, dukungan API, izin situs, perangkat input, dan koneksi layanan pengenalan suara. |
+| Ucapan benar tetapi ditandai merah | Periksa transkrip yang dikenali, dengarkan contoh, dan coba kembali. Penilaian berbasis transkrip memiliki keterbatasan. |
+| Audio tidak keluar | Periksa volume, dukungan `speechSynthesis`, ketersediaan suara bahasa target, dan interaksi tombol. |
+| Progres hilang | Pastikan browser, profil, serta alamat situs sama. Gunakan cadangan yang sudah diekspor. |
+| Nao tidak terlihat atau lapisan mata bergeser | Pastikan menggunakan satu file HTML lengkap dari versi yang dipilih; jangan mencampur CSS/rig dari revisi lain. |
+| Tampilan terlalu besar | Periksa zoom browser dan ukuran viewport; tampilan pada HP berbeda dari laptop. |
+| Unduhan gagal | Unduh ulang dari tautan berkas terbaru dan pastikan penyimpanan perangkat tersedia. |
 
 ## Teknologi dan atribusi
 
-- **HTML, CSS, dan JavaScript** untuk antarmuka serta logika; **SVG** untuk grafik dan ikon.
-- **localStorage** untuk penyimpanan lokal; **Web Speech API** untuk audio kana, pembacaan cerita, dan suara Indonesia Nao; **Canvas 2D** untuk animasi sprite Nao; dialog cetak browser untuk printer/PDF.
+- HTML, CSS, JavaScript, SVG, dan Canvas untuk antarmuka serta animasi.
+- `localStorage`, `speechSynthesis`, dan pengenalan suara browser untuk fitur lokal yang didukung.
 - [Japan Foundation — Irodori](https://www.irodori.jpf.go.jp/) dan [TUFS — modul tata bahasa Jepang](https://www.coelang.tufs.ac.jp/mt/ja/gmod/) sebagai rujukan pendalaman pola. Susunan materi dan soal dashboard dibuat tersendiri.
-- [KANJIDIC2 / EDRDG](https://www.edrdg.org/wiki/index.php/KANJIDIC_Project), melalui [kanji-data](https://github.com/sepTN/kanji-data), untuk referensi bacaan, arti dasar, jumlah goresan, dan pengelompokan level lanjutan. Data mengikuti atribusi/lisensi sumber, termasuk [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+- [KANJIDIC2 / EDRDG](https://www.edrdg.org/wiki/index.php?title=KANJIDIC_Project), melalui [kanji-data](https://github.com/sepTN/kanji-data), untuk referensi bacaan, arti dasar, goresan, dan level lanjutan. Pertahankan atribusi/lisensi sumber, termasuk [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), sesuai data yang digunakan.
 - [KanaMastery — N4 Kanji](https://kanamastery.com/jlpt/n4/kanji) sebagai rujukan daftar N4 yang digunakan sebelumnya.
-- [KanjiVG](https://kanjivg.tagaini.net/) — data jalur dan urutan goresan kana/kanji, © Ulrich Apel dan kontributor, berlisensi [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Data diadaptasi untuk pemutaran SVG; atribusi dan salinan lisensi disertakan dalam HTML. Lisensi ini berlaku pada data terkait, bukan otomatis seluruh proyek.
-- [Marugoto — Hiragana](https://a1.marugotoweb.jp/en/hiragana.php), [Katakana](https://a1.marugotoweb.jp/en/katakana.php), dan [Irodori — sumber belajar](https://www.irodori.jpf.go.jp/en/resources.html) untuk rujukan dasar aksara dan membaca.
-- **Noto Sans JP** untuk font Jepang yang disematkan; informasi lisensi font tersedia di HTML.
-- Logo dan bingkai cetak memakai identitas **Tadicoba**. Ilustrasi Nao, sidebar Torii, dan latar Kumo dibuat dengan bantuan generasi gambar untuk Tadicoba. Cerita, contoh latihan, serta padanan Indonesia disusun untuk pembelajaran Tadicoba.
+- [KanjiVG](https://kanjivg.tagaini.net/), © Ulrich Apel dan kontributor, berlisensi [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Data diadaptasi untuk pemutaran SVG; atribusi dan salinan lisensi disertakan dalam HTML.
+- [Marugoto — Hiragana](https://a1.marugotoweb.jp/en/hiragana.php) dan [Katakana](https://a1.marugotoweb.jp/en/katakana.php) sebagai rujukan aksara.
+- Noto Sans JP untuk font Jepang yang disematkan; informasi lisensi tersedia dalam HTML.
+- Pertahankan pemberitahuan hak cipta dan lisensi komponen/data yang disertakan. Lisensi data tertentu tidak otomatis menjadi lisensi seluruh proyek.
 
-Materi tertulis dan cerita bukan soal resmi JLPT. Paket 45 hari belum mencakup ujian listening; audio cerita merupakan bantuan membaca. Nilai dashboard bukan skor resmi atau jaminan kelulusan JLPT.
+Logo Tadicoba dan maskot Nao merupakan identitas visual proyek. Materi dan cerita tidak mewakili soal resmi JLPT atau sertifikasi CEFR.
 
 ---
 
-Dikelola oleh **Tata Dico Puji Handoko** · [Tadipuhan](https://github.com/Tadipuhan)
+Dikelola oleh **Tata Dico Puji Handoko**.
