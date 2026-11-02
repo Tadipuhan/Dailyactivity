@@ -11,7 +11,11 @@ Antarmuka menggunakan Bahasa Indonesia. Pilihan Jepang atau Inggris menentukan *
 | Bagian | Cakupan |
 | --- | --- |
 | Bahasa Jepang | Rencana belajar 45 hari, dasar kana, materi N5–N4, latihan, referensi kanji dan kotoba pilihan N5–N1. |
+<<<<<<< HEAD
 | Bahasa Inggris | A1–B1: 21 modul, 245 entri kosakata, 189 soal modul, serta 15 cerita sepanjang 1.000 kata dengan 75 soal pemahaman. Seluruh cerita A1 dilengkapi 25 ilustrasi per bab. |
+=======
+| Bahasa Inggris | A1–B1: 21 modul, 245 entri kosakata, 189 soal modul, serta 15 cerita sepanjang 1.000 kata dengan 75 soal pemahaman. |
+>>>>>>> a536b756e0d1c6773a9f7d7e8e62cb90f654170d
 | Latihan berbicara | Lima kalimat per bahasa dengan mikrofon, contoh audio, dan penanda kecocokan transkrip. |
 | Nao | Maskot 2D: versi ungu untuk Jepang dan versi sage berambut putih untuk Inggris. |
 | Penyimpanan | Data lokal pada browser/perangkat yang digunakan, dengan fitur cadangan yang tersedia di aplikasi. |
@@ -50,7 +54,11 @@ Dashboard menggunakan warna sage, ivory, dan hijau gelap. Pada laptop, area apli
 1. **Alfabet & membaca:** kenali 26 huruf, nama huruf, perbedaan nama dan bunyi, serta contoh pengucapan.
 2. **Verbs:** pelajari `be`, kata kerja tindakan, dan contoh kalimat sederhana.
 3. **Materi & latihan:** mulai dari Day 1, lalu lanjutkan secara bertahap hingga Day 7.
+<<<<<<< HEAD
 4. **Kosakata:** pelajari arti dan ulangi kata dari modul yang dipelajari.
+=======
+4. **Kosakata:** dengarkan dan ulangi kata dari modul yang dipelajari.
+>>>>>>> a536b756e0d1c6773a9f7d7e8e62cb90f654170d
 5. **Cerita:** pilih bacaan sesuai level, baca satu bab, dengarkan, lalu gunakan ringkasan Indonesia untuk memeriksa alur dan jawab soal pemahaman.
 6. **Latihan berbicara:** dengarkan contoh dan ucapkan kalimat melalui mikrofon.
 
@@ -122,6 +130,7 @@ Setiap modul baru mencakup tujuan komunikasi, penjelasan Indonesia, pola dan con
 
 **Alur membaca yang disarankan:** pilih level → buka cerita → baca satu bab tanpa ringkasan → dengarkan contoh → lanjutkan bab berikutnya → cek ringkasan jika diperlukan → kerjakan soal → periksa alasan jawaban. Satu cerita boleh dibagi ke beberapa sesi.
 
+<<<<<<< HEAD
 ### Ilustrasi cerita A1
 
 Seluruh **5 cerita A1** menggunakan gaya ilustrasi anime keseharian yang mengikuti tema **Sage Study**. Setiap cerita memiliki **5 ilustrasi**, satu untuk masing-masing bab, sehingga tersedia **25 ilustrasi**.
@@ -144,6 +153,8 @@ Seluruh **5 cerita A1** menggunakan gaya ilustrasi anime keseharian yang mengiku
 
 Ilustrasi dibuat dengan bantuan AI untuk menggambarkan cerita. Rincian visual bersifat pendukung; gunakan teks bacaan sebagai acuan jawaban soal.
 
+=======
+>>>>>>> a536b756e0d1c6773a9f7d7e8e62cb90f654170d
 ## Nao dan animasi
 
 Nao menjadi pendamping belajar 2D dan identitas visual Tadicoba.
@@ -199,7 +210,11 @@ Kunci penyimpanan Inggris yang digunakan:
 
 ## Menjalankan secara lokal
 
+<<<<<<< HEAD
 Gunakan file HTML versi pilihan sebagai `index.html`. File inti menggabungkan antarmuka, logika, materi, serta aset yang disematkan; tidak memerlukan instalasi npm atau proses build. Versi dengan 25 ilustrasi A1 berukuran sekitar **34,9 MB** (33,2 MiB); waktu pembukaan awal bergantung pada koneksi dan perangkat.
+=======
+Gunakan file HTML versi pilihan sebagai `index.html`. File inti menggabungkan antarmuka, logika, materi, serta aset yang disematkan; tidak memerlukan instalasi npm atau proses build.
+>>>>>>> a536b756e0d1c6773a9f7d7e8e62cb90f654170d
 
 Struktur minimal:
 
@@ -232,9 +247,15 @@ Simpan progres sebelum memindahkan situs ke domain/alamat lain. README ini tidak
 
 1. Buat salinan HTML sebelum mengedit.
 2. Cari bagian data atau fungsi yang ingin diubah; hindari mengganti semua teks dengan pola yang terlalu umum.
+<<<<<<< HEAD
 3. Materi Inggris menggunakan `a1Lessons` dan `levelBanks`; `lessons` mengacu pada level aktif. Cerita panjang disimpan pada `gradedStoryBanks`; setiap cerita memiliki `text`, `translation` (ringkasan), `chapters`, `wordCount`, `words`, `task`, dan `qs`. Cerita A1 juga mempunyai `chapterImages`, berupa lima objek `src` (data URL WebP) dan `alt` yang mengikuti urutan `chapters`. Kosakata verb serta panduan tenses berada pada struktur terpisah.
 4. Pertahankan kunci penyimpanan agar progres pengguna tetap terbaca. Perubahan struktur data memerlukan migrasi.
 5. Periksa pemilihan bahasa dan level, progres lama, seluruh menu, Nao, cetak, serta ekspor/impor cadangan setelah perubahan. Untuk cerita, pastikan gabungan bab sama dengan teks utuh, jumlah kata sesuai, dan jawaban masih didukung bacaan. Periksa kecocokan lima gambar dengan urutan bab A1, teks alternatif, serta susunan pada laptop dan ponsel.
+=======
+3. Materi Inggris menggunakan `a1Lessons` dan `levelBanks`; `lessons` mengacu pada level aktif. Cerita panjang disimpan pada `gradedStoryBanks`; setiap cerita memiliki `text`, `translation` (ringkasan), `chapters`, `wordCount`, `words`, `task`, dan `qs`. Kosakata verb serta panduan tenses berada pada struktur terpisah.
+4. Pertahankan kunci penyimpanan agar progres pengguna tetap terbaca. Perubahan struktur data memerlukan migrasi.
+5. Periksa pemilihan bahasa dan level, progres lama, seluruh menu, Nao, cetak, serta ekspor/impor cadangan setelah perubahan. Untuk cerita, pastikan gabungan bab sama dengan teks utuh, jumlah kata sesuai, dan jawaban masih didukung bacaan.
+>>>>>>> a536b756e0d1c6773a9f7d7e8e62cb90f654170d
 6. Uji ulang fitur mikrofon melalui HTTPS/localhost dan browser target.
 
 HTML juga memuat template cetak dalam JavaScript. Penggantian global `</html>` atau `</body>` bisa merusak template tersebut. Aset base64 membuat file cukup besar; jangan mengubah blok aset jika tidak diperlukan.
@@ -245,8 +266,11 @@ HTML juga memuat template cetak dalam JavaScript. Penggantian global `</html>` a
 | --- | --- |
 | Tombol bahasa tidak merespons | Periksa error JavaScript, penanda konflik merge, dan pastikan deployment menggunakan `index.html` terbaru yang utuh. |
 | Cerita masih pendek atau hanya A1 | Periksa apakah file versi 15 cerita sudah dipublikasikan, pilih level sidebar, lalu muat ulang tanpa cache. |
+<<<<<<< HEAD
 | Gambar cerita A1 belum terlihat | Pastikan versi dengan 25 ilustrasi sudah dipublikasikan, pilih A1, buka cerita, dan gulir ke bab terkait. Pada layar kecil, gambar berada di bawah teks bab. |
 | Pembukaan awal lambat | HTML memuat seluruh aset, sekitar 34,9 MB. Tunggu unduhan selesai; lazy loading gambar tidak mengurangi ukuran HTML yang ditransfer. |
+=======
+>>>>>>> a536b756e0d1c6773a9f7d7e8e62cb90f654170d
 | Cadangan Inggris ditolak | Cocokkan level aktif dengan level pada cadangan. Data level lain tidak diterima untuk mencegah penimpaan. |
 | Mikrofon tidak aktif | Periksa secure context, dukungan API, izin situs, perangkat input, dan koneksi layanan pengenalan suara. |
 | Ucapan benar tetapi ditandai merah | Periksa transkrip yang dikenali, dengarkan contoh, dan coba kembali. Penilaian berbasis transkrip memiliki keterbatasan. |
