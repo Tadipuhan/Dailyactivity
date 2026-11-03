@@ -1,105 +1,116 @@
-+# Tadicoba
+# Tadicoba
 
-**Satu ruang, dua perjalanan.** Website belajar mandiri Bahasa Jepang dan Bahasa Inggris dengan materi, latihan, kosakata, cerita, serta pendamping belajar **Nao**.
+**Satu ruang, dua perjalanan.** Website belajar mandiri Bahasa Jepang dan Bahasa Inggris dengan materi harian, latihan, kosakata, cerita bergambar, dan pendamping belajar Nao. Antarmuka menggunakan Bahasa Indonesia.
 
-Antarmuka menggunakan Bahasa Indonesia. Pilihan Jepang atau Inggris menentukan **bahasa yang dipelajari**, bukan bahasa antarmuka.
+[Buka website](https://tadipuhan.github.io/Dailyactivity/) · [Repository](https://github.com/Tadipuhan/Dailyactivity)
 
-> Dokumentasi versi dua bahasa, diperbarui 2 November 2026. Aplikasi berjalan sebagai website statis berbasis HTML, CSS, dan JavaScript. Progres tersimpan di browser; belum ada akun atau sinkronisasi cloud.
+Dokumentasi diperbarui **4 November 2026**, mengikuti HTML dengan lima serial Nao. Website berjalan secara statis tanpa instalasi npm atau proses build. Progres disimpan di browser.
 
-## Ringkasan
+## Fitur utama
 
 | Bagian | Cakupan |
 | --- | --- |
-| Bahasa Jepang | Rencana belajar 45 hari, dasar kana, materi N5–N4, latihan, referensi kanji dan kotoba pilihan N5–N1. |
-| Bahasa Inggris | A1–B1: 21 modul, 245 entri kosakata, 189 soal modul, serta 15 cerita sepanjang 1.000 kata dengan 75 soal pemahaman. Seluruh cerita A1–B1 dilengkapi 75 ilustrasi per bab. |
-| Latihan berbicara | Lima kalimat per bahasa dengan mikrofon, contoh audio, dan penanda kecocokan transkrip. |
-| Nao | Maskot 2D: versi ungu untuk Jepang dan versi sage berambut putih untuk Inggris. |
-| Penyimpanan | Data lokal pada browser/perangkat yang digunakan, dengan fitur cadangan yang tersedia di aplikasi. |
+| Bahasa Jepang | Materi Day 1–45, dasar kana, latihan, kanji dan kotoba pilihan N5–N1. |
+| Bahasa Inggris | A1, A2, B1, masing-masing tujuh modul, alfabet, verbs, referensi tenses, dan cerita. |
+| Cerita Jepang | Lima cerita lepas dan lima serial Nao dengan total 35 bab serial. |
+| Cerita Inggris | Lima cerita per level, masing-masing 1.000 kata dan lima bab. |
+| Mode baca | Satu bab atau bagian per layar, ilustrasi, fade, dan navigasi keyboard atau sentuh. |
+| Latihan berbicara | Mikrofon, audio contoh, dan penanda kecocokan transkrip dengan kalimat target. |
+| Print / PDF | Materi pilihan, kana, kanji, dan kosakata melalui dialog cetak browser. |
+| Nao | Maskot ungu untuk Jepang dan versi sage berambut putih untuk Inggris. |
+| Cadangan | Ekspor dan impor data melalui fitur yang tersedia pada aplikasi. |
 
-Materi merupakan sarana latihan mandiri. Menyelesaikan paket bukan sertifikasi CEFR, skor resmi JLPT, atau jaminan kelulusan.
+Materi merupakan latihan mandiri. Penetapan level mengikuti cakupan bahan belajar aplikasi dan tidak merupakan sertifikasi CEFR atau hasil resmi JLPT.
 
-## Mulai menggunakan
+## Mulai belajar
 
-1. Buka website, lalu pilih **Bahasa Jepang** atau **Bahasa Inggris**.
-2. Pengguna Jepang melanjutkan melalui intro Shōji menuju dashboard.
-3. Pengguna Inggris masuk ke dashboard **Sage Study**. Tutorial Nao menjelaskan urutan belajar untuk pemula dan dapat dibuka kembali melalui menu.
-4. Pada Inggris, pilih **A1, A2, atau B1** di sidebar. Pelajari materi sebelum mengerjakan latihan.
-5. Simpan cadangan progres secara berkala melalui menu yang tersedia.
+1. Pilih **Bahasa Jepang** atau **Bahasa Inggris** pada halaman pembuka.
+2. Untuk Jepang, lanjutkan melalui pintu Shōji menuju dashboard. Mulai dari **Dasar Jepang** bila belum mengenal kana.
+3. Untuk Inggris, ikuti **Tutorial Nao**, lalu pelajari **Alfabet & membaca → Verbs → Day 1**.
+4. Baca materi sebelum mengerjakan latihan. Gunakan cerita dan audio untuk mengulang pemahaman.
+5. Gunakan **Ganti pelajaran** untuk kembali ke pemilih bahasa.
+6. Cadangkan progres sebelum berpindah perangkat atau alamat situs.
 
-Pilihan terakhir diingat untuk tombol **Lanjutkan** pada halaman pemilih. Gunakan **Ganti pelajaran** untuk kembali memilih bahasa.
+Pilihan bahasa pelajaran dan level Inggris terakhir diingat oleh browser. Progres Jepang, Inggris A1, A2, dan B1 dikelola secara terpisah.
 
 ## Bahasa Jepang
 
-- Materi harian **Day 1–45**, berfokus pada penguatan N5 dan persiapan N4.
-- **40 soal pilihan ganda per hari**, dengan empat pilihan dan pembahasan; total 1.800 soal.
-- Dasar **hiragana dan katakana**, aturan membaca, bantuan audio, serta latihan kana.
-- Referensi **kanji N5–N1**, termasuk bacaan, arti, pencarian, filter, serta contoh atau urutan goresan sesuai data yang tersedia.
-- **Kotoba pilihan N5–N1**, dengan submenu level yang dapat dibuka dan ditutup.
-- Flashcard, penanda belajar, ringkasan aktivitas, dan rekap progres.
-- Tiga cerita dengan pilihan versi N5/N4, furigana, terjemahan per bagian, audio sesuai dukungan perangkat, serta 24 ilustrasi adegan dan sampul katalog.
-- Cetak materi, soal, kanji, atau kotoba melalui fitur yang tersedia; pilih **Simpan sebagai PDF** pada dialog cetak browser bila diperlukan.
+- Materi **45 hari**, berfokus pada penguatan N5 dan persiapan N4.
+- **40 soal pilihan ganda per hari**, dengan empat pilihan dan pembahasan.
+- Hiragana, katakana, aturan membaca, audio perangkat, latihan kana, dan animasi goresan.
+- Referensi kanji serta kotoba pilihan N5–N1, pencarian, filter, dan penanda belajar sesuai menu.
+- Kanji N5 berisi **103 entri dalam delapan kelompok**. N4 berisi **166 entri dalam sebelas kelompok**.
+- Flashcard, agenda, rekap aktivitas, dan pencatatan progres.
+- Cerita dengan furigana, terjemahan Indonesia, dan audio melalui suara perangkat.
 
-Daftar level lanjutan adalah referensi pilihan dan tidak boleh dianggap sebagai seluruh daftar kosakata resmi JLPT. Ketersediaan data berbeda pada setiap entri.
+Referensi level lanjutan berisi pilihan entri. Ketersediaan contoh dan data berbeda pada setiap entri.
 
-## Bahasa Inggris — Sage Study
+### Cerita lepas Jepang
 
-Dashboard menggunakan warna sage, ivory, dan hijau gelap. Pada laptop, area aplikasi mengikuti tinggi layar; sidebar memiliki scroll sendiri jika menu melebihi ruang. Materi panjang dapat digulir di area konten. Pada layar kecil, susunan menyesuaikan ruang yang tersedia.
+| Judul | Level | Bagian |
+| --- | --- | ---: |
+| Kucing Kecil dan Payung Biru | N5 / N4 | 8 |
+| Kelinci dan Roti Bulan | N5 / N4 | 8 |
+| Hari-hari Sebuah Benih Kecil | N5 / N4 | 8 |
+| Pon dan Yuki: Minggu yang Hangat | N5 | 8 |
+| Ruang Musik Setelah Bel Sekolah | N4 | 8 |
 
-### Urutan belajar untuk pemula
+Pon merupakan suami kucing oren gendut dan Yuki merupakan istrinya yang berbulu putih. Cerita ruang musik menggunakan suasana horor sekolah.
 
-1. **Alfabet & membaca:** kenali 26 huruf, nama huruf, perbedaan nama dan bunyi, serta contoh pengucapan.
-2. **Verbs:** pelajari `be`, kata kerja tindakan, dan contoh kalimat sederhana.
-3. **Materi & latihan:** mulai dari Day 1, lalu lanjutkan secara bertahap hingga Day 7.
-4. **Kosakata:** pelajari arti dan ulangi kata dari modul yang dipelajari.
-5. **Cerita:** pilih bacaan sesuai level, baca satu bab, dengarkan, lalu gunakan ringkasan Indonesia untuk memeriksa alur dan jawab soal pemahaman.
-6. **Latihan berbicara:** dengarkan contoh dan ucapkan kalimat melalui mikrofon.
+### Serial Nao
 
-Satu modul boleh dikerjakan dalam beberapa sesi. Tujuh modul per level bukan janji menguasai seluruh kompetensi level itu dalam tujuh hari. Paket ini merupakan latihan terstruktur; tugas menulis dan berbicara diperiksa mandiri.
+Buka **Bahasa Jepang → Cerita**, lalu pilih kartu serial. Lima judul berikut ditampilkan sebagai Musim 1–5.
 
-### Menu
+| Musim | Judul | Bab | Fokus cerita |
+| --- | --- | ---: | --- |
+| 1 | Nao dan Surat dari Musim yang Hilang | 8 | Surat ungu, janji lama, dan bunga pertama di stasiun bukit. |
+| 2 | Nao di Kota Bintang Kecil | 6 | Nao dan Akari mencoba membuat lampion bintang kembali bersinar. |
+| 3 | Nao dan Perpustakaan Setelah Senja | 6 | Buku biru, catatan, dan burung kertas dari masa kecil Shiori. |
+| 4 | Nao dan Tujuh Pintu Shōji | 8 | Nao membantu Chiyo menemukan jalan ke taman melalui tujuh pintu. |
+| 5 | Nao dan Catatan dari Stasiun Terakhir | 7 | Lima sketsa Ren mengajak Nao mengamati perjalanan menuju laut. |
+| **Total** | **Lima serial** | **35** | |
+
+Setiap bab memiliki judul Jepang dan Indonesia, dua versi bacaan **N5/N4**, terjemahan Indonesia, serta satu ilustrasi. Versi N4 memperluas dialog dan narasi dengan alur yang sama. Daftar bab menyediakan tautan ke bab pada tampilan bacaan biasa. Dalam mode baca, gunakan navigasi bab.
+
+#### Karakter
+
+| Tokoh | Identitas visual dan peran |
+| --- | --- |
+| Nao | Rambut lavender, mata ungu, headphone beraksen ungu, dan hoodie gelap. Tokoh utama yang belajar berani bertanya. |
+| Haru | Rambut cokelat, jaket teal, kaus bergaris, dan tas peta. Teman yang spontan. |
+| Shiori | Rambut indigo panjang, kacamata, blus ivory, dan gaun indigo. Pustakawan yang teliti. |
+| Pemilik Toko Roti | Kerudung terakota, celemek bertepung, dan pakaian hijau zaitun. Menyimpan kenangan kota. |
+| Akari | Dua kepang cokelat madu, blus coral, celemek kuning, dan lampion bintang. |
+| Chiyo | Rambut perak bersanggul, haori hijau lumut, kunci tua, dan tongkat. |
+| Ren | Rambut hitam, mantel biru, syal cokelat muda, serta buku catatan biru. |
+
+Akari adalah nama akhir karakter yang sebelumnya dikonsepkan sebagai Mio. Desain final menggunakan rambut cokelat madu.
+
+## Bahasa Inggris
+
+Dashboard **Sage Study** menggunakan sage, ivory, dan hijau gelap. Sidebar dapat digulir jika menu melebihi tinggi layar. Materi panjang memiliki area gulir.
 
 | Menu | Isi |
 | --- | --- |
-| Dashboard | Level aktif, modul terakhir, progres tujuh modul pada level tersebut, tutorial, dan akses latihan. |
-| Pilihan level | A1, A2, B1 di sidebar; pilihan terakhir diingat dan progres disimpan terpisah. |
-| Alfabet & membaca | Huruf, bantuan fonetik, contoh audio, pola bunyi, tekanan kata, serta beberapa akhiran umum. |
-| Verbs | 30 kata kerja dasar, bentuk V1/V2/V3/-ing, arti, contoh, pola negatif dan pertanyaan, serta latihan mandiri. |
-| Referensi tenses | Dua belas bentuk tense/aspect yang umum diajarkan, dengan pola dan contoh; materi lanjutan berfungsi sebagai referensi. |
-| Cerita | Lima cerita per level; setiap cerita 1.000 kata Inggris, lima bab, ringkasan Indonesia, kosakata, audio, dan lima soal berpembahasan. |
-| Tutorial Nao | Panduan mulai belajar untuk pemula. |
-| Materi & latihan | A1: 7 modul × 15 kosakata/15 soal. A2 dan B1: masing-masing 7 modul × 10 kosakata/6 soal. |
-| Kosakata | Tabel kosakata dengan filter Day. |
-| Hasil & cadangan | Riwayat latihan dan cadangan JSON khusus level Inggris yang aktif; cadangan level berbeda ditolak. |
-| Latihan berbicara | Sesi lima kalimat dasar menggunakan mikrofon; belum dibedakan menjadi paket A2 dan B1. |
+| Alfabet & membaca | 26 huruf, nama huruf, contoh bunyi, bantuan membaca, dan audio. |
+| Verbs | 30 verb dasar, bentuk V1/V2/V3/-ing, arti, contoh, negatif, dan pertanyaan. |
+| Referensi tenses | Dua belas bentuk tense/aspect yang umum diajarkan beserta pola dan contoh. |
+| Materi & latihan | Tujuh modul per level, bacaan, penjelasan Indonesia, dialog, dan soal. |
+| Kosakata | Kosakata modul dengan filter Day. |
+| Cerita | Lima cerita per level dengan lima bab, ilustrasi, audio, kosakata, dan soal pemahaman. |
+| Tutorial Nao | Panduan mulai belajar yang dapat dibuka kembali. |
+| Hasil & cadangan | Riwayat dan cadangan JSON untuk level aktif. |
 
-Referensi tenses tidak menjadikan semua bentuk continuous cocok untuk semua verb. Perhatikan penjelasan penggunaan dan pengecualian di materi.
+| Level | Modul | Entri kosakata modul | Soal modul | Cerita |
+| --- | ---: | ---: | ---: | ---: |
+| A1 | 7 | 105 | 105 | 5 |
+| A2 | 7 | 70 | 42 | 5 |
+| B1 | 7 | 70 | 42 | 5 |
+| **Total** | **21** | **245** | **189** | **15** |
 
-### Cakupan dan jumlah materi
+Jumlah kosakata menghitung entri modul. Setiap cerita Inggris memiliki lima soal pemahaman. Tujuh modul dapat dipelajari dalam beberapa sesi sesuai kebutuhan pengguna.
 
-| Level | Modul | Entri kosakata modul | Soal modul | Cerita | Soal cerita |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| A1 | 7 | 105 | 105 | 5 | 25 |
-| A2 | 7 | 70 | 42 | 5 | 25 |
-| B1 | 7 | 70 | 42 | 5 | 25 |
-| **Total Inggris** | **21** | **245** | **189** | **15** | **75** |
-
-Jumlah kosakata merupakan entri dalam modul, bukan jumlah kata unik seluruh website. Soal cerita terpisah dari soal modul.
-
-### Materi A2 dan B1
-
-| Modul | A2 | B1 |
-| --- | --- | --- |
-| 1 | Rutinitas, kegiatan sementara & pengaturan waktu | Narasi, urutan waktu & kebiasaan dahulu |
-| 2 | Bercerita tentang perjalanan & kejadian lampau | Hasil, durasi & perubahan sampai sekarang |
-| 3 | Pengalaman & hasil dengan present perfect | Kemungkinan, hipotesis & pemecahan masalah |
-| 4 | Rencana, prediksi & keputusan | Passive voice, proses & layanan |
-| 5 | Belanja, jumlah & membandingkan pilihan | Reported speech & pertanyaan tidak langsung |
-| 6 | Saran, kewajiban & permintaan sopan | Opini, alasan & deskripsi terhubung |
-| 7 | Email praktis, rencana bersyarat & review | Email kerja, keluhan & proyek akhir |
-
-Setiap modul baru mencakup tujuan komunikasi, penjelasan Indonesia, pola dan contoh, dialog, bacaan beserta terjemahan, tombol audio bacaan, tugas produktif, serta soal dengan pembahasan. Nilai minimal 80% dengan seluruh soal modul diperlukan untuk penanda tuntas. Ketuntasan pilihan ganda tidak membuktikan seluruh keterampilan CEFR.
-
-### Daftar cerita A1–B1
+### Cerita Inggris
 
 | No. | A1 | A2 | B1 |
 | --- | --- | --- | --- |
@@ -109,145 +120,92 @@ Setiap modul baru mencakup tujuan komunikasi, penjelasan Indonesia, pola dan con
 | 4 | A Rainy Afternoon | The Recipe for Everyone | The Journey They Did Not Plan |
 | 5 | Our Picnic Plan | Rain on the Walking Trip | The Notice on the Library Door |
 
-### Membaca cerita 1.000 kata
+Setiap cerita memiliki 1.000 kata Inggris berdasarkan pemisahan spasi pada teks cerita. Judul, soal, dan materi pendukung tidak termasuk hitungan. Bagian Indonesia berupa **ringkasan alur**. Nilai soal cerita ditampilkan untuk sesi membaca dan belum menjadi riwayat nilai modul.
 
-- Setiap cerita berisi **tepat 1.000 kata bahasa Inggris**, sehingga totalnya 15.000 kata cerita.
-- Hitungan mengikuti pemisahan spasi pada teks cerita. Judul, nomor bab, ringkasan, kosakata, tombol, dan soal tidak dihitung. Aplikasi pengolah kata lain bisa mempunyai aturan berbeda untuk tanda hubung atau apostrof.
-- Setiap cerita dibagi menjadi **lima bab** dengan tombol navigasi dan audio per bab. Pembagian mengikuti paragraf; panjang setiap bab tidak harus sama.
-- Tombol audio seluruh cerita tetap tersedia. Jika pembacaan panjang berhenti karena dukungan suara/browser, gunakan audio per bab.
-- Tingkat kesulitan dibedakan melalui kalimat, kosakata, dan pengembangan alur; jumlah kata bukan ukuran tunggal level. A1 tetap menggunakan bahasa yang lebih sederhana.
-- Bagian Indonesia adalah **ringkasan alur**, bukan terjemahan lengkap setiap kalimat. Label di aplikasi menyatakan perbedaan ini.
-- Setiap cerita memiliki kosakata bantuan, lima soal pemahaman beserta jawaban dan pembahasan, serta tugas menulis/berbicara mandiri.
-- Nilai cerita ditampilkan untuk sesi membaca dan **belum disimpan dalam riwayat nilai modul**.
+## Ilustrasi dan mode baca
 
-**Alur membaca yang disarankan:** pilih level → buka cerita → baca satu bab tanpa ringkasan → dengarkan contoh → lanjutkan bab berikutnya → cek ringkasan jika diperlukan → kerjakan soal → periksa alasan jawaban. Satu cerita boleh dibagi ke beberapa sesi.
+| Kelompok | Alur cerita | Ilustrasi |
+| --- | ---: | ---: |
+| Inggris A1–B1 | 15 | 75 |
+| Jepang, cerita lepas | 5 | 40 |
+| Jepang, serial Nao | 5 | 35 |
+| **Total** | **25** | **150** |
 
-### Ilustrasi cerita Inggris dan Jepang
+Gambar Jepang N5 dan N4 digunakan bersama karena alurnya sama. Sampul memakai ulang gambar cerita dan tidak menambah hitungan ilustrasi unik.
 
-| Bacaan | Cerita | Bagian per cerita | Ilustrasi unik |
-| --- | ---: | ---: | ---: |
-| Inggris A1 | 5 | 5 bab | 25 |
-| Inggris A2 | 5 | 5 bab | 25 |
-| Inggris B1 | 5 | 5 bab | 25 |
-| Jepang N5/N4 | 3 | 8 bagian | 24 |
-| **Total** | **18 alur cerita** | — | **99** |
+Ilustrasi dibuat dengan bantuan AI. Serial Nao mengikuti acuan karakter dan gaya buku cerita cat air, dengan suasana cahaya sesuai adegan. Gambar disematkan dalam HTML sebagai data URL WebP. Efek feathering menyatukan tepi gambar dengan latar.
 
-Versi N5 dan N4 memakai ilustrasi yang sama karena alurnya sama. Sampul ketiga cerita Jepang menggunakan kembali gambar dari cerita tersebut dan tidak menambah jumlah ilustrasi unik.
+Mode baca menampilkan **satu bab Inggris, satu bab serial Nao, atau satu bagian cerita lepas Jepang per layar**. Di layar lebar, teks dan gambar berdampingan. Di layar kecil, susunannya menyesuaikan ruang.
 
-Cerita Jepang yang tersedia:
+- Gunakan **Sebelumnya / Berikutnya**, tombol **← / →**, atau swipe horizontal.
+- Gulir teks panjang di area bacaan. Saat mencapai batasnya, guliran yang cukup dapat berpindah bagian.
+- **Ringkasan & soal** membuka pendukung Inggris. **Audio & kosakata** membuka pendukung Jepang.
+- **Tutup mode baca** atau Escape mengembalikan tampilan biasa.
+- Tombol **Layar penuh** memakai Fullscreen API jika browser mendukungnya.
+- Pergantian bagian menggunakan fade sekitar tiga detik dan gerak gambar halus.
+- Preferensi perangkat **reduced motion** mengurangi gerakan.
+- Posisi pada indikator merupakan posisi bab dan belum disimpan sebagai bookmark permanen.
 
-| Cerita | Tokoh utama | Cakupan gambar |
-| --- | --- | --- |
-| Kucing Kecil dan Payung Biru | Mimi dan Shiro | Hujan, penemuan payung, pencarian pemilik, dan persahabatan. |
-| Kelinci dan Roti Bulan | Hana | Membentuk adonan, bantuan teman, memanggang, dan berbagi roti. |
-| Hari-hari Sebuah Benih Kecil | Riku | Menanam, menunggu, merawat tunas, dan menikmati bunga. |
+Ilustrasi merupakan gambar statis dengan gerakan tampilan. Mulut tokoh di ilustrasi cerita tidak disinkronkan dengan narasi.
 
-- Adegan mengikuti bagian bacaan, dengan keterangan singkat dan teks alternatif.
-- Inggris menggunakan gaya anime keseharian dengan tema Sage Study. Jepang menggunakan ilustrasi buku cerita dengan tokoh hewan dan aksen lavender.
-- Efek **gradient fade/feathering** pada tepi gambar menyatukan ilustrasi dengan latar.
-- Gambar berformat **WebP** dan disematkan sebagai data URL dalam HTML. Tidak perlu mengunggah folder gambar tambahan.
-- Elemen gambar pada cerita yang dibuka dimuat langsung. Seluruh data gambar tetap termasuk dalam ukuran unduhan HTML.
-- Aset merupakan ilustrasi statis yang diberi gerakan tampilan; tokoh di dalamnya tidak dianimasikan secara terpisah atau disinkronkan dengan narasi.
+## Print dan PDF
 
-Ilustrasi dibuat dengan bantuan AI. Gunakan teks cerita sebagai acuan untuk menjawab soal; gambar berfungsi mendukung pemahaman alur.
+### Dasar Jepang
 
-## Mode baca satu layar
+Tombol **Print / PDF** menyediakan materi Dasar Jepang serta pilihan lembar hiragana, katakana, atau keduanya. Lembar kana memakai **03 — Focus & Stack**.
 
-Membuka cerita mengaktifkan mode baca yang menutupi dashboard dan sidebar:
+Setiap aksara memuat 104 bentuk, terdiri dari 46 huruf dasar, 25 dakuten/handakuten, dan 33 gabungan yōon. Huruf dasar berada di kiri, sementara kelompok tambahan ditumpuk di kanan. Hiragana dan katakana masing-masing disusun sebagai satu lembar utuh di dalam border asli Tadicoba.
 
-- **Inggris:** satu bab per layar, berlaku untuk seluruh cerita A1–B1.
-- **Jepang:** satu bagian/paragraf per layar, berlaku untuk ketiga cerita dan versi N5/N4.
-- Pada layar lebar, teks berada di kiri dan gambar di kanan. Kolom Inggris dibatasi dan dirapatkan mengikuti ukuran gambar agar ruang kosong di antaranya berkurang.
-- Pada layar kecil, teks dan gambar disusun vertikal. Teks panjang dapat digulir di dalam area bacaan tanpa menampilkan bab lain sekaligus.
+### Kanji N5 dan N4
 
-### Navigasi dan kontrol
+Pilihan ringkas pada dialog cetak N5/N4 tersedia untuk N5 saja, N4 saja, atau keduanya.
 
-| Kontrol | Kegunaan |
+| Pilihan | Lembar |
+| --- | ---: |
+| N5 ringkas | 1 |
+| N4 ringkas | 1 |
+| N5 + N4 ringkas | 2 |
+
+Kanji dikelompokkan sesuai kategori dan dilengkapi bacaan serta arti.
+
+| Orientasi di aplikasi | Desain |
 | --- | --- |
-| Sebelumnya / Berikutnya | Berpindah satu bab atau bagian. |
-| Tombol keyboard ← / → | Berpindah bagian saat fokus tidak berada dalam isian formulir. |
-| Scroll mouse/trackpad | Menggulir teks yang masih panjang terlebih dahulu; di batas teks, guliran yang cukup berpindah bagian. |
-| Swipe horizontal | Berpindah bagian pada perangkat sentuh. Geseran vertikal di area teks tetap dipakai membaca teks. |
-| Ringkasan & soal | Membuka materi pendukung Inggris: ringkasan Indonesia, kosakata, soal, dan kontrol cerita yang tersedia. |
-| Audio & kosakata | Membuka materi pendukung serta kontrol audio Jepang. Terjemahan per bagian juga tetap tersedia dalam bacaan. |
-| Kembali membaca | Kembali dari materi pendukung ke bab/bagian aktif. |
-| Tutup mode baca / Escape | Kembali ke tampilan bacaan biasa. Escape dapat lebih dahulu keluar dari layar penuh browser. |
-| Baca layar penuh | Membuka kembali mode baca setelah ditutup. |
-| Layar penuh | Meminta browser menyembunyikan bilahnya melalui Fullscreen API, bila didukung. |
+| Portrait | **13 — Dictionary Grid**, tiga kolom. |
+| Landscape | **19 — Reading Ledger**, empat kolom. |
 
-Mode baca memenuhi viewport tanpa memerlukan Fullscreen API. Tombol **Layar penuh** merupakan pilihan tambahan dan dukungannya bergantung pada browser/perangkat.
+Pilih orientasi dalam aplikasi, kemudian cocokkan orientasinya pada dialog cetak browser. Lembar menyesuaikan area kertas yang dipilih dan mempertahankan border Tadicoba. Pada kertas kecil, teks terutama N4 menjadi lebih rapat.
 
-Indikator progres menunjukkan **posisi bagian dalam cerita**, bukan nilai pemahaman atau bukti bahwa seluruh teks sudah dibaca. Posisi baca belum disimpan sebagai bookmark permanen.
+1. Pilih materi dan format cetak.
+2. Tunggu font serta gambar siap.
+3. Tekan **Cetak / Simpan PDF**.
+4. Pilih ukuran kertas, orientasi, dan skala yang sesuai.
+5. Nonaktifkan header/footer bawaan browser, lalu periksa pratinjau.
 
-### Transisi dan gerakan
+Hasil fisik mengikuti area cetak printer, margin, ukuran kertas, dan skala. Seluruh kombinasi printer dan ukuran kertas belum diuji melalui cetakan fisik. Menu Materi harian menggunakan alur cetak yang tersedia sebelumnya.
 
-- Pergantian adegan memakai **dissolve/crossfade** dengan zoom halus, tanpa perpindahan horizontal yang besar.
-- Fade utama berlangsung sekitar **3 detik**. Gerakan gambar berlanjut sekitar **4,2 detik**, dengan kemunculan teks yang sedikit bertahap.
-- Gambar tetap memiliki gerakan sangat ringan saat adegan diam; teks tetap stabil setelah transisi.
-- Navigasi yang disengaja saat transisi dapat ditampung untuk perpindahan berikutnya. Guliran beruntun dibatasi agar tidak melompati banyak bagian.
-- Pengaturan **prefers-reduced-motion** mengurangi/menonaktifkan gerakan dekoratif dan transisi.
-- Efek ini mengolah tampilan gambar, bukan morph bentuk tokoh atau animasi karakter di dalam ilustrasi.
+## Audio dan latihan berbicara
 
-Audio per bagian, pilihan N5/N4, furigana, terjemahan, dan formulir soal tetap menggunakan kontrol aslinya. Untuk Jepang, buka **Pengaturan baca** untuk mengubah versi dan furigana. Membuka mode baca tidak otomatis memulai audio.
+Audio contoh menggunakan **speechSynthesis** dan suara bahasa target yang tersedia pada perangkat.
 
-## Nao dan animasi
+Latihan mikrofon menggunakan **SpeechRecognition / webkitSpeechRecognition** jika didukung browser. Izinkan akses mikrofon, dengarkan contoh, lalu baca kalimat target.
 
-Nao menjadi pendamping belajar 2D dan identitas visual Tadicoba.
+Penanda hijau dan merah menunjukkan **kecocokan transkrip** dengan kalimat target. Pengenalan suara dapat keliru dan belum menilai fonetik atau aksen secara terperinci. Latihan Jepang menggunakan normalisasi kana. Hasil mikrofon belum menjadi riwayat progres permanen.
 
-- **Jepang:** rambut lavender, mata ungu, hoodie gelap, serta headphone beraksen ungu.
-- **Inggris:** rambut putih, mata hijau, hoodie sage, dan headphone hijau.
-- Pose Inggris: **Menyapa** saat masuk, **Bersandar** saat standby, dan **Menjelaskan** saat menu disorot atau dipilih.
-- Pergantian pose menggunakan crossfade dan easing.
-- Mata berkedip, mulut bergerak sesekali, dan rambut diberi gerakan ringan. Mata pada dashboard Inggris mengikuti pointer pada perangkat yang mendukungnya.
-- Gerakan menyesuaikan preferensi **reduced motion** perangkat/browser.
+Gunakan HTTPS atau localhost untuk mencoba mikrofon. Layanan suara browser dapat membutuhkan koneksi internet serta memproses audio melalui layanan browser.
 
-Gerakan mulut dekoratif tidak otomatis merupakan lip sync dengan seluruh audio. Model 3D bukan bagian dari website ini.
+## Data dan cadangan
 
-## Latihan berbicara dan mikrofon
+Data tersimpan pada **localStorage**. Browser, profil, perangkat, serta alamat situs mempunyai ruang penyimpanan masing-masing.
 
-1. Buka **Latihan berbicara** pada bahasa yang dipilih.
-2. Dengarkan contoh dengan tombol audio.
-3. Tekan tombol mikrofon dan berikan izin akses.
-4. Baca satu kalimat dengan suara jelas.
-5. Setelah pengenalan selesai, periksa bagian hijau dan merah, lalu ulangi atau lanjutkan.
-
-**Hijau dan merah menunjukkan kecocokan hasil transkripsi dengan kalimat target, bukan penilaian bunyi atau aksen secara fonetis.** Pengenalan suara bisa keliru meskipun pengguna membaca dengan benar. Pada Jepang, pembandingan menggunakan normalisasi kana.
-
-Fitur menggunakan `SpeechRecognition` atau `webkitSpeechRecognition`, bila tersedia. Dukungan browser berbeda. Halaman harus berjalan dalam secure context; gunakan **HTTPS atau localhost** untuk pengujian mikrofon. Layanan pengenalan suara dapat memerlukan internet dan dapat memproses audio melalui layanan browser. Tidak ada jaminan fitur mikrofon bekerja offline.
-
-Nilai sesi berbicara tidak boleh disamakan dengan hasil latihan pilihan ganda; hasil sesi mikrofon belum disimpan sebagai riwayat progres permanen.
-
-## Audio
-
-Pembacaan contoh menggunakan `speechSynthesis` dan suara yang tersedia di browser/sistem operasi. Bahasa, pilihan suara, dan kualitasnya bergantung pada perangkat. Contoh audio dapat dipakai tanpa menyalakan mikrofon bila dukungan pembacaan suara tersedia.
-
-## Penyimpanan dan cadangan
-
-- Progres Jepang dan Inggris menggunakan penyimpanan yang terpisah. Di Inggris, A1, A2, dan B1 juga mempunyai progres sendiri.
-- Berpindah level menyimpan progres level sebelumnya dan memuat level tujuan. Draf serta riwayat A1 lama tetap dapat dibaca.
-- Cadangan JSON mencakup level aktif; pulihkan pada level yang sama. Cadangan A1 tidak dapat dipakai untuk menimpa A2 atau B1.
-- Data disimpan menggunakan `localStorage`; belum ada login, server aplikasi, atau database online.
-- Browser, profil, perangkat, dan alamat situs yang berbeda mempunyai ruang penyimpanan berbeda.
-- Menghapus data situs atau berpindah alamat dapat membuat progres lama tidak terbaca.
-- Buat cadangan melalui fitur aplikasi sebelum mengganti perangkat, browser, atau alamat hosting. Impor cadangan pada bagian bahasa yang sesuai.
-- Unduhan file HTML baru tidak memindahkan progres ke perangkat lain secara otomatis.
-
-Kunci penyimpanan Inggris yang digunakan:
-
-| Kunci | Kegunaan |
-| --- | --- |
-| `tadicoba-english-a1-v1` | Modul, draf jawaban, dan riwayat A1. |
-| `tadicoba-english-a2-v1` | Modul, draf jawaban, dan riwayat A2. |
-| `tadicoba-english-b1-v1` | Modul, draf jawaban, dan riwayat B1. |
-| `tadicoba-english-level-v1` | Level Inggris terakhir yang dipilih. |
-| `tadicoba-last-course-v1` | Pilihan bahasa terakhir. |
-| `tadicoba-en-nao-guide-v1` | Penanda tutorial awal Nao sudah dilihat. |
+- Ekspor cadangan melalui menu yang tersedia sebelum memindahkan situs atau perangkat.
+- Cadangan Inggris dipulihkan pada level yang sesuai. Cadangan A1 tidak digunakan untuk menimpa A2 atau B1.
+- Menghapus data situs dapat menghapus progres.
+- Mengunduh HTML terbaru tidak otomatis memindahkan progres ke perangkat lain.
+- Progres belum disinkronkan melalui akun atau server.
 
 ## Menjalankan secara lokal
 
-Gunakan file HTML versi pilihan sebagai `index.html`. File inti menggabungkan antarmuka, logika, materi, serta aset yang disematkan; tidak memerlukan instalasi npm atau proses build. Versi dengan 99 ilustrasi dan mode baca terbaru berukuran sekitar **49,6 MB** (47,3 MiB); waktu pembukaan awal bergantung pada koneksi dan perangkat.
-
-Struktur minimal:
+Simpan HTML unduhan terbaru sebagai **index.html** dan letakkan README di folder yang sama.
 
 ```text
 Tadicoba/
@@ -255,74 +213,68 @@ Tadicoba/
 └── README.md
 ```
 
-Membuka HTML langsung dapat dipakai untuk melihat materi, tetapi fitur tertentu berbeda dukungannya pada alamat `file://`. Untuk pengujian lokal yang lebih konsisten:
+HTML sudah memuat materi, gaya, JavaScript, font, serta gambar. Ukuran versi ini sekitar **55 MiB** karena aset disematkan.
+
+Untuk menjalankan server lokal dari folder proyek, gunakan Python.
 
 ```bash
-cd Tadicoba
 python -m http.server 8000 --bind 127.0.0.1
 ```
 
-Pada Windows, jika perintah `python` tidak tersedia, gunakan `py -m http.server 8000 --bind 127.0.0.1`. Kemudian buka `http://localhost:8000`.
+Pada Windows, gunakan `py` jika perintah `python` tidak tersedia. Buka [localhost](http://localhost:8000). Audio dan mikrofon tetap mengikuti dukungan browser.
 
-## Hosting
+## GitHub Pages
 
-Aplikasi dapat ditempatkan pada hosting statis yang menyajikan HTML melalui HTTPS. Untuk GitHub Pages, gunakan berkas `index.html` pada folder sumber publikasi repository dan aktifkan Pages sesuai pengaturan repository tersebut.
+1. Cadangkan progres.
+2. Ubah nama HTML unduhan menjadi **index.html**.
+3. Unggah dan ganti file utama pada folder sumber GitHub Pages repository.
+4. Unggah **README.md** sebagai dokumentasi.
+5. Pastikan pengaturan Pages menunjuk branch dan folder yang memuat index.html.
+6. Tunggu deployment selesai, lalu buka alamat website.
+7. Jika tampilan lama masih muncul, muat ulang dengan **Ctrl + F5**.
 
-Jika yang tampil justru teks kode, pastikan yang dibuka adalah alamat website hasil publikasi, bukan halaman raw atau pratinjau kode di repository. Pastikan pula nama file benar-benar berakhiran `.html`, bukan `.html.txt`.
+Unggah HTML sebagai satu file utuh. Jika menggabungkan perubahan melalui Git, selesaikan seluruh konflik merge dan hapus penanda konflik dari hasil akhir. JavaScript yang rusak dapat membuat tombol bahasa gagal merespons.
 
-Saat mengganti `index.html`, selesaikan seluruh konflik merge. Jangan biarkan baris `<<<<<<< HEAD`, `=======`, atau `>>>>>>>` berada dalam kode hasil penggabungan. Penanda konflik dapat membuat JavaScript gagal dijalankan dan tombol pilihan bahasa tidak merespons. Periksa sumber publikasi yang aktif dan tunggu deployment selesai sebelum menguji ulang.
-
-Saat memperbarui, ganti seluruh `index.html` dengan file terbaru yang utuh; jangan menempelkannya ke versi lama. Setelah deployment selesai, muat ulang dengan **Ctrl + F5** bila masih melihat versi sebelumnya.
-
-Simpan progres sebelum memindahkan situs ke domain/alamat lain. README ini tidak menyatakan bahwa file terbaru sudah dipublikasikan ke hosting.
-
-## Mengubah isi aplikasi
-
-1. Buat salinan HTML sebelum mengedit.
-2. Cari bagian data atau fungsi yang ingin diubah; hindari mengganti semua teks dengan pola yang terlalu umum.
-3. Materi Inggris menggunakan `a1Lessons` dan `levelBanks`; `lessons` mengacu pada level aktif. Cerita panjang disimpan pada `gradedStoryBanks`; setiap cerita memiliki `text`, `translation` (ringkasan), `chapters`, `wordCount`, `words`, `task`, dan `qs`. Seluruh cerita Inggris juga mempunyai `chapterImages`, berupa lima objek `src` (data URL WebP) dan `alt` yang mengikuti urutan `chapters`. Kosakata verb serta panduan tenses berada pada struktur terpisah.
-4. Pertahankan kunci penyimpanan agar progres pengguna tetap terbaca. Perubahan struktur data memerlukan migrasi.
-5. Periksa pemilihan bahasa dan level, progres lama, seluruh menu, Nao, cetak, serta ekspor/impor cadangan setelah perubahan. Untuk cerita, pastikan gabungan bab sama dengan teks utuh, jumlah kata sesuai, dan jawaban masih didukung bacaan. Periksa kecocokan lima gambar dengan urutan bab setiap cerita Inggris, delapan gambar setiap cerita Jepang, teks alternatif, serta susunan pada laptop dan ponsel.
-6. Data gambar Jepang berada di `jpStoryIllustrations`, mengikuti judul Indonesia dan urutan delapan bagian. Mode baca berada pada blok `immersive-reader-style` dan `immersive-reader-script`; periksa navigasi, penutupan, audio, N5/N4, furigana, soal, dan reduced motion setelah mengubahnya.
-7. Uji ulang fitur mikrofon melalui HTTPS/localhost dan browser target.
-
-HTML juga memuat template cetak dalam JavaScript. Penggantian global `</html>` atau `</body>` bisa merusak template tersebut. Aset base64 membuat file cukup besar; jangan mengubah blok aset jika tidak diperlukan.
+Dokumentasi ini merujuk versi unduhan. Publikasi versi yang sama pada alamat GitHub Pages perlu dilakukan melalui repository.
 
 ## Pemecahan masalah
 
-| Kendala | Pemeriksaan |
+| Masalah | Pemeriksaan |
 | --- | --- |
-| Tombol bahasa tidak merespons | Periksa error JavaScript, penanda konflik merge, dan pastikan deployment menggunakan `index.html` terbaru yang utuh. |
-| Cerita masih pendek atau hanya A1 | Periksa apakah file versi 15 cerita sudah dipublikasikan, pilih level sidebar, lalu muat ulang tanpa cache. |
-| Gambar cerita belum terlihat | Pastikan file terbaru diunggah utuh, pilih cerita dan bab/bagian terkait, tunggu pemuatan, lalu muat ulang tanpa cache. Pada layar kecil, gambar berada di bawah teks. |
-| Pembukaan awal lambat | HTML memuat seluruh aset, sekitar 49,6 MB. Tunggu unduhan selesai; semua data gambar ikut ditransfer bersama HTML. |
-| Scroll belum memindahkan bab | Gulir teks sampai batasnya dahulu, atau gunakan tombol Berikutnya / ← →. Tunggu transisi selesai agar gerakan tidak melompati bagian. |
-| Transisi tidak bergerak | Periksa pengaturan reduced motion dan dukungan animasi browser. Bacaan tetap dapat digunakan tanpa animasi. |
-| Layar penuh browser tidak aktif | Gunakan mode baca biasa atau coba tombol Layar penuh pada browser yang mendukungnya. |
-| Cadangan Inggris ditolak | Cocokkan level aktif dengan level pada cadangan. Data level lain tidak diterima untuk mencegah penimpaan. |
-| Mikrofon tidak aktif | Periksa secure context, dukungan API, izin situs, perangkat input, dan koneksi layanan pengenalan suara. |
-| Ucapan benar tetapi ditandai merah | Periksa transkrip yang dikenali, dengarkan contoh, dan coba kembali. Penilaian berbasis transkrip memiliki keterbatasan. |
-| Audio tidak keluar | Periksa volume, dukungan `speechSynthesis`, ketersediaan suara bahasa target, dan interaksi tombol. |
-| Progres hilang | Pastikan browser, profil, serta alamat situs sama. Gunakan cadangan yang sudah diekspor. |
-| Nao tidak terlihat atau lapisan mata bergeser | Pastikan menggunakan satu file HTML lengkap dari versi yang dipilih; jangan mencampur CSS/rig dari revisi lain. |
-| Tampilan terlalu besar | Periksa zoom browser dan ukuran viewport; tampilan pada HP berbeda dari laptop. |
-| Unduhan gagal | Unduh ulang dari tautan berkas terbaru dan pastikan penyimpanan perangkat tersedia. |
+| Tombol pilihan bahasa tidak bekerja | Periksa deployment, file HTML utuh, Console browser, dan penanda konflik merge. |
+| Serial Nao belum terlihat | Pastikan versi dengan lima serial diunggah sebagai index.html, lalu muat ulang tanpa cache. |
+| Gambar belum muncul | Tunggu HTML selesai dimuat dan buka bab terkait. Data gambar harus ikut dalam HTML yang diunggah. |
+| Pembukaan awal lambat | Seluruh aset ikut diunduh bersama HTML. Ukurannya sekitar 55 MiB. |
+| Scroll belum berpindah bab | Selesaikan guliran teks dahulu atau gunakan tombol Berikutnya. |
+| Gerakan berkurang | Periksa pengaturan reduced motion perangkat. |
+| Audio tidak keluar | Periksa volume, suara bahasa target, dan dukungan speechSynthesis. |
+| Mikrofon tidak aktif | Periksa HTTPS/localhost, izin situs, dukungan API, perangkat input, dan koneksi. |
+| Ucapan ditandai salah | Periksa hasil transkrip dan coba kembali. Pengenalan suara dapat keliru. |
+| Progres tidak terbaca | Pastikan alamat situs, profil, dan browser sama atau pulihkan cadangan yang sesuai. |
+| Cetak melewati border | Cocokkan orientasi, kurangi skala, nonaktifkan header/footer, dan periksa pratinjau. |
+| Unduhan gagal | Coba tautan unduhan terbaru dan periksa ruang penyimpanan perangkat. |
+
+## Mengubah materi dan aset
+
+Data cerita Jepang memakai `storyBook`, `newStoryBooks`, dan `requestedStoryBooks`. Serial memiliki `chapters`, `versions.N5/N4`, dan `translations.N5/N4`. Jumlah judul bab, bacaan, terjemahan, dan ilustrasi harus sesuai.
+
+Ilustrasi Jepang ada di `jpStoryIllustrations`, dengan judul Indonesia sebagai kunci. Urutan gambar mengikuti urutan bagian atau bab. Data Inggris ada di `gradedStoryBanks`, termasuk bab dan `chapterImages`.
+
+Mode baca berada di `immersive-reader-style` dan `immersive-reader-script`. Saat mengubahnya, periksa perpindahan bab, kembali ke katalog, audio, pengaturan level, furigana, dan reduced motion.
+
+Pertahankan kunci localStorage agar progres lama tetap terbaca. HTML mengandung template cetak dalam JavaScript, sehingga penggantian global tag penutup HTML dapat merusak template. Buat salinan sebelum mengedit.
 
 ## Teknologi dan atribusi
 
-- HTML, CSS, JavaScript, SVG, Canvas, Web Animations API, dan dialog untuk antarmuka serta animasi.
-- Fullscreen API sebagai pilihan tambahan pada mode baca, serta media query `prefers-reduced-motion`.
-- `localStorage`, `speechSynthesis`, dan pengenalan suara browser untuk fitur lokal yang didukung.
-- [Japan Foundation — Irodori](https://www.irodori.jpf.go.jp/) dan [TUFS — modul tata bahasa Jepang](https://www.coelang.tufs.ac.jp/mt/ja/gmod/) sebagai rujukan pendalaman pola. Susunan materi dan soal dashboard dibuat tersendiri.
-- [KANJIDIC2 / EDRDG](https://www.edrdg.org/wiki/index.php?title=KANJIDIC_Project), melalui [kanji-data](https://github.com/sepTN/kanji-data), untuk referensi bacaan, arti dasar, goresan, dan level lanjutan. Pertahankan atribusi/lisensi sumber, termasuk [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), sesuai data yang digunakan.
-- [KanaMastery — N4 Kanji](https://kanamastery.com/jlpt/n4/kanji) sebagai rujukan daftar N4 yang digunakan sebelumnya.
-- [KanjiVG](https://kanjivg.tagaini.net/), © Ulrich Apel dan kontributor, berlisensi [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Data diadaptasi untuk pemutaran SVG; atribusi dan salinan lisensi disertakan dalam HTML.
-- [Marugoto — Hiragana](https://a1.marugotoweb.jp/en/hiragana.php) dan [Katakana](https://a1.marugotoweb.jp/en/katakana.php) sebagai rujukan aksara.
-- Noto Sans JP untuk font Jepang yang disematkan; informasi lisensi tersedia dalam HTML.
-- Pertahankan pemberitahuan hak cipta dan lisensi komponen/data yang disertakan. Lisensi data tertentu tidak otomatis menjadi lisensi seluruh proyek.
+HTML, CSS, JavaScript, SVG, Canvas, Web Animations API, dialog, localStorage, speechSynthesis, dan pengenalan suara browser digunakan sesuai fitur.
 
-Logo Tadicoba dan maskot Nao merupakan identitas visual proyek. Materi dan cerita tidak mewakili soal resmi JLPT atau sertifikasi CEFR.
+- [Japan Foundation — Irodori](https://www.irodori.jpf.go.jp/) dan [TUFS](https://www.coelang.tufs.ac.jp/mt/ja/gmod/) sebagai rujukan pendalaman bahasa Jepang.
+- [KANJIDIC2 / EDRDG](https://www.edrdg.org/wiki/index.php?title=KANJIDIC_Project), melalui [kanji-data](https://github.com/sepTN/kanji-data), untuk data referensi kanji. Pertahankan atribusi dan [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) sesuai komponen yang dipakai.
+- [KanaMastery](https://kanamastery.com/jlpt/n4/kanji) sebagai rujukan daftar N4 yang digunakan sebelumnya.
+- [KanjiVG](https://kanjivg.tagaini.net/), © Ulrich Apel dan kontributor, berlisensi [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), diadaptasi untuk animasi goresan.
+- [Marugoto Hiragana](https://a1.marugotoweb.jp/en/hiragana.php) dan [Katakana](https://a1.marugotoweb.jp/en/katakana.php) sebagai rujukan aksara.
+- Noto Sans JP untuk font Jepang. Informasi lisensi komponen tersedia dalam HTML.
 
----
+Pertahankan pemberitahuan lisensi data, font, dan komponen yang disertakan. Lisensi setiap komponen berlaku sesuai sumbernya. Logo Tadicoba dan maskot Nao merupakan identitas visual proyek.
 
 Dikelola oleh **Tata Dico Puji Handoko**.
