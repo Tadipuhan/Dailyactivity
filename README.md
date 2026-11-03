@@ -1,10 +1,10 @@
-+# Tadicoba
+# Tadicoba
 
 **Satu ruang, dua perjalanan.** Website belajar mandiri Bahasa Jepang dan Bahasa Inggris dengan materi, latihan, kosakata, cerita, serta pendamping belajar **Nao**.
 
 Antarmuka menggunakan Bahasa Indonesia. Pilihan Jepang atau Inggris menentukan **bahasa yang dipelajari**, bukan bahasa antarmuka.
 
-> Dokumentasi versi dua bahasa, diperbarui 2 November 2026. Aplikasi berjalan sebagai website statis berbasis HTML, CSS, dan JavaScript. Progres tersimpan di browser; belum ada akun atau sinkronisasi cloud.
+> Dokumentasi versi dua bahasa, diperbarui 3 November 2026. Aplikasi berjalan sebagai website statis berbasis HTML, CSS, dan JavaScript. Progres tersimpan di browser; belum ada akun atau sinkronisasi cloud.
 
 ## Ringkasan
 
@@ -36,7 +36,7 @@ Pilihan terakhir diingat untuk tombol **Lanjutkan** pada halaman pemilih. Gunaka
 - Referensi **kanji N5–N1**, termasuk bacaan, arti, pencarian, filter, serta contoh atau urutan goresan sesuai data yang tersedia.
 - **Kotoba pilihan N5–N1**, dengan submenu level yang dapat dibuka dan ditutup.
 - Flashcard, penanda belajar, ringkasan aktivitas, dan rekap progres.
-- Tiga cerita dengan pilihan versi N5/N4, furigana, terjemahan per bagian, audio sesuai dukungan perangkat, serta 24 ilustrasi adegan dan sampul katalog.
+- Lima cerita: tiga cerita dengan pilihan versi N5/N4, satu cerita pasangan kucing khusus N5, dan satu cerita horor sekolah khusus N4. Tersedia furigana, terjemahan per bagian, audio sesuai dukungan perangkat, serta 40 ilustrasi adegan.
 - Cetak materi, soal, kanji, atau kotoba melalui fitur yang tersedia; pilih **Simpan sebagai PDF** pada dialog cetak browser bila diperlukan.
 
 Daftar level lanjutan adalah referensi pilihan dan tidak boleh dianggap sebagai seluruh daftar kosakata resmi JLPT. Ketersediaan data berbeda pada setiap entri.
@@ -129,10 +129,10 @@ Setiap modul baru mencakup tujuan komunikasi, penjelasan Indonesia, pola dan con
 | Inggris A1 | 5 | 5 bab | 25 |
 | Inggris A2 | 5 | 5 bab | 25 |
 | Inggris B1 | 5 | 5 bab | 25 |
-| Jepang N5/N4 | 3 | 8 bagian | 24 |
-| **Total** | **18 alur cerita** | — | **99** |
+| Jepang N5/N4 | 5 | 8 bagian | 40 |
+| **Total** | **20 alur cerita** | — | **115** |
 
-Versi N5 dan N4 memakai ilustrasi yang sama karena alurnya sama. Sampul ketiga cerita Jepang menggunakan kembali gambar dari cerita tersebut dan tidak menambah jumlah ilustrasi unik.
+Versi N5 dan N4 memakai ilustrasi yang sama karena alurnya sama. Sampul cerita Jepang menggunakan kembali gambar dari cerita tersebut dan tidak menambah jumlah ilustrasi unik.
 
 Cerita Jepang yang tersedia:
 
@@ -141,6 +141,8 @@ Cerita Jepang yang tersedia:
 | Kucing Kecil dan Payung Biru | Mimi dan Shiro | Hujan, penemuan payung, pencarian pemilik, dan persahabatan. |
 | Kelinci dan Roti Bulan | Hana | Membentuk adonan, bantuan teman, memanggang, dan berbagi roti. |
 | Hari-hari Sebuah Benih Kecil | Riku | Menanam, menunggu, merawat tunas, dan menikmati bunga. |
+| Pasangan kucing — khusus N5 | Pon dan Yuki | Kehidupan suami kucing oren gendut dan istrinya, kucing putih. |
+| Horor sekolah — khusus N4 | Tokoh dalam cerita sekolah | Misteri ruang musik, buku catatan, dan suasana sekolah saat hujan. |
 
 - Adegan mengikuti bagian bacaan, dengan keterangan singkat dan teks alternatif.
 - Inggris menggunakan gaya anime keseharian dengan tema Sage Study. Jepang menggunakan ilustrasi buku cerita dengan tokoh hewan dan aksen lavender.
@@ -156,7 +158,7 @@ Ilustrasi dibuat dengan bantuan AI. Gunakan teks cerita sebagai acuan untuk menj
 Membuka cerita mengaktifkan mode baca yang menutupi dashboard dan sidebar:
 
 - **Inggris:** satu bab per layar, berlaku untuk seluruh cerita A1–B1.
-- **Jepang:** satu bagian/paragraf per layar, berlaku untuk ketiga cerita dan versi N5/N4.
+- **Jepang:** satu bagian/paragraf per layar, berlaku untuk kelima cerita sesuai level yang tersedia.
 - Pada layar lebar, teks berada di kiri dan gambar di kanan. Kolom Inggris dibatasi dan dirapatkan mengikuti ukuran gambar agar ruang kosong di antaranya berkurang.
 - Pada layar kecil, teks dan gambar disusun vertikal. Teks panjang dapat digulir di dalam area bacaan tanpa menampilkan bab lain sekaligus.
 
@@ -189,6 +191,29 @@ Indikator progres menunjukkan **posisi bagian dalam cerita**, bukan nilai pemaha
 - Efek ini mengolah tampilan gambar, bukan morph bentuk tokoh atau animasi karakter di dalam ilustrasi.
 
 Audio per bagian, pilihan N5/N4, furigana, terjemahan, dan formulir soal tetap menggunakan kontrol aslinya. Untuk Jepang, buka **Pengaturan baca** untuk mengubah versi dan furigana. Membuka mode baca tidak otomatis memulai audio.
+
+## Cetak dan simpan PDF
+
+Menu **Dasar Jepang** memiliki tombol **Print / PDF** dengan empat pilihan:
+
+| Pilihan | Hasil |
+| --- | --- |
+| Seluruh materi Dasar Jepang | Tabel hiragana satu halaman dan katakana satu halaman; contoh kata dan aturan membaca di halaman terpisah. |
+| Hiragana — semua kelompok | Satu halaman berisi 104 kana dan romaji: huruf dasar, dakuten/handakuten, serta gabungan bunyi kecil. |
+| Katakana — semua kelompok | Satu halaman berisi 104 kana dan romaji dengan kelompok yang sama. |
+| Aturan membaca saja | Penjelasan dan contoh bunyi; bagian penjelasan dibuka pada dokumen cetak. |
+
+**Border halaman asli Tadicoba tetap digunakan.** Tabel diskalakan sebagai satu lembar utuh di dalam border agar baris tidak terpisah ke halaman berikutnya.
+
+1. Buka **Dasar Jepang → Print / PDF**, lalu pilih materi.
+2. Tunggu huruf dan gambar siap, kemudian tekan **Cetak / Simpan PDF**.
+3. Pilih ukuran kertas dan gunakan **Pas ke halaman / Fit to page** bila tersedia.
+4. Nonaktifkan header dan footer bawaan browser untuk hasil lebih bersih.
+5. Periksa pratinjau sebelum mencetak; ukuran kertas yang lebih kecil menghasilkan huruf lebih kecil.
+
+Ukuran fisik dan area cetak tetap mengikuti pengaturan browser, printer, margin, dan skala pengguna. Pengaturan skala yang diperbesar dapat mengubah hasil. Tata letak ini belum diverifikasi melalui cetakan fisik untuk setiap ukuran kertas.
+
+Menu **Materi harian** mempertahankan fitur cetak sebelumnya; pembaruan kana tidak menambahkan tombol cetak baru pada header Materi harian. Fitur cetak materi, soal, kanji, dan kotoba lainnya tetap menggunakan kontrol yang tersedia.
 
 ## Nao dan animasi
 
@@ -245,7 +270,7 @@ Kunci penyimpanan Inggris yang digunakan:
 
 ## Menjalankan secara lokal
 
-Gunakan file HTML versi pilihan sebagai `index.html`. File inti menggabungkan antarmuka, logika, materi, serta aset yang disematkan; tidak memerlukan instalasi npm atau proses build. Versi dengan 99 ilustrasi dan mode baca terbaru berukuran sekitar **49,6 MB** (47,3 MiB); waktu pembukaan awal bergantung pada koneksi dan perangkat.
+Gunakan file HTML versi pilihan sebagai `index.html`. File inti menggabungkan antarmuka, logika, materi, serta aset yang disematkan; tidak memerlukan instalasi npm atau proses build. Versi dengan 115 ilustrasi dan pembaruan cetak kana berukuran sekitar **53 MB** (50,5 MiB); waktu pembukaan awal bergantung pada koneksi dan perangkat.
 
 Struktur minimal:
 
@@ -295,7 +320,7 @@ HTML juga memuat template cetak dalam JavaScript. Penggantian global `</html>` a
 | Tombol bahasa tidak merespons | Periksa error JavaScript, penanda konflik merge, dan pastikan deployment menggunakan `index.html` terbaru yang utuh. |
 | Cerita masih pendek atau hanya A1 | Periksa apakah file versi 15 cerita sudah dipublikasikan, pilih level sidebar, lalu muat ulang tanpa cache. |
 | Gambar cerita belum terlihat | Pastikan file terbaru diunggah utuh, pilih cerita dan bab/bagian terkait, tunggu pemuatan, lalu muat ulang tanpa cache. Pada layar kecil, gambar berada di bawah teks. |
-| Pembukaan awal lambat | HTML memuat seluruh aset, sekitar 49,6 MB. Tunggu unduhan selesai; semua data gambar ikut ditransfer bersama HTML. |
+| Pembukaan awal lambat | HTML memuat seluruh aset, sekitar 53 MB. Tunggu unduhan selesai; semua data gambar ikut ditransfer bersama HTML. |
 | Scroll belum memindahkan bab | Gulir teks sampai batasnya dahulu, atau gunakan tombol Berikutnya / ← →. Tunggu transisi selesai agar gerakan tidak melompati bagian. |
 | Transisi tidak bergerak | Periksa pengaturan reduced motion dan dukungan animasi browser. Bacaan tetap dapat digunakan tanpa animasi. |
 | Layar penuh browser tidak aktif | Gunakan mode baca biasa atau coba tombol Layar penuh pada browser yang mendukungnya. |
@@ -306,6 +331,7 @@ HTML juga memuat template cetak dalam JavaScript. Penggantian global `</html>` a
 | Progres hilang | Pastikan browser, profil, serta alamat situs sama. Gunakan cadangan yang sudah diekspor. |
 | Nao tidak terlihat atau lapisan mata bergeser | Pastikan menggunakan satu file HTML lengkap dari versi yang dipilih; jangan mencampur CSS/rig dari revisi lain. |
 | Tampilan terlalu besar | Periksa zoom browser dan ukuran viewport; tampilan pada HP berbeda dari laptop. |
+| Tabel kana terpotong saat dicetak | Gunakan HTML terbaru, pilih Pas ke halaman / Fit to page, periksa ukuran kertas dan margin, lalu nonaktifkan header/footer browser. Jangan memperbesar skala melewati area cetak. |
 | Unduhan gagal | Unduh ulang dari tautan berkas terbaru dan pastikan penyimpanan perangkat tersedia. |
 
 ## Teknologi dan atribusi
