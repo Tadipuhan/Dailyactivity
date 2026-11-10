@@ -4,11 +4,7 @@
 
 [Buka website](https://tadipuhan.github.io/Dailyactivity/) · [Repository](https://github.com/Tadipuhan/Dailyactivity)
 
-<<<<<<< HEAD
 Dokumentasi diperbarui **4 November 2026**, mengikuti HTML dengan lima serial Nao. Website berjalan secara statis tanpa instalasi npm atau proses build. Progres disimpan di browser.
-=======
-> Dokumentasi versi dua bahasa, diperbarui 3 November 2026. Aplikasi berjalan sebagai website statis berbasis HTML, CSS, dan JavaScript. Progres tersimpan di browser; belum ada akun atau sinkronisasi cloud.
->>>>>>> 06ea3bccb53245048a863f22e3ab2379828f0768
 
 ## Fitur utama
 
@@ -39,7 +35,6 @@ Pilihan bahasa pelajaran dan level Inggris terakhir diingat oleh browser. Progre
 
 ## Bahasa Jepang
 
-<<<<<<< HEAD
 - Materi **45 hari**, berfokus pada penguatan N5 dan persiapan N4.
 - **40 soal pilihan ganda per hari**, dengan empat pilihan dan pembahasan.
 - Hiragana, katakana, aturan membaca, audio perangkat, latihan kana, dan animasi goresan.
@@ -47,16 +42,6 @@ Pilihan bahasa pelajaran dan level Inggris terakhir diingat oleh browser. Progre
 - Kanji N5 berisi **103 entri dalam delapan kelompok**. N4 berisi **166 entri dalam sebelas kelompok**.
 - Flashcard, agenda, rekap aktivitas, dan pencatatan progres.
 - Cerita dengan furigana, terjemahan Indonesia, dan audio melalui suara perangkat.
-=======
-- Materi harian **Day 1–45**, berfokus pada penguatan N5 dan persiapan N4.
-- **40 soal pilihan ganda per hari**, dengan empat pilihan dan pembahasan; total 1.800 soal.
-- Dasar **hiragana dan katakana**, aturan membaca, bantuan audio, serta latihan kana.
-- Referensi **kanji N5–N1**, termasuk bacaan, arti, pencarian, filter, serta contoh atau urutan goresan sesuai data yang tersedia.
-- **Kotoba pilihan N5–N1**, dengan submenu level yang dapat dibuka dan ditutup.
-- Flashcard, penanda belajar, ringkasan aktivitas, dan rekap progres.
-- Lima cerita: tiga cerita dengan pilihan versi N5/N4, satu cerita pasangan kucing khusus N5, dan satu cerita horor sekolah khusus N4. Tersedia furigana, terjemahan per bagian, audio sesuai dukungan perangkat, serta 40 ilustrasi adegan.
-- Cetak materi, soal, kanji, atau kotoba melalui fitur yang tersedia; pilih **Simpan sebagai PDF** pada dialog cetak browser bila diperlukan.
->>>>>>> 06ea3bccb53245048a863f22e3ab2379828f0768
 
 Referensi level lanjutan berisi pilihan entri. Ketersediaan contoh dan data berbeda pada setiap entri.
 
@@ -148,21 +133,9 @@ Setiap cerita memiliki 1.000 kata Inggris berdasarkan pemisahan spasi pada teks 
 
 Gambar Jepang N5 dan N4 digunakan bersama karena alurnya sama. Sampul memakai ulang gambar cerita dan tidak menambah hitungan ilustrasi unik.
 
-<<<<<<< HEAD
 Ilustrasi dibuat dengan bantuan AI. Serial Nao mengikuti acuan karakter dan gaya buku cerita cat air, dengan suasana cahaya sesuai adegan. Gambar disematkan dalam HTML sebagai data URL WebP. Efek feathering menyatukan tepi gambar dengan latar.
 
 Mode baca menampilkan **satu bab Inggris, satu bab serial Nao, atau satu bagian cerita lepas Jepang per layar**. Di layar lebar, teks dan gambar berdampingan. Di layar kecil, susunannya menyesuaikan ruang.
-=======
-| Bacaan | Cerita | Bagian per cerita | Ilustrasi unik |
-| --- | ---: | ---: | ---: |
-| Inggris A1 | 5 | 5 bab | 25 |
-| Inggris A2 | 5 | 5 bab | 25 |
-| Inggris B1 | 5 | 5 bab | 25 |
-| Jepang N5/N4 | 5 | 8 bagian | 40 |
-| **Total** | **20 alur cerita** | — | **115** |
-
-Versi N5 dan N4 memakai ilustrasi yang sama karena alurnya sama. Sampul cerita Jepang menggunakan kembali gambar dari cerita tersebut dan tidak menambah jumlah ilustrasi unik.
->>>>>>> 06ea3bccb53245048a863f22e3ab2379828f0768
 
 - Gunakan **Sebelumnya / Berikutnya**, tombol **← / →**, atau swipe horizontal.
 - Gulir teks panjang di area bacaan. Saat mencapai batasnya, guliran yang cukup dapat berpindah bagian.
@@ -173,17 +146,7 @@ Versi N5 dan N4 memakai ilustrasi yang sama karena alurnya sama. Sampul cerita J
 - Preferensi perangkat **reduced motion** mengurangi gerakan.
 - Posisi pada indikator merupakan posisi bab dan belum disimpan sebagai bookmark permanen.
 
-<<<<<<< HEAD
 Ilustrasi merupakan gambar statis dengan gerakan tampilan. Mulut tokoh di ilustrasi cerita tidak disinkronkan dengan narasi.
-=======
-| Cerita | Tokoh utama | Cakupan gambar |
-| --- | --- | --- |
-| Kucing Kecil dan Payung Biru | Mimi dan Shiro | Hujan, penemuan payung, pencarian pemilik, dan persahabatan. |
-| Kelinci dan Roti Bulan | Hana | Membentuk adonan, bantuan teman, memanggang, dan berbagi roti. |
-| Hari-hari Sebuah Benih Kecil | Riku | Menanam, menunggu, merawat tunas, dan menikmati bunga. |
-| Pasangan kucing — khusus N5 | Pon dan Yuki | Kehidupan suami kucing oren gendut dan istrinya, kucing putih. |
-| Horor sekolah — khusus N4 | Tokoh dalam cerita sekolah | Misteri ruang musik, buku catatan, dan suasana sekolah saat hujan. |
->>>>>>> 06ea3bccb53245048a863f22e3ab2379828f0768
 
 ## Print dan PDF
 
@@ -193,14 +156,7 @@ Tombol **Print / PDF** menyediakan materi Dasar Jepang serta pilihan lembar hira
 
 Setiap aksara memuat 104 bentuk, terdiri dari 46 huruf dasar, 25 dakuten/handakuten, dan 33 gabungan yōon. Huruf dasar berada di kiri, sementara kelompok tambahan ditumpuk di kanan. Hiragana dan katakana masing-masing disusun sebagai satu lembar utuh di dalam border asli Tadicoba.
 
-<<<<<<< HEAD
 ### Kanji N5 dan N4
-=======
-- **Inggris:** satu bab per layar, berlaku untuk seluruh cerita A1–B1.
-- **Jepang:** satu bagian/paragraf per layar, berlaku untuk kelima cerita sesuai level yang tersedia.
-- Pada layar lebar, teks berada di kiri dan gambar di kanan. Kolom Inggris dibatasi dan dirapatkan mengikuti ukuran gambar agar ruang kosong di antaranya berkurang.
-- Pada layar kecil, teks dan gambar disusun vertikal. Teks panjang dapat digulir di dalam area bacaan tanpa menampilkan bab lain sekaligus.
->>>>>>> 06ea3bccb53245048a863f22e3ab2379828f0768
 
 Pilihan ringkas pada dialog cetak N5/N4 tersedia untuk N5 saja, N4 saja, atau keduanya.
 
@@ -231,34 +187,7 @@ Hasil fisik mengikuti area cetak printer, margin, ukuran kertas, dan skala. Selu
 
 Audio contoh menggunakan **speechSynthesis** dan suara bahasa target yang tersedia pada perangkat.
 
-<<<<<<< HEAD
 Latihan mikrofon menggunakan **SpeechRecognition / webkitSpeechRecognition** jika didukung browser. Izinkan akses mikrofon, dengarkan contoh, lalu baca kalimat target.
-=======
-## Cetak dan simpan PDF
-
-Menu **Dasar Jepang** memiliki tombol **Print / PDF** dengan empat pilihan:
-
-| Pilihan | Hasil |
-| --- | --- |
-| Seluruh materi Dasar Jepang | Tabel hiragana satu halaman dan katakana satu halaman; contoh kata dan aturan membaca di halaman terpisah. |
-| Hiragana — semua kelompok | Satu halaman berisi 104 kana dan romaji: huruf dasar, dakuten/handakuten, serta gabungan bunyi kecil. |
-| Katakana — semua kelompok | Satu halaman berisi 104 kana dan romaji dengan kelompok yang sama. |
-| Aturan membaca saja | Penjelasan dan contoh bunyi; bagian penjelasan dibuka pada dokumen cetak. |
-
-**Border halaman asli Tadicoba tetap digunakan.** Tabel diskalakan sebagai satu lembar utuh di dalam border agar baris tidak terpisah ke halaman berikutnya.
-
-1. Buka **Dasar Jepang → Print / PDF**, lalu pilih materi.
-2. Tunggu huruf dan gambar siap, kemudian tekan **Cetak / Simpan PDF**.
-3. Pilih ukuran kertas dan gunakan **Pas ke halaman / Fit to page** bila tersedia.
-4. Nonaktifkan header dan footer bawaan browser untuk hasil lebih bersih.
-5. Periksa pratinjau sebelum mencetak; ukuran kertas yang lebih kecil menghasilkan huruf lebih kecil.
-
-Ukuran fisik dan area cetak tetap mengikuti pengaturan browser, printer, margin, dan skala pengguna. Pengaturan skala yang diperbesar dapat mengubah hasil. Tata letak ini belum diverifikasi melalui cetakan fisik untuk setiap ukuran kertas.
-
-Menu **Materi harian** mempertahankan fitur cetak sebelumnya; pembaruan kana tidak menambahkan tombol cetak baru pada header Materi harian. Fitur cetak materi, soal, kanji, dan kotoba lainnya tetap menggunakan kontrol yang tersedia.
-
-## Nao dan animasi
->>>>>>> 06ea3bccb53245048a863f22e3ab2379828f0768
 
 Penanda hijau dan merah menunjukkan **kecocokan transkrip** dengan kalimat target. Pengenalan suara dapat keliru dan belum menilai fonetik atau aksen secara terperinci. Latihan Jepang menggunakan normalisasi kana. Hasil mikrofon belum menjadi riwayat progres permanen.
 
@@ -276,13 +205,7 @@ Data tersimpan pada **localStorage**. Browser, profil, perangkat, serta alamat s
 
 ## Menjalankan secara lokal
 
-<<<<<<< HEAD
 Simpan HTML unduhan terbaru sebagai **index.html** dan letakkan README di folder yang sama.
-=======
-Gunakan file HTML versi pilihan sebagai `index.html`. File inti menggabungkan antarmuka, logika, materi, serta aset yang disematkan; tidak memerlukan instalasi npm atau proses build. Versi dengan 115 ilustrasi dan pembaruan cetak kana berukuran sekitar **53 MB** (50,5 MiB); waktu pembukaan awal bergantung pada koneksi dan perangkat.
-
-Struktur minimal:
->>>>>>> 06ea3bccb53245048a863f22e3ab2379828f0768
 
 ```text
 Tadicoba/
@@ -318,7 +241,6 @@ Dokumentasi ini merujuk versi unduhan. Publikasi versi yang sama pada alamat Git
 
 | Masalah | Pemeriksaan |
 | --- | --- |
-<<<<<<< HEAD
 | Tombol pilihan bahasa tidak bekerja | Periksa deployment, file HTML utuh, Console browser, dan penanda konflik merge. |
 | Serial Nao belum terlihat | Pastikan versi dengan lima serial diunggah sebagai index.html, lalu muat ulang tanpa cache. |
 | Gambar belum muncul | Tunggu HTML selesai dimuat dan buka bab terkait. Data gambar harus ikut dalam HTML yang diunggah. |
@@ -341,24 +263,6 @@ Ilustrasi Jepang ada di `jpStoryIllustrations`, dengan judul Indonesia sebagai k
 Mode baca berada di `immersive-reader-style` dan `immersive-reader-script`. Saat mengubahnya, periksa perpindahan bab, kembali ke katalog, audio, pengaturan level, furigana, dan reduced motion.
 
 Pertahankan kunci localStorage agar progres lama tetap terbaca. HTML mengandung template cetak dalam JavaScript, sehingga penggantian global tag penutup HTML dapat merusak template. Buat salinan sebelum mengedit.
-=======
-| Tombol bahasa tidak merespons | Periksa error JavaScript, penanda konflik merge, dan pastikan deployment menggunakan `index.html` terbaru yang utuh. |
-| Cerita masih pendek atau hanya A1 | Periksa apakah file versi 15 cerita sudah dipublikasikan, pilih level sidebar, lalu muat ulang tanpa cache. |
-| Gambar cerita belum terlihat | Pastikan file terbaru diunggah utuh, pilih cerita dan bab/bagian terkait, tunggu pemuatan, lalu muat ulang tanpa cache. Pada layar kecil, gambar berada di bawah teks. |
-| Pembukaan awal lambat | HTML memuat seluruh aset, sekitar 53 MB. Tunggu unduhan selesai; semua data gambar ikut ditransfer bersama HTML. |
-| Scroll belum memindahkan bab | Gulir teks sampai batasnya dahulu, atau gunakan tombol Berikutnya / ← →. Tunggu transisi selesai agar gerakan tidak melompati bagian. |
-| Transisi tidak bergerak | Periksa pengaturan reduced motion dan dukungan animasi browser. Bacaan tetap dapat digunakan tanpa animasi. |
-| Layar penuh browser tidak aktif | Gunakan mode baca biasa atau coba tombol Layar penuh pada browser yang mendukungnya. |
-| Cadangan Inggris ditolak | Cocokkan level aktif dengan level pada cadangan. Data level lain tidak diterima untuk mencegah penimpaan. |
-| Mikrofon tidak aktif | Periksa secure context, dukungan API, izin situs, perangkat input, dan koneksi layanan pengenalan suara. |
-| Ucapan benar tetapi ditandai merah | Periksa transkrip yang dikenali, dengarkan contoh, dan coba kembali. Penilaian berbasis transkrip memiliki keterbatasan. |
-| Audio tidak keluar | Periksa volume, dukungan `speechSynthesis`, ketersediaan suara bahasa target, dan interaksi tombol. |
-| Progres hilang | Pastikan browser, profil, serta alamat situs sama. Gunakan cadangan yang sudah diekspor. |
-| Nao tidak terlihat atau lapisan mata bergeser | Pastikan menggunakan satu file HTML lengkap dari versi yang dipilih; jangan mencampur CSS/rig dari revisi lain. |
-| Tampilan terlalu besar | Periksa zoom browser dan ukuran viewport; tampilan pada HP berbeda dari laptop. |
-| Tabel kana terpotong saat dicetak | Gunakan HTML terbaru, pilih Pas ke halaman / Fit to page, periksa ukuran kertas dan margin, lalu nonaktifkan header/footer browser. Jangan memperbesar skala melewati area cetak. |
-| Unduhan gagal | Unduh ulang dari tautan berkas terbaru dan pastikan penyimpanan perangkat tersedia. |
->>>>>>> 06ea3bccb53245048a863f22e3ab2379828f0768
 
 ## Teknologi dan atribusi
 
