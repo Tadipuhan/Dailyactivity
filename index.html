@@ -1485,53 +1485,52 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
   },true);
 })();
 </script>
-<<<<<<< HEAD
-<style id="td-kanji-mobile-tabs">/* Desktop keeps the original card presentation. */
-#compass-v2 .kt-tabs{display:none}
-#compass-v2 .kt-panel,#compass-v2 .kt-group,#compass-v2 .kt-group-cards{display:contents}
-#compass-v2 .kt-group-title,#compass-v2 .kt-note{display:none}
+<style id="td-kanji-mobile-tabs">/* Mobile kanji: detail tabs + thematic groups. Desktop keeps the native grid. */
+#compass-v2 .kt-tabs,
+#compass-v2 .kt-group-title,
+#compass-v2 .kt-note{display:none}
+
 @media screen and (max-width:760px){
-#compass-v2 .kanji-card-grid{display:block!important}
-#compass-v2 .kt-group{display:block;margin:0 0 16px;border:1px solid var(--td-line,#494056);border-radius:15px;overflow:hidden;background:var(--td-panel,var(--panel))}
-#compass-v2 .kt-group-title{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:12px 14px;cursor:pointer;background:var(--td-soft,#41324e);color:var(--td-text,var(--text));font-weight:650;font-size:14px;list-style:none}
-#compass-v2 .kt-group-title::-webkit-details-marker{display:none}
-#compass-v2 .kt-group-title::after{content:'⌄';font-size:18px}
-#compass-v2 .kt-group[open]>.kt-group-title::after{content:'⌃'}
-#compass-v2 .kt-group-title small{margin-left:auto;font-size:11px;font-weight:400}
-#compass-v2 .kt-group-cards{display:grid;gap:12px;padding:12px}
-#compass-v2 .kt-group:not([open])>.kt-group-cards{display:none}
-#compass-v2 .study-kanji-card{min-height:0!important;height:auto!important;padding:14px!important;border-radius:12px!important;display:flex!important;flex-direction:column!important;gap:12px!important}
-#compass-v2 .kanji-card-top{margin:0!important;gap:8px!important}
-#compass-v2 .kanji-card-eyebrow{font-size:10px!important;letter-spacing:.07em!important}
-#compass-v2 .kanji-card-id,#compass-v2 .kanji-level-tag{font-size:10px!important}
-#compass-v2 .kanji-card-center{display:grid!important;grid-template-columns:70px minmax(0,1fr)!important;grid-template-rows:auto auto!important;column-gap:14px!important;row-gap:4px!important;text-align:left!important;padding:0!important;margin:0!important;min-height:0!important}
-#compass-v2 .kanji-card-symbol{grid-row:1/3;font-size:58px!important;line-height:1.2!important;width:70px!important;height:76px!important;min-height:0!important;display:flex;align-items:center;justify-content:center;margin:0!important}
-#compass-v2 .kanji-card-meaning{font-size:18px!important;line-height:1.4!important;align-self:end;margin:0!important;overflow-wrap:anywhere}
-#compass-v2 .kanji-strokes{font-size:12px!important;margin:0!important;align-self:start}
-#compass-v2 .kt-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;padding:3px;border-radius:10px;background:var(--td-soft,#33263f)}
-#compass-v2 .kt-tabs button{min-height:44px!important;padding:8px 3px!important;font:600 13px/1.3 system-ui!important;border:0!important;border-radius:8px!important;background:transparent!important;color:var(--td-text,var(--text))!important}
-#compass-v2 .kt-tabs button[aria-selected=true]{background:#7953a1!important;color:white!important}
-#compass-v2 .kt-panel{display:none;min-width:0}
-#compass-v2 .study-kanji-card[data-kt-tab="0"]>[data-kt-panel="0"],#compass-v2 .study-kanji-card[data-kt-tab="1"]>[data-kt-panel="1"],#compass-v2 .study-kanji-card[data-kt-tab="2"]>[data-kt-panel="2"]{display:block}
-#compass-v2 .kanji-card-readings{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;margin:0!important;padding:8px 0!important}
-#compass-v2 .kanji-card-readings h4{font-size:10px!important;margin:0 0 8px!important}
-#compass-v2 .kana-reading{font-size:21px!important;line-height:1.7!important;margin:0!important;overflow-wrap:anywhere}
-#compass-v2 .romaji-reading{font-size:12px!important;margin:4px 0!important;overflow-wrap:anywhere}
-#compass-v2 .kanji-example-box{padding:12px!important;margin:0!important;border-radius:10px!important}
-#compass-v2 .example-sentence{font-size:21px!important;line-height:1.8!important;margin:6px 0!important}
-#compass-v2 .example-kana,#compass-v2 .example-translation,#compass-v2 .kanji-example-word{font-size:14px!important;line-height:1.65!important;overflow-wrap:anywhere}
-#compass-v2 .kanji-card-footer{margin:0!important;padding-top:10px!important;gap:8px!important;flex-wrap:wrap!important}
-#compass-v2 .kanji-card-footer label{font-size:11px!important}
-#compass-v2 .kanji-card-footer select{min-height:44px!important;max-width:100%;font-size:13px!important}
-#compass-v2 .kanji-card-group{font-size:11px!important}
-#compass-v2 .kt-note{display:block;font-size:14px;line-height:1.7;padding:8px 0}
-#compass-v2 .kt-panel .ks-open{min-height:44px;font-size:13px;margin:0 0 10px}
-#compass-v2 .kt-panel .ks-canvas{width:min(100%,220px)!important;max-height:220px;margin:auto}
-}
-</style></head>
-=======
-</head>
->>>>>>> c562f0bd5e347aa898c6f1eed17f9389f385f847
+  #compass-v2 .kanji-card-grid{display:block!important}
+  #compass-v2 .kt-group{display:block;margin:0 0 16px;border:1px solid var(--td-line,#494056);border-radius:15px;overflow:hidden;background:var(--td-panel,var(--panel))}
+  #compass-v2 .kt-group-title{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:12px 14px;cursor:pointer;background:var(--td-soft,#41324e);color:var(--td-text,var(--text));font-weight:650;font-size:14px;list-style:none}
+  #compass-v2 .kt-group-title::-webkit-details-marker{display:none}
+  #compass-v2 .kt-group-title::after{content:'⌄';font-size:18px}
+  #compass-v2 .kt-group[open]>.kt-group-title::after{content:'⌃'}
+  #compass-v2 .kt-group-title small{margin-left:auto;font-size:11px;font-weight:400}
+  #compass-v2 .kt-group-cards{display:grid;gap:12px;padding:12px}
+  #compass-v2 .kt-group:not([open])>.kt-group-cards{display:none}
+  #compass-v2 .study-kanji-card{min-height:0!important;height:auto!important;padding:14px!important;border-radius:12px!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;gap:12px!important}
+  #compass-v2 .kanji-card-top{margin:0!important;gap:8px!important}
+  #compass-v2 .kanji-card-eyebrow{font-size:10px!important;letter-spacing:.07em!important}
+  #compass-v2 .kanji-card-id,#compass-v2 .kanji-level-tag{font-size:10px!important}
+  #compass-v2 .kanji-card-center{display:grid!important;grid-template-columns:70px minmax(0,1fr)!important;grid-template-rows:auto auto!important;column-gap:14px!important;row-gap:4px!important;text-align:left!important;padding:0!important;margin:0!important;min-height:0!important}
+  #compass-v2 .kanji-card-symbol{grid-row:1/3;font-size:58px!important;line-height:1.2!important;width:70px!important;height:76px!important;min-height:0!important;display:flex;align-items:center;justify-content:center;margin:0!important}
+  #compass-v2 .kanji-card-meaning{font-size:18px!important;line-height:1.4!important;align-self:end;margin:0!important;overflow-wrap:anywhere}
+  #compass-v2 .kanji-strokes{font-size:12px!important;margin:0!important;align-self:start}
+  #compass-v2 .kt-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;padding:3px;border-radius:10px;background:var(--td-soft,#33263f)}
+  #compass-v2 .kt-tabs button{min-height:44px!important;padding:8px 3px!important;font:600 13px/1.3 system-ui!important;border:0!important;border-radius:8px!important;background:transparent!important;color:var(--td-text,var(--text))!important}
+  #compass-v2 .kt-tabs button[aria-selected=true]{background:#7953a1!important;color:white!important}
+  #compass-v2 .kt-panel{display:none;min-width:0}
+  #compass-v2 .study-kanji-card[data-kt-tab="0"]>[data-kt-panel="0"],
+  #compass-v2 .study-kanji-card[data-kt-tab="1"]>[data-kt-panel="1"],
+  #compass-v2 .study-kanji-card[data-kt-tab="2"]>[data-kt-panel="2"]{display:block}
+  #compass-v2 .kanji-card-readings{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;margin:0!important;padding:8px 0!important}
+  #compass-v2 .kanji-card-readings h4{font-size:10px!important;margin:0 0 8px!important}
+  #compass-v2 .kana-reading{font-size:21px!important;line-height:1.7!important;margin:0!important;overflow-wrap:anywhere}
+  #compass-v2 .romaji-reading{font-size:12px!important;margin:4px 0!important;overflow-wrap:anywhere}
+  #compass-v2 .kanji-example-box{padding:12px!important;margin:0!important;border-radius:10px!important}
+  #compass-v2 .example-sentence{font-size:21px!important;line-height:1.8!important;margin:6px 0!important}
+  #compass-v2 .example-kana,#compass-v2 .example-translation,#compass-v2 .kanji-example-word{font-size:14px!important;line-height:1.65!important;overflow-wrap:anywhere}
+  #compass-v2 .kanji-card-footer{margin:0!important;padding-top:10px!important;gap:8px!important;flex-wrap:wrap!important}
+  #compass-v2 .kanji-card-footer label{font-size:11px!important}
+  #compass-v2 .kanji-card-footer select{min-height:44px!important;max-width:100%;font-size:13px!important}
+  #compass-v2 .kanji-card-group{font-size:11px!important}
+  #compass-v2 .kt-note{display:block;font-size:14px;line-height:1.7;padding:8px 0}
+  #compass-v2 .kt-panel .ks-open{min-height:44px;font-size:13px;margin:0 0 10px}
+  #compass-v2 .kt-panel .ks-canvas{width:min(100%,220px)!important;max-height:220px;margin:auto}
+  html.kt-mobile-kanji #nao-demo{display:none!important}
+}</style></head>
 <body>
 <script type="application/json" id="codex-visualization-widget-state">{}</script>
 <script>(() => {
@@ -4294,7 +4293,17 @@ for(const [lang,selector]of [['en','#td-english .tde-tabs'],['jp','#compass-v2 a
 })();
 </script><script id="td-kanji-mobile-tabs-script">(function(){
 'use strict';
-const mobile=matchMedia('(max-width:760px)');let serial=0;
+const mobile=matchMedia('(max-width:760px)');let serial=0,observers=[];
+function cleanConflictArtifact(){
+  if(!document.body)return;
+  [...document.body.childNodes].forEach(node=>{
+    if(node.nodeType===Node.TEXT_NODE&&node.textContent.length<240&&/<<<<<<<\s*HEAD|>>>>>>>\s*[0-9a-f]{7,40}/i.test(node.textContent))node.remove();
+  });
+}
+function syncNao(){
+  const active=mobile.matches&&[...document.querySelectorAll('.kanji-card-grid')].some(grid=>grid.getClientRects().length>0);
+  document.documentElement.classList.toggle('kt-mobile-kanji',active);
+}
 function enhanceCard(card){
  if(!card.dataset.ktReady){
   card.dataset.ktReady='true';
@@ -4323,17 +4332,42 @@ function enhanceCard(card){
  if(stroke.querySelector('.ks-open'))note?.remove();
 }
 function enhanceGrid(grid){
- const cards=[...grid.querySelectorAll('.study-kanji-card')];cards.forEach(enhanceCard);
+ if(!mobile.matches)return;
+ const cards=[...grid.querySelectorAll('.study-kanji-card')];
+ cards.forEach((card,index)=>{if(!card.dataset.ktOrder)card.dataset.ktOrder=String(index);enhanceCard(card);});
  const fresh=cards.filter(c=>!c.closest('.kt-group'));
  if(fresh.length){const groups=new Map();for(const c of fresh){const name=c.querySelector('.kanji-card-group')?.textContent.trim()||'Kanji lainnya';if(!groups.has(name)){const group=document.createElement('details');group.className='kt-group';group.open=true;const summary=document.createElement('summary');summary.className='kt-group-title';const title=document.createElement('span');title.textContent=name;const count=document.createElement('small');summary.append(title,count);const body=document.createElement('div');body.className='kt-group-cards';group.append(summary,body);grid.insertBefore(group,c);groups.set(name,group);}groups.get(name).querySelector('.kt-group-cards').append(c);}
   for(const g of groups.values())g.querySelector('summary small').textContent=g.querySelectorAll('.study-kanji-card').length+' kanji';
  }
 }
-function init(){document.querySelectorAll('.kanji-card-grid').forEach(grid=>{let pending=false;enhanceGrid(grid);new MutationObserver(()=>{if(pending)return;pending=true;queueMicrotask(()=>{pending=false;enhanceGrid(grid);});}).observe(grid,{childList:true,subtree:true});});}
-mobile.addEventListener('change',()=>{if(!mobile.matches)document.querySelectorAll('.kt-group').forEach(g=>g.open=true);});
+function restoreCard(card){
+ if(!card.dataset.ktReady)return;
+ const center=card.querySelector('.kanji-card-center'),panels=[...card.querySelectorAll(':scope > .kt-panel')];
+ const readings=panels[0]?[...panels[0].children].filter(n=>!n.classList.contains('kt-note')):[];
+ const examples=panels[1]?[...panels[1].children].filter(n=>!n.classList.contains('kt-note')):[];
+ const strokes=panels[2]?[...panels[2].children].filter(n=>!n.classList.contains('kt-note')):[];
+ const open=strokes.filter(n=>n.classList.contains('ks-open')),players=strokes.filter(n=>n.classList.contains('ks-player'));
+ open.forEach(n=>center?.append(n));
+ card.querySelector(':scope > .kt-tabs')?.remove();panels.forEach(n=>n.remove());
+ const footer=card.querySelector(':scope > .kanji-card-footer');
+ if(center)center.after(...players,...readings,...examples,...(footer?[footer]:[]));
+ delete card.dataset.ktReady;delete card.dataset.ktTab;
+}
+function restoreGrid(grid){
+ const cards=[...grid.querySelectorAll('.study-kanji-card')].sort((a,b)=>(+a.dataset.ktOrder||0)-(+b.dataset.ktOrder||0));
+ cards.forEach(restoreCard);const frag=document.createDocumentFragment();cards.forEach(card=>{delete card.dataset.ktOrder;frag.append(card);});grid.replaceChildren(frag);
+}
+function applyMode(){
+ document.querySelectorAll('.kanji-card-grid').forEach(grid=>mobile.matches?enhanceGrid(grid):restoreGrid(grid));
+ syncNao();
+}
+function init(){
+ cleanConflictArtifact();
+ document.querySelectorAll('.kanji-card-grid').forEach(grid=>{let pending=false;const observer=new MutationObserver(()=>{if(pending)return;pending=true;queueMicrotask(()=>{pending=false;if(mobile.matches)enhanceGrid(grid);syncNao();});});observer.observe(grid,{childList:true});observers.push(observer);});
+ applyMode();mobile.addEventListener('change',applyMode);document.addEventListener('click',()=>setTimeout(syncNao,0),true);
+}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
-})();
-</script></body>
+})();</script></body>
 <!-- kanji-data license
 MIT License
 
