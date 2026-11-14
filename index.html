@@ -1485,52 +1485,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
   },true);
 })();
 </script>
-<style id="td-kanji-mobile-tabs">/* Mobile kanji: detail tabs + thematic groups. Desktop keeps the native grid. */
-#compass-v2 .kt-tabs,
-#compass-v2 .kt-group-title,
-#compass-v2 .kt-note{display:none}
-
-@media screen and (max-width:760px){
-  #compass-v2 .kanji-card-grid{display:block!important}
-  #compass-v2 .kt-group{display:block;margin:0 0 16px;border:1px solid var(--td-line,#494056);border-radius:15px;overflow:hidden;background:var(--td-panel,var(--panel))}
-  #compass-v2 .kt-group-title{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:12px 14px;cursor:pointer;background:var(--td-soft,#41324e);color:var(--td-text,var(--text));font-weight:650;font-size:14px;list-style:none}
-  #compass-v2 .kt-group-title::-webkit-details-marker{display:none}
-  #compass-v2 .kt-group-title::after{content:'⌄';font-size:18px}
-  #compass-v2 .kt-group[open]>.kt-group-title::after{content:'⌃'}
-  #compass-v2 .kt-group-title small{margin-left:auto;font-size:11px;font-weight:400}
-  #compass-v2 .kt-group-cards{display:grid;gap:12px;padding:12px}
-  #compass-v2 .kt-group:not([open])>.kt-group-cards{display:none}
-  #compass-v2 .study-kanji-card{min-height:0!important;height:auto!important;padding:14px!important;border-radius:12px!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;gap:12px!important}
-  #compass-v2 .kanji-card-top{margin:0!important;gap:8px!important}
-  #compass-v2 .kanji-card-eyebrow{font-size:10px!important;letter-spacing:.07em!important}
-  #compass-v2 .kanji-card-id,#compass-v2 .kanji-level-tag{font-size:10px!important}
-  #compass-v2 .kanji-card-center{display:grid!important;grid-template-columns:70px minmax(0,1fr)!important;grid-template-rows:auto auto!important;column-gap:14px!important;row-gap:4px!important;text-align:left!important;padding:0!important;margin:0!important;min-height:0!important}
-  #compass-v2 .kanji-card-symbol{grid-row:1/3;font-size:58px!important;line-height:1.2!important;width:70px!important;height:76px!important;min-height:0!important;display:flex;align-items:center;justify-content:center;margin:0!important}
-  #compass-v2 .kanji-card-meaning{font-size:18px!important;line-height:1.4!important;align-self:end;margin:0!important;overflow-wrap:anywhere}
-  #compass-v2 .kanji-strokes{font-size:12px!important;margin:0!important;align-self:start}
-  #compass-v2 .kt-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;padding:3px;border-radius:10px;background:var(--td-soft,#33263f)}
-  #compass-v2 .kt-tabs button{min-height:44px!important;padding:8px 3px!important;font:600 13px/1.3 system-ui!important;border:0!important;border-radius:8px!important;background:transparent!important;color:var(--td-text,var(--text))!important}
-  #compass-v2 .kt-tabs button[aria-selected=true]{background:#7953a1!important;color:white!important}
-  #compass-v2 .kt-panel{display:none;min-width:0}
-  #compass-v2 .study-kanji-card[data-kt-tab="0"]>[data-kt-panel="0"],
-  #compass-v2 .study-kanji-card[data-kt-tab="1"]>[data-kt-panel="1"],
-  #compass-v2 .study-kanji-card[data-kt-tab="2"]>[data-kt-panel="2"]{display:block}
-  #compass-v2 .kanji-card-readings{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;margin:0!important;padding:8px 0!important}
-  #compass-v2 .kanji-card-readings h4{font-size:10px!important;margin:0 0 8px!important}
-  #compass-v2 .kana-reading{font-size:21px!important;line-height:1.7!important;margin:0!important;overflow-wrap:anywhere}
-  #compass-v2 .romaji-reading{font-size:12px!important;margin:4px 0!important;overflow-wrap:anywhere}
-  #compass-v2 .kanji-example-box{padding:12px!important;margin:0!important;border-radius:10px!important}
-  #compass-v2 .example-sentence{font-size:21px!important;line-height:1.8!important;margin:6px 0!important}
-  #compass-v2 .example-kana,#compass-v2 .example-translation,#compass-v2 .kanji-example-word{font-size:14px!important;line-height:1.65!important;overflow-wrap:anywhere}
-  #compass-v2 .kanji-card-footer{margin:0!important;padding-top:10px!important;gap:8px!important;flex-wrap:wrap!important}
-  #compass-v2 .kanji-card-footer label{font-size:11px!important}
-  #compass-v2 .kanji-card-footer select{min-height:44px!important;max-width:100%;font-size:13px!important}
-  #compass-v2 .kanji-card-group{font-size:11px!important}
-  #compass-v2 .kt-note{display:block;font-size:14px;line-height:1.7;padding:8px 0}
-  #compass-v2 .kt-panel .ks-open{min-height:44px;font-size:13px;margin:0 0 10px}
-  #compass-v2 .kt-panel .ks-canvas{width:min(100%,220px)!important;max-height:220px;margin:auto}
-  html.kt-mobile-kanji #nao-demo{display:none!important}
-}</style></head>
+</head>
 <body>
 <script type="application/json" id="codex-visualization-widget-state">{}</script>
 <script>(() => {
@@ -4315,6 +4270,10 @@ function enhanceCard(card){
   const center=card.querySelector('.kanji-card-center');center.after(tabs);
   card.querySelectorAll('.kanji-card-readings').forEach(n=>panels[0].append(n));
   card.querySelectorAll('.kanji-example-box,.kanji-example-word').forEach(n=>panels[1].append(n));
+  const readingSummary=document.createElement('div');readingSummary.className='kt-reading-summary';
+  const meaningLabel=document.createElement('strong');meaningLabel.textContent='Arti';readingSummary.append(meaningLabel,document.createTextNode(center.querySelector('.kanji-card-meaning')?.textContent||''));
+  const sentence=panels[1].querySelector('.example-sentence'),translation=panels[1].querySelector('.example-translation');
+  if(sentence)readingSummary.append(sentence.cloneNode(true));if(translation)readingSummary.append(translation.cloneNode(true));panels[0].append(readingSummary);
   if(!panels[1].children.length){const p=document.createElement('p');p.className='kt-note';p.textContent='Contoh penggunaan belum tersedia untuk kanji ini.';panels[1].append(p);}
   function choose(i,focus){
    card.dataset.ktTab=String(i);[...tabs.children].forEach((b,j)=>{b.setAttribute('aria-selected',String(i===j));b.tabIndex=i===j?0:-1;});
@@ -4324,6 +4283,12 @@ function enhanceCard(card){
   tabs.addEventListener('click',e=>{const i=[...tabs.children].indexOf(e.target.closest('button'));if(i>=0)choose(i,false);});
   tabs.addEventListener('keydown',e=>{let i=Number(card.dataset.ktTab);if(e.key==='ArrowRight')i=(i+1)%3;else if(e.key==='ArrowLeft')i=(i+2)%3;else if(e.key==='Home')i=0;else if(e.key==='End')i=2;else return;e.preventDefault();choose(i,true);});choose(0,false);
   const footer=card.querySelector('.kanji-card-footer');if(footer)card.append(footer);
+  const pick=document.createElement('button');pick.type='button';pick.className='kt-pick';
+  const glyph=document.createElement('span');glyph.className='kt-mini-glyph';glyph.textContent=center.querySelector('.kanji-card-symbol')?.textContent||'';
+  const title=document.createElement('span');title.className='kt-mini-title';title.textContent=center.querySelector('.kanji-card-meaning')?.textContent||'';
+  const hint=document.createElement('span');hint.className='kt-mini-readings';hint.textContent=[...card.querySelectorAll('.kana-reading')].map(n=>n.textContent.trim()).join(' · ');
+  const arrow=document.createElement('span');arrow.textContent='›';arrow.setAttribute('aria-hidden','true');pick.append(glyph,title,hint,arrow);card.prepend(pick);
+  pick.addEventListener('click',()=>{const group=card.closest('.kt-group');group?.querySelectorAll('.study-kanji-card').forEach(c=>{const active=c===card;c.classList.toggle('kt-active',active);c.querySelector('.kt-pick')?.setAttribute('aria-expanded',String(active));});});
  }
  const stroke=card.querySelector('[data-kt-panel="2"]');
  card.querySelectorAll('.ks-open,.ks-player').forEach(n=>{if(n.parentElement!==stroke)stroke.append(n);});
@@ -4337,13 +4302,17 @@ function enhanceGrid(grid){
  cards.forEach((card,index)=>{if(!card.dataset.ktOrder)card.dataset.ktOrder=String(index);enhanceCard(card);});
  const fresh=cards.filter(c=>!c.closest('.kt-group'));
  if(fresh.length){const groups=new Map();for(const c of fresh){const name=c.querySelector('.kanji-card-group')?.textContent.trim()||'Kanji lainnya';if(!groups.has(name)){const group=document.createElement('details');group.className='kt-group';group.open=true;const summary=document.createElement('summary');summary.className='kt-group-title';const title=document.createElement('span');title.textContent=name;const count=document.createElement('small');summary.append(title,count);const body=document.createElement('div');body.className='kt-group-cards';group.append(summary,body);grid.insertBefore(group,c);groups.set(name,group);}groups.get(name).querySelector('.kt-group-cards').append(c);}
-  for(const g of groups.values())g.querySelector('summary small').textContent=g.querySelectorAll('.study-kanji-card').length+' kanji';
+  for(const g of groups.values()){
+   g.querySelector('summary small').textContent=g.querySelectorAll('.study-kanji-card').length+' kanji';
+   const first=g.querySelector('.study-kanji-card');first?.classList.add('kt-active');
+   g.querySelectorAll('.kt-pick').forEach(b=>b.setAttribute('aria-expanded',String(b.closest('.study-kanji-card')===first)));
+  }
  }
 }
 function restoreCard(card){
  if(!card.dataset.ktReady)return;
  const center=card.querySelector('.kanji-card-center'),panels=[...card.querySelectorAll(':scope > .kt-panel')];
- const readings=panels[0]?[...panels[0].children].filter(n=>!n.classList.contains('kt-note')):[];
+ const readings=panels[0]?[...panels[0].children].filter(n=>!n.classList.contains('kt-note')&&!n.classList.contains('kt-reading-summary')):[];
  const examples=panels[1]?[...panels[1].children].filter(n=>!n.classList.contains('kt-note')):[];
  const strokes=panels[2]?[...panels[2].children].filter(n=>!n.classList.contains('kt-note')):[];
  const open=strokes.filter(n=>n.classList.contains('ks-open')),players=strokes.filter(n=>n.classList.contains('ks-player'));
@@ -4352,6 +4321,7 @@ function restoreCard(card){
  const footer=card.querySelector(':scope > .kanji-card-footer');
  if(center)center.after(...players,...readings,...examples,...(footer?[footer]:[]));
  delete card.dataset.ktReady;delete card.dataset.ktTab;
+ card.querySelector(':scope > .kt-pick')?.remove();card.classList.remove('kt-active');
 }
 function restoreGrid(grid){
  const cards=[...grid.querySelectorAll('.study-kanji-card')].sort((a,b)=>(+a.dataset.ktOrder||0)-(+b.dataset.ktOrder||0));
@@ -4367,7 +4337,92 @@ function init(){
  applyMode();mobile.addEventListener('change',applyMode);document.addEventListener('click',()=>setTimeout(syncNao,0),true);
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
-})();</script></body>
+})();</script><style id="td-kanji-mobile-tabs">/* Mobile kanji: detail tabs + thematic groups. Desktop keeps the native grid. */
+#compass-v2 .kt-tabs,
+#compass-v2 .kt-group-title,
+#compass-v2 .kt-note,#compass-v2 .kt-pick{display:none}
+
+@media screen and (max-width:760px){
+  #compass-v2 .kanji-card-grid{display:block!important}
+  #compass-v2 .kt-group{display:block;margin:0 0 16px;border:1px solid var(--td-line,#494056);border-radius:15px;overflow:hidden;background:var(--td-panel,var(--panel))}
+  #compass-v2 .kt-group-title{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:12px 14px;cursor:pointer;background:var(--td-soft,#41324e);color:var(--td-text,var(--text));font-weight:650;font-size:14px;list-style:none}
+  #compass-v2 .kt-group-title::-webkit-details-marker{display:none}
+  #compass-v2 .kt-group-title::after{content:'⌄';font-size:18px}
+  #compass-v2 .kt-group[open]>.kt-group-title::after{content:'⌃'}
+  #compass-v2 .kt-group-title small{margin-left:auto;font-size:11px;font-weight:400}
+  #compass-v2 .kt-group-cards{display:grid;gap:12px;padding:12px}
+  #compass-v2 .kt-group:not([open])>.kt-group-cards{display:none}
+  #compass-v2 .study-kanji-card{min-height:0!important;height:auto!important;padding:14px!important;border-radius:12px!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;gap:12px!important}
+  #compass-v2 .kanji-card-top{margin:0!important;gap:8px!important}
+  #compass-v2 .kanji-card-eyebrow{font-size:10px!important;letter-spacing:.07em!important}
+  #compass-v2 .kanji-card-id,#compass-v2 .kanji-level-tag{font-size:10px!important}
+  #compass-v2 .kanji-card-center{display:grid!important;grid-template-columns:70px minmax(0,1fr)!important;grid-template-rows:auto auto!important;column-gap:14px!important;row-gap:4px!important;text-align:left!important;padding:0!important;margin:0!important;min-height:0!important}
+  #compass-v2 .kanji-card-symbol{grid-row:1/3;font-size:58px!important;line-height:1.2!important;width:70px!important;height:76px!important;min-height:0!important;display:flex;align-items:center;justify-content:center;margin:0!important}
+  #compass-v2 .kanji-card-meaning{font-size:18px!important;line-height:1.4!important;align-self:end;margin:0!important;overflow-wrap:anywhere}
+  #compass-v2 .kanji-strokes{font-size:12px!important;margin:0!important;align-self:start}
+  #compass-v2 .kt-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;padding:3px;border-radius:10px;background:var(--td-soft,#33263f)}
+  #compass-v2 .kt-tabs button{min-height:44px!important;padding:8px 3px!important;font:600 13px/1.3 system-ui!important;border:0!important;border-radius:8px!important;background:transparent!important;color:var(--td-text,var(--text))!important}
+  #compass-v2 .kt-tabs button[aria-selected=true]{background:#7953a1!important;color:white!important}
+  #compass-v2 .kt-panel{display:none;min-width:0}
+  #compass-v2 .study-kanji-card[data-kt-tab="0"]>[data-kt-panel="0"],
+  #compass-v2 .study-kanji-card[data-kt-tab="1"]>[data-kt-panel="1"],
+  #compass-v2 .study-kanji-card[data-kt-tab="2"]>[data-kt-panel="2"]{display:block}
+  #compass-v2 .kanji-card-readings{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;margin:0!important;padding:8px 0!important}
+  #compass-v2 .kanji-card-readings h4{font-size:10px!important;margin:0 0 8px!important}
+  #compass-v2 .kana-reading{font-size:21px!important;line-height:1.7!important;margin:0!important;overflow-wrap:anywhere}
+  #compass-v2 .romaji-reading{font-size:12px!important;margin:4px 0!important;overflow-wrap:anywhere}
+  #compass-v2 .kanji-example-box{padding:12px!important;margin:0!important;border-radius:10px!important}
+  #compass-v2 .example-sentence{font-size:21px!important;line-height:1.8!important;margin:6px 0!important}
+  #compass-v2 .example-kana,#compass-v2 .example-translation,#compass-v2 .kanji-example-word{font-size:14px!important;line-height:1.65!important;overflow-wrap:anywhere}
+  #compass-v2 .kanji-card-footer{margin:0!important;padding-top:10px!important;gap:8px!important;flex-wrap:wrap!important}
+  #compass-v2 .kanji-card-footer label{font-size:11px!important}
+  #compass-v2 .kanji-card-footer select{min-height:44px!important;max-width:100%;font-size:13px!important}
+  #compass-v2 .kanji-card-group{font-size:11px!important}
+  #compass-v2 .kt-note{display:block;font-size:14px;line-height:1.7;padding:8px 0}
+  #compass-v2 .kt-panel .ks-open{min-height:44px;font-size:13px;margin:0 0 10px}
+  #compass-v2 .kt-panel .ks-canvas{width:min(100%,220px)!important;max-height:220px;margin:auto}
+  html.kt-mobile-kanji #nao-demo{display:none!important}
+}
+
+@media screen and (max-width:760px){
+  #compass-v2 .kt-group{border:0;background:transparent;overflow:visible;margin-bottom:22px}
+  #compass-v2 .kt-group-title{border:1px solid var(--td-line);border-radius:12px;margin-bottom:10px;background:var(--td-soft);padding:13px 14px}
+  #compass-v2 .kt-group-cards{padding:0;gap:9px}
+  #compass-v2 .kt-group .study-kanji-card{max-width:none!important;width:100%!important;margin:0!important;padding:0!important;border-radius:14px!important;gap:0!important;overflow:hidden;min-height:0!important}
+  #compass-v2 .kt-group .study-kanji-card>:not(.kt-pick){display:none!important}
+  #compass-v2 .kt-group .study-kanji-card>.kt-pick{display:grid!important;grid-template-columns:48px minmax(55px,1fr) minmax(0,1.2fr) 12px;gap:10px;align-items:center;width:100%;min-height:76px;padding:12px!important;border:0!important;border-radius:0!important;background:transparent!important;color:var(--td-text)!important;text-align:left;cursor:pointer}
+  #compass-v2 .kt-mini-glyph{display:grid;place-items:center;width:48px;height:50px;border-radius:10px;background:var(--td-soft);font:32px/1.3 CompassJP,system-ui!important}
+  #compass-v2 .kt-mini-title{font-size:14px;font-weight:650;overflow-wrap:anywhere}
+  #compass-v2 .kt-mini-readings{font:12px/1.7 CompassJP,system-ui;overflow-wrap:anywhere;color:var(--td-muted)}
+  #compass-v2 .kt-group .study-kanji-card.kt-active>.kt-pick{display:none!important}
+  #compass-v2 .kt-group .study-kanji-card.kt-active>.kanji-card-top{display:flex!important;padding:12px 14px 0!important;margin:0!important}
+  #compass-v2 .kt-group .kt-active .kanji-card-eyebrow{display:none!important}
+  #compass-v2 .kt-group .study-kanji-card.kt-active>.kanji-card-center{display:grid!important;grid-template-columns:76px minmax(0,1fr)!important;grid-template-rows:auto auto!important;align-content:center!important;gap:3px 14px!important;padding:12px 14px 16px!important;min-height:0!important;height:auto!important}
+  #compass-v2 .kt-group .kt-active .kanji-card-symbol{font-size:50px!important;line-height:1.2!important;width:76px!important;height:80px!important;min-height:0!important;padding:0!important;grid-column:1!important;grid-row:1/3!important;background:var(--td-soft)!important;border:1px solid var(--td-line);border-radius:12px;transform:none!important}
+  #compass-v2 .kt-group .kt-active h3.kanji-card-meaning{grid-column:2!important;grid-row:1!important;min-height:0!important;font-size:20px!important;line-height:1.4!important;align-self:end!important}
+  #compass-v2 .kt-group .kt-active .kanji-strokes{grid-column:2!important;grid-row:2!important;font-size:12px!important;align-self:start!important}
+  #compass-v2 .kt-group .study-kanji-card.kt-active>.kt-tabs{display:grid!important;border-radius:0;border-top:1px solid var(--td-line);border-bottom:1px solid var(--td-line);padding:4px;margin:0!important}
+  #compass-v2 .kt-group .kt-tabs button{min-height:42px!important;font-size:13px!important}
+  #compass-v2 .kt-group .kt-tabs button[aria-selected=true]{background:var(--td-primary,#9b78cf)!important;color:var(--td-on-primary,#fff)!important}
+  #compass-v2 .kt-group .study-kanji-card.kt-active[data-kt-tab="0"]>[data-kt-panel="0"],
+  #compass-v2 .kt-group .study-kanji-card.kt-active[data-kt-tab="1"]>[data-kt-panel="1"],
+  #compass-v2 .kt-group .study-kanji-card.kt-active[data-kt-tab="2"]>[data-kt-panel="2"]{display:block!important;padding:14px!important}
+  #compass-v2 .kt-group .kanji-card-readings{display:grid!important;grid-template-columns:1fr!important;padding:0!important;gap:12px!important}
+  #compass-v2 .kt-group .kanji-card-readings>section{display:grid;grid-template-columns:96px minmax(0,1fr);gap:2px 12px;align-items:start}
+  #compass-v2 .kt-group .kanji-card-readings h4{grid-column:1;grid-row:1/3;margin:0!important;background:var(--td-soft);border-radius:6px;padding:6px!important;font-size:10px!important;line-height:1.5!important;letter-spacing:0!important}
+  #compass-v2 .kt-group .kana-reading{grid-column:2;font-size:19px!important;line-height:1.5!important}
+  #compass-v2 .kt-group .romaji-reading{grid-column:2;font-size:11px!important;margin:1px 0!important}
+  #compass-v2 .kt-reading-summary{border-top:1px solid var(--td-line);padding-top:12px;margin-top:12px;font-size:14px;line-height:1.7}
+  #compass-v2 .kt-reading-summary strong{font-size:12px;color:var(--td-muted);margin-right:14px}
+  #compass-v2 .kt-reading-summary .example-sentence{margin:10px 0 2px!important}
+  #compass-v2 .kt-reading-summary .example-translation{font-size:12px!important}
+  #compass-v2 .kt-group .kanji-example-box{min-height:0!important;margin:0!important;padding:10px!important}
+  #compass-v2 .kt-group .example-sentence{font-size:19px!important}
+  #compass-v2 .kt-group .study-kanji-card.kt-active>.kanji-card-footer{display:flex!important;margin:0!important;padding:10px 14px!important;border-top:1px solid var(--td-line);gap:8px!important}
+  #compass-v2 .kt-group .kanji-card-footer>.kanji-card-group{display:none!important}
+  #compass-v2 .kt-group .kanji-card-footer label{width:100%;display:flex!important;align-items:center;justify-content:space-between;gap:10px}
+  #compass-v2 .kt-group .kanji-card-footer select{width:auto!important;max-width:65%;min-height:40px!important;font-size:12px!important;padding:8px!important}
+}</style></body>
 <!-- kanji-data license
 MIT License
 
