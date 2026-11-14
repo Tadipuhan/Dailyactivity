@@ -1427,6 +1427,106 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 #compass-v2[data-recovery-menu=open] .td-mobile-recovery{z-index:1201;width:min(320px,88vw)}
 #compass-v2[data-recovery-menu=open] .app>aside nav{display:flex!important;flex-direction:column!important;align-items:stretch!important}
 }
+</style><style id="td-desktop-access-style">#td-desktop-access-notice{box-sizing:border-box;position:fixed;inset:0;margin:auto;width:min(460px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;padding:0;border:1px solid #c5addb;border-radius:22px;background:#faf7ff;color:#30213f;box-shadow:0 24px 90px #11091e66;font:16px/1.65 system-ui,sans-serif;text-align:left;z-index:2147483647;color-scheme:light}
+#td-desktop-access-notice::backdrop{background:#170e27a6;backdrop-filter:blur(4px)}
+#td-desktop-access-notice .td-access-content{padding:30px}
+#td-desktop-access-notice .td-access-badge{display:inline-block;font-size:12px;font-weight:650;color:#714895;background:#eee3f7;padding:5px 10px;border-radius:99px}
+#td-desktop-access-notice h2{color:#352043;font:700 25px/1.3 system-ui,sans-serif;margin:18px 0 12px}
+#td-desktop-access-notice p{margin:10px 0;font:400 15px/1.7 system-ui,sans-serif;color:#4b3d58}
+#td-desktop-access-notice button{display:block;width:100%;min-height:46px;padding:12px 16px;margin-top:24px;border:1px solid #714895;border-radius:12px;background:#714895;color:#fff;font:600 14px/1.5 system-ui,sans-serif;cursor:pointer}
+#td-desktop-access-notice button:focus-visible{outline:3px solid #b18acb;outline-offset:4px}
+@media print{#td-desktop-access-notice{display:none!important}}
+</style>
+<script id="td-desktop-access-guard">(function installTadicobaDesktopGuard(){
+  'use strict';
+  if(window.__tadicobaDesktopGuardInstalled)return;
+  window.__tadicobaDesktopGuardInstalled=true;
+  var attempts=0,notice=null,reasonNode=null,detailNode=null,previousFocus=null;
+  function desktop(){return window.matchMedia && window.matchMedia('(any-hover: hover) and (any-pointer: fine)').matches;}
+  function createNotice(){
+    if(notice)return;
+    notice=document.createElement('dialog');notice.id='td-desktop-access-notice';
+    notice.setAttribute('aria-labelledby','td-access-title');
+    notice.setAttribute('aria-describedby','td-access-reason td-access-detail');
+    notice.innerHTML='<div class="td-access-content"><span class="td-access-badge">Tadicoba · Pemberitahuan</span><h2 id="td-access-title">Akses ini dibatasi</h2><p id="td-access-reason"></p><p id="td-access-detail"></p><button type="button" autofocus>Mengerti, lanjut belajar</button></div>';
+    document.body.appendChild(notice);
+    reasonNode=notice.querySelector('#td-access-reason');detailNode=notice.querySelector('#td-access-detail');
+    notice.querySelector('button').addEventListener('click',function(){
+      if(typeof notice.close==='function')notice.close();else notice.removeAttribute('open');
+    });
+    notice.addEventListener('close',function(){if(previousFocus && previousFocus.isConnected)previousFocus.focus();});
+  }
+  function deny(event,reason){
+    event.preventDefault();event.stopImmediatePropagation();attempts++;
+    function show(){
+      createNotice();
+      reasonNode.textContent=reason;
+      detailNode.textContent=attempts>1?'Permintaan kembali ditolak. Silakan lanjutkan belajar melalui menu yang tersedia.':'Silakan gunakan menu belajar yang tersedia. Pembatasan ini berlaku untuk pelajaran Jepang dan Inggris.';
+      if(!notice.open){
+        previousFocus=document.activeElement;
+        if(typeof notice.showModal==='function')notice.showModal();else notice.setAttribute('open','');
+      }
+      notice.querySelector('button').focus();
+    }
+    if(document.body)show();else document.addEventListener('DOMContentLoaded',show,{once:true});
+  }
+  window.addEventListener('contextmenu',function(event){
+    if(desktop())deny(event,'Menu klik kanan dinonaktifkan pada tampilan desktop Tadicoba.');
+  },true);
+  window.addEventListener('keydown',function(event){
+    if(!desktop())return;
+    var key=String(event.key||'').toLowerCase();
+    var inspect=key==='f12' || (event.ctrlKey && event.shiftKey && ['i','j','c','k'].includes(key)) || (event.metaKey && event.altKey && ['i','j','c'].includes(key));
+    var source=key==='u' && !event.shiftKey && ((event.ctrlKey && !event.altKey) || event.metaKey);
+    var menu=key==='contextmenu'||(event.shiftKey && key==='f10');
+    if(inspect)deny(event,'Pintasan Inspect / Developer Tools dinonaktifkan di halaman ini.');
+    else if(source)deny(event,'Pintasan untuk melihat sumber halaman dinonaktifkan di halaman ini.');
+    else if(menu)deny(event,'Menu klik kanan dinonaktifkan pada tampilan desktop Tadicoba.');
+  },true);
+})();
+</script>
+<style id="td-kanji-mobile-tabs">/* Desktop keeps the original card presentation. */
+#compass-v2 .kt-tabs{display:none}
+#compass-v2 .kt-panel,#compass-v2 .kt-group,#compass-v2 .kt-group-cards{display:contents}
+#compass-v2 .kt-group-title,#compass-v2 .kt-note{display:none}
+@media screen and (max-width:760px){
+#compass-v2 .kanji-card-grid{display:block!important}
+#compass-v2 .kt-group{display:block;margin:0 0 16px;border:1px solid var(--td-line,#494056);border-radius:15px;overflow:hidden;background:var(--td-panel,var(--panel))}
+#compass-v2 .kt-group-title{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:12px 14px;cursor:pointer;background:var(--td-soft,#41324e);color:var(--td-text,var(--text));font-weight:650;font-size:14px;list-style:none}
+#compass-v2 .kt-group-title::-webkit-details-marker{display:none}
+#compass-v2 .kt-group-title::after{content:'⌄';font-size:18px}
+#compass-v2 .kt-group[open]>.kt-group-title::after{content:'⌃'}
+#compass-v2 .kt-group-title small{margin-left:auto;font-size:11px;font-weight:400}
+#compass-v2 .kt-group-cards{display:grid;gap:12px;padding:12px}
+#compass-v2 .kt-group:not([open])>.kt-group-cards{display:none}
+#compass-v2 .study-kanji-card{min-height:0!important;height:auto!important;padding:14px!important;border-radius:12px!important;display:flex!important;flex-direction:column!important;gap:12px!important}
+#compass-v2 .kanji-card-top{margin:0!important;gap:8px!important}
+#compass-v2 .kanji-card-eyebrow{font-size:10px!important;letter-spacing:.07em!important}
+#compass-v2 .kanji-card-id,#compass-v2 .kanji-level-tag{font-size:10px!important}
+#compass-v2 .kanji-card-center{display:grid!important;grid-template-columns:70px minmax(0,1fr)!important;grid-template-rows:auto auto!important;column-gap:14px!important;row-gap:4px!important;text-align:left!important;padding:0!important;margin:0!important;min-height:0!important}
+#compass-v2 .kanji-card-symbol{grid-row:1/3;font-size:58px!important;line-height:1.2!important;width:70px!important;height:76px!important;min-height:0!important;display:flex;align-items:center;justify-content:center;margin:0!important}
+#compass-v2 .kanji-card-meaning{font-size:18px!important;line-height:1.4!important;align-self:end;margin:0!important;overflow-wrap:anywhere}
+#compass-v2 .kanji-strokes{font-size:12px!important;margin:0!important;align-self:start}
+#compass-v2 .kt-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;padding:3px;border-radius:10px;background:var(--td-soft,#33263f)}
+#compass-v2 .kt-tabs button{min-height:44px!important;padding:8px 3px!important;font:600 13px/1.3 system-ui!important;border:0!important;border-radius:8px!important;background:transparent!important;color:var(--td-text,var(--text))!important}
+#compass-v2 .kt-tabs button[aria-selected=true]{background:#7953a1!important;color:white!important}
+#compass-v2 .kt-panel{display:none;min-width:0}
+#compass-v2 .study-kanji-card[data-kt-tab="0"]>[data-kt-panel="0"],#compass-v2 .study-kanji-card[data-kt-tab="1"]>[data-kt-panel="1"],#compass-v2 .study-kanji-card[data-kt-tab="2"]>[data-kt-panel="2"]{display:block}
+#compass-v2 .kanji-card-readings{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;margin:0!important;padding:8px 0!important}
+#compass-v2 .kanji-card-readings h4{font-size:10px!important;margin:0 0 8px!important}
+#compass-v2 .kana-reading{font-size:21px!important;line-height:1.7!important;margin:0!important;overflow-wrap:anywhere}
+#compass-v2 .romaji-reading{font-size:12px!important;margin:4px 0!important;overflow-wrap:anywhere}
+#compass-v2 .kanji-example-box{padding:12px!important;margin:0!important;border-radius:10px!important}
+#compass-v2 .example-sentence{font-size:21px!important;line-height:1.8!important;margin:6px 0!important}
+#compass-v2 .example-kana,#compass-v2 .example-translation,#compass-v2 .kanji-example-word{font-size:14px!important;line-height:1.65!important;overflow-wrap:anywhere}
+#compass-v2 .kanji-card-footer{margin:0!important;padding-top:10px!important;gap:8px!important;flex-wrap:wrap!important}
+#compass-v2 .kanji-card-footer label{font-size:11px!important}
+#compass-v2 .kanji-card-footer select{min-height:44px!important;max-width:100%;font-size:13px!important}
+#compass-v2 .kanji-card-group{font-size:11px!important}
+#compass-v2 .kt-note{display:block;font-size:14px;line-height:1.7;padding:8px 0}
+#compass-v2 .kt-panel .ks-open{min-height:44px;font-size:13px;margin:0 0 10px}
+#compass-v2 .kt-panel .ks-canvas{width:min(100%,220px)!important;max-height:220px;margin:auto}
+}
 </style></head>
 <body>
 <script type="application/json" id="codex-visualization-widget-state">{}</script>
@@ -4187,6 +4287,47 @@ for(const [lang,selector]of [['en','#td-english .tde-tabs'],['jp','#compass-v2 a
   button.addEventListener('click',function(){if(root.getAttribute('data-recovery-menu')==='open'){close();return;}root.setAttribute('data-recovery-menu','open');side.inert=false;side.removeAttribute('aria-hidden');button.setAttribute('aria-expanded','true');button.textContent='✕ Tutup';});
   side.addEventListener('click',function(e){if(e.target.closest('button[data-page]'))close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script><script id="td-kanji-mobile-tabs-script">(function(){
+'use strict';
+const mobile=matchMedia('(max-width:760px)');let serial=0;
+function enhanceCard(card){
+ if(!card.dataset.ktReady){
+  card.dataset.ktReady='true';
+  const id='kt-'+(++serial),tabs=document.createElement('div');tabs.className='kt-tabs';tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','Detail kanji '+card.querySelector('.kanji-card-symbol')?.textContent);
+  const names=['Bacaan','Contoh','Goresan'],panels=names.map((name,i)=>{
+   const p=document.createElement('section');p.className='kt-panel';p.dataset.ktPanel=String(i);p.id=id+'-panel-'+i;p.setAttribute('role','tabpanel');p.setAttribute('aria-labelledby',id+'-tab-'+i);card.append(p);
+   const b=document.createElement('button');b.type='button';b.id=id+'-tab-'+i;b.textContent=name;b.setAttribute('role','tab');b.setAttribute('aria-controls',p.id);tabs.append(b);return p;
+  });
+  const center=card.querySelector('.kanji-card-center');center.after(tabs);
+  card.querySelectorAll('.kanji-card-readings').forEach(n=>panels[0].append(n));
+  card.querySelectorAll('.kanji-example-box,.kanji-example-word').forEach(n=>panels[1].append(n));
+  if(!panels[1].children.length){const p=document.createElement('p');p.className='kt-note';p.textContent='Contoh penggunaan belum tersedia untuk kanji ini.';panels[1].append(p);}
+  function choose(i,focus){
+   card.dataset.ktTab=String(i);[...tabs.children].forEach((b,j)=>{b.setAttribute('aria-selected',String(i===j));b.tabIndex=i===j?0:-1;});
+   if(i!==2){const close=panels[2].querySelector('.ks-player:not([hidden]) .ks-close');close?.click();}
+   if(focus)tabs.children[i].focus();
+  }
+  tabs.addEventListener('click',e=>{const i=[...tabs.children].indexOf(e.target.closest('button'));if(i>=0)choose(i,false);});
+  tabs.addEventListener('keydown',e=>{let i=Number(card.dataset.ktTab);if(e.key==='ArrowRight')i=(i+1)%3;else if(e.key==='ArrowLeft')i=(i+2)%3;else if(e.key==='Home')i=0;else if(e.key==='End')i=2;else return;e.preventDefault();choose(i,true);});choose(0,false);
+  const footer=card.querySelector('.kanji-card-footer');if(footer)card.append(footer);
+ }
+ const stroke=card.querySelector('[data-kt-panel="2"]');
+ card.querySelectorAll('.ks-open,.ks-player').forEach(n=>{if(n.parentElement!==stroke)stroke.append(n);});
+ let note=stroke.querySelector('.kt-note');
+ if(!stroke.querySelector('.ks-open')&&!note){note=document.createElement('p');note.className='kt-note';note.textContent='Animasi goresan belum tersedia untuk kanji ini.';stroke.append(note);}
+ if(stroke.querySelector('.ks-open'))note?.remove();
+}
+function enhanceGrid(grid){
+ const cards=[...grid.querySelectorAll('.study-kanji-card')];cards.forEach(enhanceCard);
+ const fresh=cards.filter(c=>!c.closest('.kt-group'));
+ if(fresh.length){const groups=new Map();for(const c of fresh){const name=c.querySelector('.kanji-card-group')?.textContent.trim()||'Kanji lainnya';if(!groups.has(name)){const group=document.createElement('details');group.className='kt-group';group.open=true;const summary=document.createElement('summary');summary.className='kt-group-title';const title=document.createElement('span');title.textContent=name;const count=document.createElement('small');summary.append(title,count);const body=document.createElement('div');body.className='kt-group-cards';group.append(summary,body);grid.insertBefore(group,c);groups.set(name,group);}groups.get(name).querySelector('.kt-group-cards').append(c);}
+  for(const g of groups.values())g.querySelector('summary small').textContent=g.querySelectorAll('.study-kanji-card').length+' kanji';
+ }
+}
+function init(){document.querySelectorAll('.kanji-card-grid').forEach(grid=>{let pending=false;enhanceGrid(grid);new MutationObserver(()=>{if(pending)return;pending=true;queueMicrotask(()=>{pending=false;enhanceGrid(grid);});}).observe(grid,{childList:true,subtree:true});});}
+mobile.addEventListener('change',()=>{if(!mobile.matches)document.querySelectorAll('.kt-group').forEach(g=>g.open=true);});
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
 </script></body>
 <!-- kanji-data license
