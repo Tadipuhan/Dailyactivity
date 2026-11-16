@@ -4277,9 +4277,67 @@ function syncNao(){
   const active=mobile.matches&&[...document.querySelectorAll('.kanji-card-grid')].some(grid=>grid.getClientRects().length>0);
   document.documentElement.classList.toggle('kt-mobile-kanji',active);
 }
+function ktHiragana(value){return String(value).normalize('NFKC').replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-0x60));}
+function ktAlignReading(jp,kana){
+ const known={
+  '父と母は元気です。':[{text:'父',kana:'ちち'},{text:'と'},{text:'母',kana:'はは'},{text:'は'},{text:'元気',kana:'げんき'},{text:'です。'}],
+  '春は花がきれいです。':[{text:'春',kana:'はる'},{text:'は'},{text:'花',kana:'はな'},{text:'がきれいです。'}],
+  '兄と弟は学生です。':[{text:'兄',kana:'あに'},{text:'と'},{text:'弟',kana:'おとうと'},{text:'は'},{text:'学生',kana:'がくせい'},{text:'です。'}]
+ };
+ if(known[jp]&&known[jp].map(p=>p.kana||p.text).join('')===ktHiragana(kana))return known[jp];
+ const tokens=jp.match(/[一-龯々〆]+|[^一-龯々〆]+/gu)||[],reading=ktHiragana(kana),solutions=[];
+ function visit(i,pos,parts){
+  if(solutions.length>1)return;
+  if(i===tokens.length){if(pos===reading.length)solutions.push(parts);return;}
+  const text=tokens[i];
+  if(!/^[一-龯々〆]+$/u.test(text)){
+   const literal=ktHiragana(text);if(reading.startsWith(literal,pos))visit(i+1,pos+literal.length,[...parts,{text}]);return;
+  }
+  for(let end=pos+1;end<=reading.length;end++){
+   if(i===tokens.length-1&&end!==reading.length)continue;
+   const next=tokens[i+1];if(next&&!reading.startsWith(ktHiragana(next),end))continue;
+   visit(i+1,end,[...parts,{text,kana:reading.slice(pos,end)}]);
+  }
+ }
+ visit(0,0,[]);return solutions.length===1?solutions[0]:null;
+}
+function ktReadingUse(card,parts){
+ const target=card.querySelector('.kanji-card-symbol')?.textContent.trim();
+ const entry=parts?.find(p=>p.kana&&p.text===target);if(!entry)return null;
+ const rows=[...card.querySelectorAll('.kanji-card-readings>section')];
+ function list(row){return ktHiragana(row?.querySelector('.kana-reading')?.textContent||'').split(/[、,・／/\s]+/).filter(Boolean).map(s=>s.replace(/[.()（）―ー-]/g,''));}
+ const on=list(rows[0]),kun=list(rows[1]),read=entry.kana;
+ const isOn=on.includes(read),isKun=kun.some(s=>s===read||(read.length>0&&s.startsWith(read)&&s.length-read.length<=2));
+ if(isOn===isKun)return null;
+ const next=parts[parts.indexOf(entry)+1]?.text||'';
+ const fullKun=isKun?kun.find(s=>s.startsWith(read)&&next.startsWith(s.slice(read.length))):null;
+ const suffix=fullKun?fullKun.slice(read.length):'';
+ return 'Contoh ini: '+target+suffix+'（'+(fullKun||read)+'） · '+(isOn?'On’yomi':'Kun’yomi');
+}
+function ktAddFurigana(card){
+ const example=card.querySelector('.kanji-example-box'),sentence=example?.querySelector('.example-sentence'),kana=example?.querySelector('.example-kana');
+ if(!sentence||sentence.dataset.ktOriginal!==undefined||!kana)return;
+ const jp=sentence.textContent.trim(),reading=kana.textContent.trim(),parts=ktAlignReading(jp,reading);
+ if(!parts||!parts.some(p=>p.kana))return;
+ sentence.dataset.ktOriginal=sentence.textContent;sentence.replaceChildren();
+ for(const part of parts){
+  if(!part.kana){sentence.append(document.createTextNode(part.text));continue;}
+  const ruby=document.createElement('ruby'),rt=document.createElement('rt');rt.textContent=part.kana;ruby.append(document.createTextNode(part.text),rt);sentence.append(ruby);
+ }
+ example.classList.add('kt-furigana-ready');
+ const use=ktReadingUse(card,parts);
+ if(use){const note=document.createElement('p');note.className='kt-reading-use';note.textContent=use;example.append(note);}
+}
+function ktRemoveFurigana(card){
+ card.querySelectorAll('.example-sentence[data-kt-original]').forEach(n=>{n.textContent=n.dataset.ktOriginal;delete n.dataset.ktOriginal;});
+ card.querySelectorAll('.kt-reading-use').forEach(n=>n.remove());
+ card.querySelectorAll('.kt-furigana-ready').forEach(n=>n.classList.remove('kt-furigana-ready'));
+}
+
 function enhanceCard(card){
  if(!card.dataset.ktReady){
   card.dataset.ktReady='true';
+  ktAddFurigana(card);
   const id='kt-'+(++serial),tabs=document.createElement('div');tabs.className='kt-tabs';tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','Detail kanji '+card.querySelector('.kanji-card-symbol')?.textContent);
   const names=['Bacaan','Contoh','Goresan'],panels=names.map((name,i)=>{
    const p=document.createElement('section');p.className='kt-panel';p.dataset.ktPanel=String(i);p.id=id+'-panel-'+i;p.setAttribute('role','tabpanel');p.setAttribute('aria-labelledby',id+'-tab-'+i);card.append(p);
@@ -4291,7 +4349,7 @@ function enhanceCard(card){
   const readingSummary=document.createElement('div');readingSummary.className='kt-reading-summary';
   const meaningLabel=document.createElement('strong');meaningLabel.textContent='Arti';readingSummary.append(meaningLabel,document.createTextNode(center.querySelector('.kanji-card-meaning')?.textContent||''));
   const sentence=panels[1].querySelector('.example-sentence'),translation=panels[1].querySelector('.example-translation');
-  if(sentence)readingSummary.append(sentence.cloneNode(true));if(translation)readingSummary.append(translation.cloneNode(true));panels[0].append(readingSummary);
+  if(sentence)readingSummary.append(sentence.cloneNode(true));if(translation)readingSummary.append(translation.cloneNode(true));const readingUse=panels[1].querySelector('.kt-reading-use');if(readingUse)readingSummary.append(readingUse.cloneNode(true));const plainKana=panels[1].querySelector('.example-kana');if(plainKana&&!sentence?.querySelector('ruby'))readingSummary.append(plainKana.cloneNode(true));panels[0].append(readingSummary);
   if(!panels[1].children.length){const p=document.createElement('p');p.className='kt-note';p.textContent='Contoh penggunaan belum tersedia untuk kanji ini.';panels[1].append(p);}
   function choose(i,focus){
    card.dataset.ktTab=String(i);[...tabs.children].forEach((b,j)=>{b.setAttribute('aria-selected',String(i===j));b.tabIndex=i===j?0:-1;});
@@ -4329,6 +4387,7 @@ function enhanceGrid(grid){
 }
 function restoreCard(card){
  if(!card.dataset.ktReady)return;
+ ktRemoveFurigana(card);
  const center=card.querySelector('.kanji-card-center'),panels=[...card.querySelectorAll(':scope > .kt-panel')];
  const readings=panels[0]?[...panels[0].children].filter(n=>!n.classList.contains('kt-note')&&!n.classList.contains('kt-reading-summary')):[];
  const examples=panels[1]?[...panels[1].children].filter(n=>!n.classList.contains('kt-note')):[];
@@ -4440,7 +4499,14 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
   #compass-v2 .kt-group .kanji-card-footer>.kanji-card-group{display:none!important}
   #compass-v2 .kt-group .kanji-card-footer label{width:100%;display:flex!important;align-items:center;justify-content:space-between;gap:10px}
   #compass-v2 .kt-group .kanji-card-footer select{width:auto!important;max-width:65%;min-height:40px!important;font-size:12px!important;padding:8px!important}
-}</style></body>
+}</style><style id="td-kanji-example-furigana">@media screen and (max-width:760px){
+ #compass-v2 .kt-group .example-sentence:has(ruby){line-height:2.25!important;word-break:normal;overflow-wrap:normal;line-break:strict}
+ #compass-v2 .kt-group .example-sentence ruby{ruby-position:over;ruby-align:center}
+ #compass-v2 .kt-group .example-sentence rt{font-family:CompassJP,system-ui,sans-serif!important;font-size:.5em!important;line-height:1.1!important;font-weight:400;letter-spacing:0;color:var(--td-primary,#bca0ec)}
+ #compass-v2 .kt-group .kt-furigana-ready .example-kana{display:none!important}
+ #compass-v2 .kt-group .kt-reading-use{font-size:11px!important;line-height:1.65!important;margin:8px 0 0!important;padding:7px 9px!important;border-radius:7px;background:var(--td-soft);color:var(--td-text)!important}
+}
+</style></body>
 <!-- kanji-data license
 MIT License
 
