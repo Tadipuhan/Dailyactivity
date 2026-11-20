@@ -1658,6 +1658,21 @@ html[data-td-furigana=on] #td-focus-reader rt{display:ruby-text!important;visibi
  }
 }
 
+
+@media(max-width:760px){
+ #td-focus-reader.focus-lavender .focus-paper footer{
+   display:grid;grid-template-columns:minmax(0,1fr);align-items:stretch;
+   width:100%;min-width:0;margin:0;box-sizing:border-box;
+ }
+ #td-focus-reader.focus-lavender .focus-guide{width:100%;gap:8px}
+ #td-focus-reader.focus-lavender .focus-guide progress{min-width:0}
+ #td-focus-reader.focus-lavender .fl-footer-actions{
+   width:100%;min-width:0;align-items:stretch;
+ }
+ #td-focus-reader.focus-lavender .fl-footer-actions button{
+   min-width:0;white-space:normal;line-height:1.2;overflow-wrap:normal
+ }
+}
 </style>
 </head>
 <body>
