@@ -1709,6 +1709,195 @@ html[data-td-furigana=on] #td-focus-reader rt{display:ruby-text!important;visibi
 })();
 
 </script>
+<style id="td-studio-layout-fix-v34">
+/* Keep the Studio grid strictly two children: day rail and study content. */
+#compass-v2 #quizpanel{grid-template-columns:210px minmax(0,1fr);min-width:0;max-width:100%}
+#compass-v2 #quizpanel>.td-day-rail{grid-column:1;grid-row:1;min-width:0}
+#compass-v2 #quizpanel>.td-studio-content{grid-column:2;grid-row:1;min-width:0;max-width:100%;overflow-wrap:anywhere}
+#compass-v2 #quizpanel>.td-ruby-toolbar{grid-column:1/-1}
+#compass-v2 #quizpanel .td-studio-content>.td-ruby-toolbar{display:flex;justify-content:flex-end;width:100%;margin:0 0 16px}
+#compass-v2 #quizworkspace{min-width:0;max-width:100%}
+#compass-v2 #quizworkspace fieldset{min-inline-size:0;max-width:100%;width:100%}
+#compass-v2 #quizworkspace label{min-width:0;overflow-wrap:anywhere}
+#compass-v2 #quizworkspace ruby{white-space:normal}
+#compass-v2 #quizpanel .tablewrap{max-width:100%;overflow-x:auto}
+#td-focus-reader{box-sizing:border-box!important;inset:0!important;margin:0!important;width:100%!important;max-width:100vw!important;height:100dvh!important;max-height:100dvh!important;overflow:hidden!important}
+#td-focus-reader .focus-shell{min-width:0;max-width:100%;margin-inline:auto}
+#td-focus-reader .focus-paper,#td-focus-reader .focus-workspace,#td-focus-reader .focus-heading,#td-focus-reader .focus-tools{min-width:0;max-width:100%}
+#td-focus-reader .focus-copy table{max-width:100%}
+#td-focus-reader [data-focus=ruby]{touch-action:manipulation;user-select:none;flex-shrink:0;min-width:112px}
+html[data-td-furigana=off] #td-focus-reader rt{display:none!important;visibility:hidden!important}
+html[data-td-furigana=on] #td-focus-reader rt{display:ruby-text!important;visibility:visible!important}
+@media(max-width:960px){#compass-v2 #quizpanel{grid-template-columns:minmax(0,1fr)!important}#compass-v2 #quizpanel>.td-day-rail{grid-column:1;grid-row:1}#compass-v2 #quizpanel>.td-studio-content{grid-column:1;grid-row:2}}
+@media(max-width:650px){#td-focus-reader .focus-shell{padding:8px}#td-focus-reader .focus-tools{flex-wrap:wrap}#td-focus-reader .focus-tools>div{display:flex;justify-content:flex-end;gap:8px}#compass-v2 #quizworkspace fieldset{padding:12px}}
+</style>
+<style id="td-reading-placement-v36">
+#compass-v2 #quizworkspace .quizquestions>.reading{grid-column:1/-1;min-width:0;width:100%;margin:18px 0 8px;break-inside:avoid;scroll-margin-top:20px}
+#compass-v2 #quizworkspace .quizquestions>.reading p{line-height:1.95}
+</style>
+<style id="td-focus-frosted-lavender-v39">
+#td-focus-reader.focus-lavender{--fl-text:#291344;--fl-soft:#715687;--fl-line:#ac89dd69;--fl-glass:rgba(255,255,255,.65);color:var(--fl-text);background:radial-gradient(ellipse at 8% 76%,#cbb8fa99,transparent 52%),radial-gradient(ellipse at 90% 8%,#e8d8ffcc,transparent 55%),linear-gradient(145deg,#f7f2ff,#eee7fa 58%,#f9f5ff)!important;font-family:system-ui,sans-serif}
+#td-focus-reader.focus-lavender::backdrop{background:#eee7fa}
+#td-focus-reader.focus-lavender:before,#td-focus-reader.focus-lavender:after{content:'';position:absolute;pointer-events:none;inset:35% -10% auto;width:120%;height:35%;border:1px solid #ffffffa8;border-radius:50%;background:linear-gradient(135deg,#ffffff32,#c5a8f329);transform:rotate(-14deg)}
+#td-focus-reader.focus-lavender:after{inset:80% -10% auto;transform:rotate(12deg);height:30%;background:#ffffff40}
+#td-focus-reader.focus-lavender .focus-shell{position:relative;isolation:isolate;z-index:1;width:100%;height:100%;padding:22px 32px;gap:18px;min-width:0}
+#td-focus-reader.focus-lavender .focus-bar{display:flex;align-items:center;justify-content:flex-start;gap:20px;color:var(--fl-text);min-height:46px;flex-shrink:0}
+#td-focus-reader.focus-lavender .focus-brand{gap:10px;font-size:19px;font-weight:750;white-space:nowrap}
+#td-focus-reader.focus-lavender .focus-brand strong{font-size:16px;color:#422363;padding-left:16px;border-left:1px solid #9976c257}
+#td-focus-reader.focus-lavender .focus-brand img{width:34px;height:34px}
+#td-focus-reader.focus-lavender .fl-top-nav{display:flex;gap:10px;margin-left:auto;align-items:center}
+#td-focus-reader.focus-lavender button,#td-focus-reader.focus-lavender select{border:1px solid var(--fl-line);background:linear-gradient(145deg,#ffffffd9,#f4edffb3);color:#3f215c;border-radius:12px;box-shadow:0 3px 8px #5e39800d,inset 0 1px #fffffff2;min-height:42px;transition:background .18s ease,box-shadow .18s ease;font-size:14px}
+#td-focus-reader.focus-lavender button:hover:not(:disabled){background:#eee2ff;box-shadow:0 4px 14px #74509b1c}
+#td-focus-reader.focus-lavender button:focus-visible{outline:3px solid #a780e3;outline-offset:3px}
+#td-focus-reader.focus-lavender button:disabled{opacity:.4}
+#td-focus-reader.focus-lavender .focus-paper{position:relative;background:transparent;box-shadow:none;border:0;border-radius:0;padding:0;width:100%;margin-inline:auto;gap:14px;min-width:0;flex:1;min-height:0;transition:width .28s ease,margin .28s ease}
+#td-focus-reader.focus-lavender[data-fl-panel=open] .focus-paper{width:calc(100% - 282px);margin-left:282px;margin-right:0}
+#td-focus-reader.focus-lavender .focus-heading{border:0;padding:0 8px 6px;flex:none}
+#td-focus-reader.focus-lavender .focus-heading small{display:none}
+#td-focus-reader.focus-lavender .fl-breadcrumb{font-size:13px;font-weight:650;letter-spacing:.025em;color:#7651a1;margin:0 0 7px}
+#td-focus-reader.focus-lavender .focus-heading h1{font-size:clamp(24px,2.6vw,38px);line-height:1.3;color:#32154f;max-width:none;margin:0}
+#td-focus-reader.focus-lavender .focus-workspace{display:flex;gap:0;min-width:0;min-height:0;flex:1}
+#td-focus-reader.focus-lavender .focus-scroll{min-width:0;width:100%;background:transparent;border:0;padding:4px 8px 14px;scrollbar-color:#b99bd4 transparent;scrollbar-gutter:stable}
+#td-focus-reader.focus-lavender .focus-example,#td-focus-reader.focus-lavender .focus-copy{max-width:none;width:100%;border:1px solid #b99ae074;border-radius:22px;background:var(--fl-glass);box-shadow:0 8px 24px #79529b0b,inset 0 1px #fff;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);padding:20px clamp(14px,1.5vw,26px);line-height:1.9}
+#td-focus-reader.focus-lavender .focus-example{margin:0 0 18px}
+#td-focus-reader.focus-lavender .focus-example p{font-size:clamp(25px,2.9vw,43px);color:#29113e;line-height:1.85}
+#td-focus-reader.focus-lavender .focus-example span{font-size:16px;color:#5f476f}
+#td-focus-reader.focus-lavender .focus-copy{font-size:17px;color:#34243e;overflow-wrap:anywhere}
+#td-focus-reader.focus-lavender .focus-copy h2{color:#542492;font-size:23px;margin:0 0 16px}
+#td-focus-reader.focus-lavender .focus-copy table{background:#ffffff38;border-radius:10px}
+#td-focus-reader.focus-lavender .focus-copy td,#td-focus-reader.focus-lavender .focus-copy th{border-color:#bca3d445;padding:12px;min-width:70px}
+#td-focus-reader.focus-lavender .focus-copy th{background:#ddc8fa54}
+#td-focus-reader.focus-lavender .focus-paper footer{display:flex;align-items:center;justify-content:space-between;gap:16px;flex:none;padding:8px 8px 0}
+#td-focus-reader.focus-lavender .focus-guide{display:flex;flex:1;gap:16px;align-items:center;min-width:0;color:#67497f}
+#td-focus-reader.focus-lavender .focus-guide progress{width:min(420px,45%);height:6px;flex:1}
+#td-focus-reader.focus-lavender progress::-webkit-progress-bar{background:#d8c7ed}
+#td-focus-reader.focus-lavender progress::-webkit-progress-value{background:linear-gradient(90deg,#bb8df1,#8751dc)}
+#td-focus-reader.focus-lavender .fl-footer-actions{display:flex;gap:9px;align-items:center}
+#td-focus-reader.focus-lavender .focus-primary,#td-focus-reader.focus-lavender .fl-practice{color:#fff;background:linear-gradient(135deg,#9770d4,#7550ba);border-color:#8c61c0}
+#td-focus-reader.focus-lavender .focus-primary:hover,#td-focus-reader.focus-lavender .fl-practice:hover{background:#7950b9}
+#td-focus-reader.focus-lavender .fl-header-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+#td-focus-reader.focus-lavender .fl-menu{padding:8px 12px;font-weight:700;white-space:nowrap}
+#td-focus-reader.focus-lavender .fl-menu[aria-expanded=true]{background:#e6d7fa;border-color:#9672c5}
+#td-focus-reader.focus-lavender #focus-title{flex:1;min-width:0;margin:0;font-size:clamp(17px,1.35vw,24px);line-height:1.3;color:#422363;overflow-wrap:anywhere}
+#td-focus-reader.focus-lavender .focus-heading:not(:has(.td-speech-note)){display:none}
+#td-focus-reader.focus-lavender .fl-panel{position:absolute;z-index:5;top:86px;left:32px;width:246px;max-height:calc(100% - 128px);min-height:250px;display:flex;flex-direction:column;gap:14px;padding:14px 12px 12px;border:1px solid #ffffffd4;border-radius:24px;background:linear-gradient(145deg,#ffffffa6,#e5d7fa8f);box-shadow:0 12px 36px #71499424,inset 0 1px 1px #fff;backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px)}
+#td-focus-reader.focus-lavender .fl-panel[hidden],#td-focus-reader.focus-lavender .fl-select-storage[hidden],#td-focus-reader.focus-lavender .focus-tools[hidden]{display:none!important}
+#td-focus-reader.focus-lavender .fl-panel-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+#td-focus-reader.focus-lavender .fl-panel-top>span{font-size:10px;font-weight:700;letter-spacing:.1em;color:#7b6194}
+#td-focus-reader.focus-lavender .fl-panel-top .fl-hide{min-height:28px;min-width:28px;width:28px;height:28px;padding:0;border-radius:50%;font-size:25px;line-height:1}
+#td-focus-reader.focus-lavender .fl-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:#cdb3eb24;padding:4px;border-radius:12px}
+#td-focus-reader.focus-lavender .fl-tabs button{min-height:36px;padding:6px 8px;font-size:13px;box-shadow:none;border-color:transparent;background:transparent;border-radius:9px}
+#td-focus-reader.focus-lavender .fl-tabs button[aria-selected=true]{background:linear-gradient(135deg,#8a5abc,#633898);color:#fff;box-shadow:0 3px 8px #7044a31f}
+#td-focus-reader.focus-lavender .fl-list-area{overflow:hidden;flex:1;min-height:100px}
+#td-focus-reader.focus-lavender .fl-list-area>div{overflow:auto;max-height:min(48vh,480px);scrollbar-width:thin;scrollbar-color:#b69bcf transparent}
+#td-focus-reader.focus-lavender .focus-sections{display:flex;flex-direction:column;gap:5px;overflow:visible;padding:0 2px;max-height:none;min-height:0}
+#td-focus-reader.focus-lavender .focus-section-link,#td-focus-reader.focus-lavender .fl-day{width:100%;display:flex;align-items:flex-start;gap:10px;padding:10px 9px;border:1px solid transparent;background:transparent;border-radius:10px;box-shadow:none;color:#5f4678;font-size:13px;line-height:1.55;text-align:left;white-space:normal;min-height:38px;max-width:none}
+#td-focus-reader.focus-lavender .focus-section-link.is-active,#td-focus-reader.focus-lavender .fl-day.is-active{background:#cdb2f27a;color:#45206e;font-weight:700;border-color:#b892e340}
+#td-focus-reader.focus-lavender .fl-day>span:first-child{font-size:11px;opacity:.7;flex:none;width:20px;line-height:1.9}
+#td-focus-reader.focus-lavender .fl-panel-foot{display:grid;grid-template-columns:1.2fr 1fr;gap:7px;padding-top:8px;border-top:1px solid #a987ce37}
+#td-focus-reader.focus-lavender .fl-panel-foot button{font-size:12px;min-height:36px;padding:6px 7px;white-space:nowrap}
+#td-focus-reader.focus-lavender .fl-shade{display:none}
+#td-focus-reader.focus-lavender .td-speech-note{font-size:11px;margin:0 8px;color:#80658f;line-height:1.5;flex:none}
+@media(max-width:1050px){#td-focus-reader.focus-lavender .focus-shell{padding:18px 22px}#td-focus-reader.focus-lavender .focus-brand{font-size:16px}#td-focus-reader.focus-lavender .focus-brand strong{font-size:14px}#td-focus-reader.focus-lavender .focus-bar{gap:12px}#td-focus-reader.focus-lavender .fl-panel{left:22px}}
+@media(max-width:760px){#td-focus-reader.focus-lavender .focus-shell{padding:12px;gap:12px}#td-focus-reader.focus-lavender .focus-bar{flex-wrap:wrap;gap:8px;justify-content:space-between}#td-focus-reader.focus-lavender .focus-brand{font-size:15px;margin-left:auto}#td-focus-reader.focus-lavender .focus-brand strong{font-size:12px;padding-left:8px}#td-focus-reader.focus-lavender .focus-brand img{width:27px;height:27px}#td-focus-reader.focus-lavender .fl-top-nav{width:100%;justify-content:flex-end;gap:7px}#td-focus-reader.focus-lavender button{min-height:38px;font-size:12px;padding:7px 10px}#td-focus-reader.focus-lavender .focus-paper,#td-focus-reader.focus-lavender[data-fl-panel=open] .focus-paper{padding-top:4px;width:100%;margin-inline:0;gap:10px}#td-focus-reader.focus-lavender .focus-heading{padding:2px 4px 0}#td-focus-reader.focus-lavender .focus-heading h1{font-size:23px}#td-focus-reader.focus-lavender .fl-breadcrumb{font-size:11px;margin-bottom:5px}#td-focus-reader.focus-lavender .focus-scroll{padding:4px 2px 10px}#td-focus-reader.focus-lavender .focus-example,#td-focus-reader.focus-lavender .focus-copy{padding:17px;border-radius:17px}#td-focus-reader.focus-lavender .focus-example p{font-size:25px;line-height:1.9}#td-focus-reader.focus-lavender .focus-example span{font-size:14px}#td-focus-reader.focus-lavender .focus-copy{font-size:16px}#td-focus-reader.focus-lavender .focus-paper footer{flex-wrap:wrap;padding:0 2px;gap:9px}#td-focus-reader.focus-lavender .focus-guide{width:100%;flex-basis:100%;font-size:11px}#td-focus-reader.focus-lavender .fl-footer-actions{display:flex;width:100%;justify-content:flex-end;gap:6px}#td-focus-reader.focus-lavender .fl-panel{left:12px;top:106px;width:min(285px,calc(100% - 24px));max-height:calc(100% - 120px)}#td-focus-reader.focus-lavender .fl-list-area>div{max-height:calc(100dvh - 335px)}#td-focus-reader.focus-lavender .fl-shade:not([hidden]){display:block;position:absolute;inset:100px 0 0;z-index:4;border:0;border-radius:0;background:#35214122;backdrop-filter:blur(3px);box-shadow:none}#td-focus-reader.focus-lavender .td-speech-note{font-size:10px;margin:0 3px}}
+@media(max-width:900px){
+ #td-focus-reader.focus-lavender .focus-bar{flex-wrap:wrap;justify-content:space-between}
+ #td-focus-reader.focus-lavender .fl-top-nav{width:auto;gap:6px}
+ #td-focus-reader.focus-lavender #focus-title{order:1;flex-basis:100%;font-size:18px}
+ #td-focus-reader.focus-lavender .focus-brand{display:none}
+}
+@media(max-width:390px){
+ #td-focus-reader.focus-lavender .focus-bar button{padding-inline:6px}
+ #td-focus-reader.focus-lavender .fl-header-actions{gap:4px}
+}
+@media(prefers-reduced-motion:reduce){#td-focus-reader.focus-lavender *{transition:none!important}}
+#td-focus-reader.focus-lavender .fl-table-frame,
+#td-focus-reader.focus-lavender .fl-table-scroll{display:contents}
+#td-focus-reader.focus-lavender .fl-table-hint{display:none}
+
+@media(max-width:760px){
+ #td-focus-reader.focus-lavender .focus-shell{
+   --fl-top: max(12px,env(safe-area-inset-top));
+   padding:var(--fl-top) 12px max(10px,env(safe-area-inset-bottom));
+   gap:10px
+ }
+ #td-focus-reader.focus-lavender .focus-bar{
+   display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 8px
+ }
+ #td-focus-reader.focus-lavender .fl-header-actions,
+ #td-focus-reader.focus-lavender .focus-brand{position:relative;z-index:6}
+ #td-focus-reader.focus-lavender .focus-brand{
+   display:flex;justify-self:end;gap:5px;font-size:clamp(12px,3.7vw,16px);margin:0
+ }
+ #td-focus-reader.focus-lavender .focus-brand img{width:24px;height:24px}
+ #td-focus-reader.focus-lavender #focus-title{
+   order:0;grid-column:1/-1;font-size:clamp(19px,5.5vw,26px);font-weight:750
+ }
+ #td-focus-reader.focus-lavender .fl-top-nav{
+   grid-column:1/-1;justify-content:space-between;width:100%;margin:0
+ }
+ #td-focus-reader.focus-lavender .focus-bar button{min-height:40px;padding-inline:8px}
+ #td-focus-reader.focus-lavender .focus-paper,
+ #td-focus-reader.focus-lavender[data-fl-panel=open] .focus-paper{
+   padding:0;width:100%;margin:0;gap:8px;transition:none
+ }
+ #td-focus-reader.focus-lavender .focus-scroll{padding:2px 0 8px;scrollbar-gutter:auto}
+ #td-focus-reader.focus-lavender .focus-copy{padding:14px}
+ #td-focus-reader.focus-lavender .focus-copy h2{font-size:20px;line-height:1.3}
+ #td-focus-reader.focus-lavender .fl-table-frame{display:block;min-width:0;margin:0 0 12px}
+ #td-focus-reader.focus-lavender .fl-table-scroll{
+   display:block;overflow-x:auto;overscroll-behavior-inline:contain;
+   border:1px solid var(--fl-line);border-radius:10px;scrollbar-width:thin;
+   scrollbar-color:#a781d4 #e3d5f4
+ }
+ #td-focus-reader.focus-lavender .fl-table-scroll table{width:max-content;min-width:100%;max-width:none;margin:0}
+ #td-focus-reader.focus-lavender .fl-table-scroll td,
+ #td-focus-reader.focus-lavender .fl-table-scroll th{padding:9px;max-width:16rem;overflow-wrap:normal}
+ #td-focus-reader.focus-lavender .fl-table-frame.is-overflowing .fl-table-hint{
+   display:block;margin:5px 0 0;text-align:center;font-size:12px;color:var(--fl-soft)
+ }
+ #td-focus-reader.focus-lavender .focus-paper footer{
+   position:relative;z-index:6;padding:9px;border:1px solid var(--fl-line);
+   border-radius:16px;background:#f9f3ffe8;backdrop-filter:blur(12px)
+ }
+ #td-focus-reader.focus-lavender .fl-footer-actions{
+   display:grid;grid-template-columns:repeat(3,minmax(0,1fr))
+ }
+ #td-focus-reader.focus-lavender .fl-footer-actions button{padding-inline:3px;min-height:42px}
+ #td-focus-reader.focus-lavender .fl-panel{
+   top:calc(var(--fl-top) + 48px);width:min(290px,calc(100% - 36px));
+   max-height:calc(100% - var(--fl-top) - 156px);min-height:0;
+   background:linear-gradient(145deg,#fbf7fff5,#ecdef8f5)
+ }
+ #td-focus-reader.focus-lavender .fl-panel-top>span{
+   font-size:19px;letter-spacing:0;color:var(--fl-text)
+ }
+ #td-focus-reader.focus-lavender .fl-panel-foot{display:none}
+ #td-focus-reader.focus-lavender .fl-list-area{
+   min-height:0;overflow:auto;overscroll-behavior:contain
+ }
+ #td-focus-reader.focus-lavender .fl-list-area>div{max-height:none;overflow:visible}
+ #td-focus-reader.focus-lavender .fl-shade:not([hidden]){
+   inset:calc(var(--fl-top) + 42px) 0 0;background:#35214126;backdrop-filter:none
+ }
+}
+
+
+@media(max-width:760px){
+ #td-focus-reader.focus-lavender .focus-paper footer{
+   display:grid;grid-template-columns:minmax(0,1fr);align-items:stretch;
+   width:100%;min-width:0;margin:0;box-sizing:border-box;
+ }
+ #td-focus-reader.focus-lavender .focus-guide{width:100%;gap:8px}
+ #td-focus-reader.focus-lavender .focus-guide progress{min-width:0}
+ #td-focus-reader.focus-lavender .fl-footer-actions{
+   width:100%;min-width:0;align-items:stretch;
+ }
+ #td-focus-reader.focus-lavender .fl-footer-actions button{
+   min-width:0;white-space:normal;line-height:1.2;overflow-wrap:normal
+ }
+}
+</style>
 </head>
 <body>
 <script type="application/json" id="codex-visualization-widget-state">{}</script>
@@ -3332,6 +3521,7 @@ function installDailyFocus() {
   q('#showmaterial').addEventListener('click',openReader);
 }
 installDailyFocus();
+<<<<<<< HEAD
 function installStudyReview() {
   const history = q('#quizhistory');
   const dashboard = document.createElement('section');
@@ -3513,6 +3703,8 @@ function installStudyReview() {
 }
 
 installStudyReview();
+=======
+>>>>>>> 7e07562fef63451b26066135c5c56d8ba73430c2
 // One furigana preference for every Japanese learning surface, including moved readers.
 (() => {
    const lexicon = new Map([["一", "ひと"], ["七", "なな"], ["三", "みっ"], ["上", "うえ"], ["下", "した"], ["並", "なら"], ["中", "なか"], ["乗", "の"], ["九", "ここの"], ["二", "ふた"], ["互", "たが"], ["五", "いつ"], ["人", "ひと"], ["今", "いま"], ["休", "やす"], ["会", "あ"], ["伺", "うかが"], ["低", "ひく"], ["住", "す"], ["体", "からだ"], ["何", "なに"], ["作", "つく"], ["使", "つか"], ["借", "か"], ["傘", "かさ"], ["働", "はたら"], ["兄", "あに"], ["先", "さき"], ["入", "はい"], ["八", "やっ"], ["六", "むっ"], ["円", "えん"], ["冷", "つめ"], ["出", "で"], ["分", "わ"], ["切", "き"], ["別", "べつ"], ["前", "まえ"], ["助", "たす"], ["十", "とお"], ["危", "あぶ"], ["参", "まい"], ["友", "とも"], ["取", "と"], ["受", "う"], ["召", "め"], ["右", "みぎ"], ["合", "あ"], ["同", "おな"], ["吸", "す"], ["呼", "よ"], ["喜", "よろこ"], ["四", "よっ"], ["困", "こま"], ["増", "ふ"], ["壁", "かべ"], ["壊", "こわ"], ["声", "こえ"], ["変", "か"], ["外", "そと"], ["多", "おお"], ["夜", "よる"], ["大", "おお"], ["好", "す"], ["妹", "いもうと"], ["姉", "あね"], ["始", "はじ"], ["嫌", "きら"], ["子", "こ"], ["字", "じ"], ["存", "ぞん"], ["守", "まも"], ["安", "やす"], ["客", "きゃく"], ["家", "いえ"], ["寒", "さむ"], ["寝", "ね"], ["寺", "てら"], ["小", "ちい"], ["少", "すこ"], ["山", "やま"], ["席", "せき"], ["帰", "かえ"], ["広", "ひろ"], ["店", "みせ"], ["座", "すわ"], ["建", "た"], ["引", "ひ"], ["弟", "おとうと"], ["強", "つよ"], ["弾", "ひ"], ["形", "けい"], ["彼", "かれ"], ["待", "ま"], ["後", "あと"], ["必", "かなら"], ["忘", "わす"], ["忙", "いそが"], ["思", "おも"], ["急", "いそ"], ["悪", "わる"], ["慣", "な"], ["戻", "もど"], ["払", "はら"], ["抜", "ぬ"], ["押", "お"], ["招", "まね"], ["持", "も"], ["探", "さが"], ["撮", "と"], ["教", "おし"], ["新", "あたら"], ["方", "かた"], ["日", "ひ"], ["早", "はや"], ["明", "あか"], ["易", "やさ"], ["星", "ほし"], ["春", "はる"], ["昼", "ひる"], ["晩", "ばん"], ["晴", "は"], ["暇", "ひま"], ["暑", "あつ"], ["暖", "あたた"], ["暗", "くら"], ["曲", "ま"], ["書", "か"], ["服", "ふく"], ["朝", "あさ"], ["木", "き"], ["本", "ほん"], ["机", "つくえ"], ["来", "き"], ["柔", "やわ"], ["楽", "たの"], ["橋", "はし"], ["次", "つぎ"], ["欲", "ほ"], ["歌", "うた"], ["止", "と"], ["正", "ただ"], ["歩", "ある"], ["歯", "は"], ["死", "し"], ["残", "のこ"], ["母", "はは"], ["比", "くら"], ["気", "き"], ["水", "みず"], ["決", "き"], ["泊", "と"], ["泳", "およ"], ["浴", "あ"], ["消", "け"], ["涼", "すず"], ["混", "こ"], ["減", "へ"], ["測", "はか"], ["熱", "ねつ"], ["父", "ちち"], ["物", "もの"], ["犬", "いぬ"], ["猫", "ねこ"], ["甘", "あま"], ["申", "もう"], ["町", "まち"], ["疲", "つか"], ["痛", "いた"], ["盗", "ぬす"], ["直", "なお"], ["眠", "ねむ"], ["着", "き"], ["知", "し"], ["短", "みじか"], ["確", "たし"], ["磨", "みが"], ["祭", "まつ"], ["私", "わたし"], ["空", "そら"], ["窓", "まど"], ["立", "た"], ["答", "こた"], ["箱", "はこ"], ["紙", "かみ"], ["細", "こま"], ["終", "お"], ["続", "つづ"], ["締", "し"], ["置", "お"], ["習", "なら"], ["考", "かんが"], ["聞", "き"], ["脱", "ぬ"], ["花", "はな"], ["茶", "ちゃ"], ["落", "お"], ["薬", "くすり"], ["行", "い"], ["見", "み"], ["覚", "おぼ"], ["覧", "らん"], ["親", "おや"], ["触", "さわ"], ["言", "い"], ["訳", "わけ"], ["試", "ため"], ["話", "はな"], ["読", "よ"], ["調", "しら"], ["買", "か"], ["貸", "か"], ["貼", "は"], ["贈", "おく"], ["走", "はし"], ["起", "お"], ["越", "こ"], ["足", "あし"], ["踏", "ふ"], ["車", "くるま"], ["辛", "から"], ["込", "こ"], ["迎", "むか"], ["近", "ちか"], ["返", "かえ"], ["送", "おく"], ["通", "とお"], ["速", "はや"], ["連", "つ"], ["遅", "おく"], ["遊", "あそ"], ["運", "はこ"], ["道", "みち"], ["選", "えら"], ["酒", "さけ"], ["重", "おも"], ["金", "かね"], ["長", "なが"], ["閉", "し"], ["開", "あ"], ["間", "あいだ"], ["降", "ふ"], ["隣", "となり"], ["難", "むずか"], ["雨", "あめ"], ["雪", "ゆき"], ["雲", "くも"], ["青", "あお"], ["静", "しず"], ["靴", "くつ"], ["頭", "あたま"], ["頼", "たの"], ["願", "ねが"], ["食", "た"], ["飯", "はん"], ["飲", "の"], ["飾", "かざ"], ["駅", "えき"], ["高", "たか"], ["髪", "かみ"], ["鳴", "な"], ["黒", "くろ"], ["一人", "ひとり"], ["一冊", "いっさつ"], ["一度", "いちど"], ["一日", "いちにち"], ["一緒", "いっしょ"], ["丁寧", "ていねい"], ["七人", "しちにん"], ["七時", "しちじ"], ["丈夫", "じょうぶ"], ["三人", "さんにん"], ["三時", "さんじ"], ["上手", "じょうず"], ["上着", "うわぎ"], ["世界", "せかい"], ["中止", "ちゅうし"], ["主語", "しゅご"], ["九人", "きゅうにん"], ["九時", "くじ"], ["予報", "よほう"], ["予定", "よてい"], ["予約", "よやく"], ["二人", "ふたり"], ["二冊", "にさつ"], ["二回", "にかい"], ["二階", "にかい"], ["五人", "ごにん"], ["五時", "ごじ"], ["京都", "きょうと"], ["人数", "にんずう"], ["今年", "ことし"], ["今日", "きょう"], ["今朝", "けさ"], ["今週", "こんしゅう"], ["仕事", "しごと"], ["代表", "だいひょう"], ["以上", "いじょう"], ["以下", "いか"], ["以内", "いない"], ["以外", "いがい"], ["休憩", "きゅうけい"], ["休館", "きゅうかん"], ["会員", "かいいん"], ["会場", "かいじょう"], ["会社", "かいしゃ"], ["会話", "かいわ"], ["会議", "かいぎ"], ["住所", "じゅうしょ"], ["体調", "たいちょう"], ["体重", "たいじゅう"], ["何人", "なんにん"], ["何度", "なんど"], ["何時", "なんじ"], ["何番", "なんばん"], ["作文", "さくぶん"], ["作業", "さぎょう"], ["便利", "べんり"], ["保管", "ほかん"], ["値段", "ねだん"], ["停止", "ていし"], ["健康", "けんこう"], ["元気", "げんき"], ["先月", "せんげつ"], ["先生", "せんせい"], ["先週", "せんしゅう"], ["入口", "いりぐち"], ["全部", "ぜんぶ"], ["八人", "はちにん"], ["八時", "はちじ"], ["公園", "こうえん"], ["六人", "ろくにん"], ["六時", "ろくじ"], ["内容", "ないよう"], ["写真", "しゃしん"], ["出張", "しゅっちょう"], ["出発", "しゅっぱつ"], ["切符", "きっぷ"], ["別々", "べつべつ"], ["利用", "りよう"], ["到着", "とうちゃく"], ["努力", "どりょく"], ["勉強", "べんきょう"], ["医者", "いしゃ"], ["十人", "じゅうにん"], ["十分", "じゅっぷん"], ["十時", "じゅうじ"], ["十脚", "じゅっきゃく"], ["千円", "せんえん"], ["午前", "ごぜん"], ["午後", "ごご"], ["半分", "はんぶん"], ["印刷", "いんさつ"], ["原稿", "げんこう"], ["去年", "きょねん"], ["参加", "さんか"], ["受付", "うけつけ"], ["台風", "たいふう"], ["各自", "かくじ"], ["合格", "ごうかく"], ["同僚", "どうりょう"], ["名前", "なまえ"], ["問題", "もんだい"], ["四人", "よにん"], ["四時", "よじ"], ["土産", "みやげ"], ["地図", "ちず"], ["場合", "ばあい"], ["場所", "ばしょ"], ["変更", "へんこう"], ["夏休", "なつやす"], ["夜遅", "よるおそ"], ["大事", "だいじ"], ["大切", "たいせつ"], ["大阪", "おおさか"], ["学校", "がっこう"], ["学生", "がくせい"], ["安全", "あんぜん"], ["家族", "かぞく"], ["宿題", "しゅくだい"], ["将来", "しょうらい"], ["小説", "しょうせつ"], ["少々", "しょうしょう"], ["山田", "やまだ"], ["工事", "こうじ"], ["工場", "こうじょう"], ["平日", "へいじつ"], ["店員", "てんいん"], ["建物", "たてもの"], ["弁当", "べんとう"], ["当日", "とうじつ"], ["復習", "ふくしゅう"], ["心配", "しんぱい"], ["必要", "ひつよう"], ["情報", "じょうほう"], ["意味", "いみ"], ["意見", "いけん"], ["手伝", "てつだ"], ["手袋", "てぶくろ"], ["手順", "てじゅん"], ["担当", "たんとう"], ["招待", "しょうたい"], ["拝見", "はいけん"], ["掃除", "そうじ"], ["授業", "じゅぎょう"], ["提出", "ていしゅつ"], ["換気", "かんき"], ["操作", "そうさ"], ["故障", "こしょう"], ["教室", "きょうしつ"], ["散歩", "さんぽ"], ["文章", "ぶんしょう"], ["料理", "りょうり"], ["新聞", "しんぶん"], ["方法", "ほうほう"], ["旅行", "りょこう"], ["日時", "にちじ"], ["日本", "にほん"], ["明日", "あした"], ["映画", "えいが"], ["昨日", "きのう"], ["時計", "とけい"], ["時間", "じかん"], ["景色", "けしき"], ["書類", "しょるい"], ["最初", "さいしょ"], ["最後", "さいご"], ["最近", "さいきん"], ["有名", "ゆうめい"], ["未定", "みてい"], ["未満", "みまん"], ["本当", "ほんとう"], ["条件", "じょうけん"], ["来年", "らいねん"], ["来月", "らいげつ"], ["来週", "らいしゅう"], ["東京", "とうきょう"], ["東口", "ひがしぐち"], ["果物", "くだもの"], ["案内", "あんない"], ["椅子", "いす"], ["様子", "ようす"], ["機械", "きかい"], ["残念", "ざんねん"], ["残業", "ざんぎょう"], ["毎日", "まいにち"], ["毎晩", "まいばん"], ["毎月", "まいつき"], ["毎朝", "まいあさ"], ["注意", "ちゅうい"], ["洗濯", "せんたく"], ["添付", "てんぷ"], ["準備", "じゅんび"], ["漢字", "かんじ"], ["無理", "むり"], ["片付", "かたづ"], ["物語", "ものがたり"], ["玄関", "げんかん"], ["理由", "りゆう"], ["用意", "ようい"], ["田中", "たなか"], ["留学", "りゅうがく"], ["留守", "るす"], ["番号", "ばんごう"], ["病院", "びょういん"], ["発表", "はっぴょう"], ["発見", "はっけん"], ["百円", "ひゃくえん"], ["目的", "もくてき"], ["相談", "そうだん"], ["研修", "けんしゅう"], ["確認", "かくにん"], ["空港", "くうこう"], ["簡単", "かんたん"], ["約束", "やくそく"], ["終了", "しゅうりょう"], ["経験", "けいけん"], ["結婚", "けっこん"], ["結果", "けっか"], ["練習", "れんしゅう"], ["習慣", "しゅうかん"], ["能力", "のうりょく"], ["自由", "じゆう"], ["至急", "しきゅう"], ["苦手", "にがて"], ["荷物", "にもつ"], ["菓子", "かし"], ["規則", "きそく"], ["親切", "しんせつ"], ["言葉", "ことば"], ["計画", "けいかく"], ["試合", "しあい"], ["試験", "しけん"], ["説明", "せつめい"], ["調子", "ちょうし"], ["財布", "さいふ"], ["貯金", "ちょきん"], ["資料", "しりょう"], ["質問", "しつもん"], ["趣味", "しゅみ"], ["辞書", "じしょ"], ["近所", "きんじょ"], ["返事", "へんじ"], ["返信", "へんしん"], ["送信", "そうしん"], ["連絡", "れんらく"], ["週末", "しゅうまつ"], ["運動", "うんどう"], ["運転", "うんてん"], ["道具", "どうぐ"], ["遠慮", "えんりょ"], ["部下", "ぶか"], ["部品", "ぶひん"], ["部屋", "へや"], ["部長", "ぶちょう"], ["都合", "つごう"], ["野菜", "やさい"], ["銀行", "ぎんこう"], ["開始", "かいし"], ["間違", "まちが"], ["階段", "かいだん"], ["電気", "でんき"], ["電源", "でんげん"], ["電話", "でんわ"], ["電車", "でんしゃ"], ["音楽", "おんがく"], ["順番", "じゅんばん"], ["頭痛", "ずつう"], ["館内", "かんない"], ["駅前", "えきまえ"], ["駅員", "えきいん"], ["一時間", "いちじかん"], ["三十分", "さんじゅっぷん"], ["三年間", "さんねんかん"], ["世界中", "せかいじゅう"], ["予定表", "よていひょう"], ["交差点", "こうさてん"], ["人数分", "にんずうぶん"], ["他動詞", "たどうし"], ["会社員", "かいしゃいん"], ["会議中", "かいぎちゅう"], ["会議室", "かいぎしつ"], ["使役形", "しえきけい"], ["冷蔵庫", "れいぞうこ"], ["勉強会", "べんきょうかい"], ["十年前", "じゅうねんまえ"], ["午前中", "ごぜんちゅう"], ["博物館", "はくぶつかん"], ["参加者", "さんかしゃ"], ["受身形", "うけみけい"], ["喫茶店", "きっさてん"], ["図書館", "としょかん"], ["土曜日", "どようび"], ["大丈夫", "だいじょうぶ"], ["尊敬語", "そんけいご"], ["意向形", "いこうけい"], ["担当者", "たんとうしゃ"], ["招待状", "しょうたいじょう"], ["授業中", "じゅぎょうちゅう"], ["日曜日", "にちようび"], ["日本語", "にほんご"], ["映画館", "えいがかん"], ["月曜日", "げつようび"], ["水曜日", "すいようび"], ["火曜日", "かようび"], ["発表会", "はっぴょうかい"], ["研究室", "けんきゅうしつ"], ["確認済", "かくにんず"], ["終了後", "しゅうりょうご"], ["結婚式", "けっこんしき"], ["美容院", "びよういん"], ["自動詞", "じどうし"], ["自習室", "じしゅうしつ"], ["自転車", "じてんしゃ"], ["試験中", "しけんちゅう"], ["説明書", "せつめいしょ"], ["謙譲語", "けんじょうご"], ["身分証", "みぶんしょう"], ["辞書形", "じしょけい"], ["返却箱", "へんきゃくばこ"], ["連絡先", "れんらくさき"], ["運動会", "うんどうかい"], ["郵便局", "ゆうびんきょく"], ["金曜日", "きんようび"], ["三日", "みっか"], ["二時間", "にじかん"], ["天気予報", "てんきよほう"], ["携帯電話", "けいたいでんわ"], ["筆記用具", "ひっきようぐ"], ["五十分", "ごじゅっぷん"], ["五百円", "ごひゃくえん"], ["十八歳", "じゅうはっさい"], ["四十五日間", "よんじゅうごにちかん"], ["造", "つく"], ["二時", "にじ"], ["九時五十分", "くじごじゅっぷん"], ["十分前", "じゅっぷんまえ"], ["漬", "つ"]]);
@@ -3584,7 +3776,11 @@ function ktAlignReading(jp,kana){
  const focus=document.getElementById('td-focus-reader');
  const skip='ruby,rt,rp,script,style,textarea,input,select,option,svg,canvas,code,pre,[contenteditable=true],.kanji-card-symbol,.kanji-character,.kt-row-symbol,.kana-reading,.example-kana,.romaji-reading,.td-reading-assessment,.ad-japanese,.td-ruby-toolbar,[data-td-ruby-toggle],#td-sidebar,#td-bottom-nav,.td-immersive[data-kind=en]';
  function annotate(scope){if(!scope)return;const walker=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT),nodes=[];let n;
+<<<<<<< HEAD
   while(n=walker.nextNode())if(/[一-龯]/.test(n.data)&&!n.parentElement?.closest(skip+',[data-ui-language],[data-td-message],.td-reading-switch') && n.parentElement?.closest(".focus-copy,.focus-example,.material-body,.reading,.mc-question,.review-question,.jx-question,.jx-passage,.ad-japanese,.ad-quiz,.example-sentence,.kt-panel,.story-japanese,[lang=\"ja\"]:not(html)") && !window.tadicobaUI?.isLocalized(n))nodes.push(n);
+=======
+  while(n=walker.nextNode())if(/[一-龯]/.test(n.data)&&!n.parentElement?.closest(skip))nodes.push(n);
+>>>>>>> 7e07562fef63451b26066135c5c56d8ba73430c2
   for(const node of nodes){const text=node.data,frag=document.createDocumentFragment();let index=0,start=0;
    while(index<text.length){if(!/[一-龯]/.test(text[index])){index++;continue}const rest=text.slice(index),explicit=rest.match(/^([一-龯々]+[ぁ-ゖ]*?)[（(]([ぁ-ゖー]+)[）)]/),candidates=keys.get(text[index])||[];
     const word=candidates.find(w=>rest.startsWith(w)&&(!/[一-龯々]/.test(w.at(-1))||!/[一-龯々]/.test(text[index+w.length]||'')));
@@ -12980,7 +13176,11 @@ function ktReadingUse(card,parts){
  const next=parts[parts.indexOf(entry)+1]?.text||'';
  const fullKun=isKun?kun.find(s=>s.startsWith(read)&&next.startsWith(s.slice(read.length))):null;
  const suffix=fullKun?fullKun.slice(read.length):'';
+<<<<<<< HEAD
  return {word:target+suffix+'（'+(fullKun||read)+'）',type:isOn?'On’yomi':'Kun’yomi'};
+=======
+ return 'Contoh ini: '+target+suffix+'（'+(fullKun||read)+'） · '+(isOn?'On’yomi':'Kun’yomi');
+>>>>>>> 7e07562fef63451b26066135c5c56d8ba73430c2
 }
 function ktAddFurigana(card){
  const example=card.querySelector('.kanji-example-box'),sentence=example?.querySelector('.example-sentence'),kana=example?.querySelector('.example-kana');
@@ -12994,7 +13194,11 @@ function ktAddFurigana(card){
  }
  example.classList.add('kt-furigana-ready');
  const use=ktReadingUse(card,parts);
+<<<<<<< HEAD
  if(use){const note=document.createElement('p');note.className='kt-reading-use';tdMessages.bind(note,'kanjiReading',use);example.append(note);}
+=======
+ if(use){const note=document.createElement('p');note.className='kt-reading-use';note.textContent=use;example.append(note);}
+>>>>>>> 7e07562fef63451b26066135c5c56d8ba73430c2
 }
 function ktRemoveFurigana(card){
  card.querySelectorAll('.example-sentence[data-kt-original]').forEach(n=>{n.textContent=n.dataset.ktOriginal;delete n.dataset.ktOriginal;});
@@ -13017,8 +13221,13 @@ function enhanceCard(card){
   const readingSummary=document.createElement('div');readingSummary.className='kt-reading-summary';
   const meaningLabel=document.createElement('strong');meaningLabel.textContent='Arti';readingSummary.append(meaningLabel,document.createTextNode(center.querySelector('.kanji-card-meaning')?.textContent||''));
   const sentence=panels[1].querySelector('.example-sentence'),translation=panels[1].querySelector('.example-translation');
+<<<<<<< HEAD
   if(sentence)readingSummary.append(sentence.cloneNode(true));if(translation)readingSummary.append(translation.cloneNode(true));const readingUse=panels[1].querySelector('.kt-reading-use');if(readingUse)readingSummary.append(tdMessages.clone(readingUse));const plainKana=panels[1].querySelector('.example-kana');if(plainKana&&!sentence?.querySelector('ruby'))readingSummary.append(plainKana.cloneNode(true));panels[0].append(readingSummary);
   if(!panels[1].children.length){const p=document.createElement('p');p.className='kt-note';tdMessages.bind(p,'kanjiMissing');panels[1].append(p);}
+=======
+  if(sentence)readingSummary.append(sentence.cloneNode(true));if(translation)readingSummary.append(translation.cloneNode(true));const readingUse=panels[1].querySelector('.kt-reading-use');if(readingUse)readingSummary.append(readingUse.cloneNode(true));const plainKana=panels[1].querySelector('.example-kana');if(plainKana&&!sentence?.querySelector('ruby'))readingSummary.append(plainKana.cloneNode(true));panels[0].append(readingSummary);
+  if(!panels[1].children.length){const p=document.createElement('p');p.className='kt-note';p.textContent='Contoh penggunaan belum tersedia untuk kanji ini.';panels[1].append(p);}
+>>>>>>> 7e07562fef63451b26066135c5c56d8ba73430c2
   function choose(i,focus){
    card.dataset.ktTab=String(i);[...tabs.children].forEach((b,j)=>{b.setAttribute('aria-selected',String(i===j));b.tabIndex=i===j?0:-1;});
    if(i!==2){const close=panels[2].querySelector('.ks-player:not([hidden]) .ks-close');close?.click();}
@@ -13289,7 +13498,11 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
      tableSizes.observe(scroll);
    }
  }
+<<<<<<< HEAD
  function sync(){pending=false;prepareTables();const dailyTitle=dayTitles.get(control('day').value);if(dailyTitle)setText(title,window.tadicobaUI?.t(dailyTitle)??dailyTitle);const ruby=control('ruby'),proxy=panel.querySelector('[data-fl-ruby]');setText(proxy,ruby.textContent);const pressed=ruby.getAttribute('aria-pressed')||String(reader.dataset.ruby!=='off');proxy.setAttribute('aria-pressed',pressed);for(const b of dayList.querySelectorAll('[data-fl-day]')){const active=b.dataset.flDay===control('day').value;b.classList.toggle('is-active',active);if(active)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')}
+=======
+ function sync(){pending=false;prepareTables();const dailyTitle=dayTitles.get(control('day').value);if(dailyTitle)setText(title,dailyTitle);const ruby=control('ruby'),proxy=panel.querySelector('[data-fl-ruby]');setText(proxy,ruby.textContent);const pressed=ruby.getAttribute('aria-pressed')||String(reader.dataset.ruby!=='off');proxy.setAttribute('aria-pressed',pressed);for(const b of dayList.querySelectorAll('[data-fl-day]')){const active=b.dataset.flDay===control('day').value;b.classList.toggle('is-active',active);if(active)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')}
+>>>>>>> 7e07562fef63451b26066135c5c56d8ba73430c2
  }
  function schedule(){if(pending)return;pending=true;queueMicrotask(sync)}
  function show(value,focus=false){expanded=!!value;reader.dataset.flPanel=expanded?'open':'closed';panel.hidden=!expanded;panel.inert=!expanded;shade.hidden=!expanded;menu.setAttribute('aria-expanded',String(expanded));menu.setAttribute('aria-label',expanded?'Sembunyikan panel materi':'Tampilkan panel materi');if(!mobile.matches){try{localStorage.setItem('tadicoba-focus-panel-v1',expanded?'open':'closed')}catch{}}if(focus)(expanded?panel.querySelector('[aria-selected=true]'):menu).focus({preventScroll:true})}
@@ -13300,11 +13513,15 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
  reader.addEventListener('keydown',e=>{if(e.key==='Escape'&&expanded){e.preventDefault();e.stopPropagation();show(false,true)}},true);
  new MutationObserver(schedule).observe(reader,{childList:true,subtree:true});
  new MutationObserver(schedule).observe(reader,{attributes:true,attributeFilter:['open','data-ruby']});control('day').addEventListener('change',schedule);
+<<<<<<< HEAD
  document.addEventListener('tadicoba:ui-language',sync);
+=======
+>>>>>>> 7e07562fef63451b26066135c5c56d8ba73430c2
  show(mobile.matches?false:expanded);switchTab('sections');sync();
 })();
 
 </script>
+<<<<<<< HEAD
 <script id="td-ui-localization">
 (() => {
   const labels = new Map([["☰ Menu", "☰ メニュー"], ["Menu", "メニュー"], ["Ringkasan", "概要"], ["Dashboard", "ダッシュボード"], ["Aktivitas harian", "日々の活動"], ["Jepang · 45 hari", "日本語・45日間"], ["Akumulasi bulanan", "月間集計"], ["Rekap bulanan", "月間レポート"], ["Ruang untuk progresmu.", "学習の進捗を確認しましょう"], ["Agenda harian, kebiasaan, dan perjalanan menuju N4.", "毎日の予定と習慣、N4に向けた学習"], ["Agenda dapat diedit · riwayat contoh", "予定を編集できます・サンプル履歴"], ["Ritme belajar mingguan", "週間学習ペース"], ["7 hari terakhir · waktu latihan aktif dari jawaban terkirim", "直近7日間・提出済みの練習時間"], ["Penyelesaian tugas", "タスクの達成状況"], ["Agenda & prioritas", "予定と優先順位"], ["Tugas hari ini", "今日のタスク"], ["Belajar Jepang", "日本語学習"], ["Target harian", "一日の目標"], ["Target sesi", "学習目標"], ["Roadmap tuntas", "学習計画の達成状況"], ["Hasil latihan terakhir", "前回の練習結果"], ["Konsistensi kebiasaan", "習慣の継続"], ["Evaluasi hari ini", "今日の振り返り"], ["Hasil latihan per keterampilan", "技能別の練習結果"], ["Perjalanan 45 hari", "45日間の学習"], ["Periode", "期間"], ["Akumulasi waktu belajar", "学習時間の合計"], ["Alokasi waktu tercatat", "記録された時間の内訳"], ["Konsistensi aktivitas", "活動の継続状況"], ["Rekap per minggu", "週間集計"], ["Evaluasi bulanan", "月間の振り返り"], ["Prioritas bulan berikutnya", "来月の優先事項"], ["Personal activity workspace", "個人用アクティビティ管理"], ["Pengguna", "ユーザー"], ["Pengaturan", "設定"], ["Suara Nao · anak perempuan", "ナオの声・女の子"], ["Kurangi gerakan", "動きを減らす"], ["Sembunyikan Nao", "ナオを非表示"], ["Tampilkan Nao", "ナオを表示"], ["Lewati →", "スキップ →"], ["Satu ruang, dua perjalanan", "一つの場所、二つの学び"], ["Hari ini mau", "今日は何を"], ["belajar apa?", "学びますか？"], ["Perjalanan baru dimulai dari satu kata.", "新しい学びは一つの言葉から。"], ["Pilih bahasa yang ingin kamu jelajahi.", "学びたい言語を選んでください。"], ["Bahasa Jepang", "日本語"], ["Bahasa Inggris", "英語"], ["Pelajaran bahasa Inggris", "英語コース"], ["Lanjutkan pelajaran terakhir →", "前回のレッスンを続ける →"], ["Progres Jepang dan Inggris disimpan terpisah di browser ini.", "日本語と英語の進捗はこのブラウザに別々に保存されます。"], ["Jeda animasi", "アニメーションを一時停止"], ["Putar animasi", "アニメーションを再生"], ["Ganti pelajaran", "コースを切り替える"], ["Alfabet & membaca", "アルファベットと読み方"], ["Verbs", "動詞"], ["Cerita", "物語"], ["Tutorial Nao", "ナオのガイド"], ["Materi & latihan", "教材と練習"], ["Kosakata", "語彙"], ["Hasil & cadangan", "結果とバックアップ"], ["Dasar Jepang", "日本語の基礎"], ["Materi harian", "毎日の教材"], ["Materi Harian", "毎日の教材"], ["Kanji", "漢字"], ["Kotoba", "語彙"], ["Flashcard", "単語カード"], ["Flashcard kanji & kotoba", "漢字と語彙のカード"], ["Mode Berpetualang", "冒険モード"], ["Petualangan Nao", "ナオの冒険"], ["Simulasi JLPT", "JLPT模擬試験"], ["Pilih paket", "問題セットを選ぶ"], ["Mulai simulasi", "模擬試験を始める"], ["Contoh soal resmi ↗", "公式の例題 ↗"], ["Baca materi", "教材を読む"], ["Kerjakan 40 soal", "40問に取り組む"], ["Baca materi asli", "元の教材を読む"], ["Materi sebelum soal", "練習前の教材"], ["Baca materi, lalu klik Mulai latihan. Pilih satu dari empat jawaban untuk setiap soal.", "教材を読んでから「練習を始める」を押してください。各問で四つの選択肢から答えを選びます。"], ["Jawaban benar dan pembahasan ditampilkan setelah dikirim.", "提出後に正解と解説が表示されます。"], ["Kirim 40 jawaban & catat hadir", "40問の回答を提出して出席を記録"], ["Draf pilihan tersimpan.", "回答の下書きを保存しました。"], ["Jawab semua 40 soal sebelum mengirim.", "40問すべてに回答してから提出してください。"], ["Hadir tercatat.", "出席を記録しました。"], ["Hadir", "出席"], ["Hadir hari ini", "本日の出席済み"], ["Belum hadir", "未出席"], ["ABSENSI HARI INI", "本日の出席"], ["Soal baru", "新規問題"], ["Pengulangan", "復習"], ["Tuntas", "完了"], ["Perlu remedial", "再練習が必要"], ["Perlu diperiksa", "確認が必要"], ["Benar / setara", "正解・同じ意味"], ["Perlu diulang", "要復習"], ["Koreksi riwayat lama", "過去の回答を採点"], ["Benar", "正解"], ["Salah", "不正解"], ["✓ Benar", "✓ 正解"], ["✕ Salah", "✕ 不正解"], ["Masih salah", "不正解"], ["Belum ada jawaban dikirim.", "提出された回答はありません。"], ["Kunci:", "正解："], ["Jawabanmu:", "あなたの回答："], ["Jawaban sebelumnya:", "前回の回答："], ["Ulangi soal yang salah", "間違えた問題を解き直す"], ["Lanjutkan Belajar", "学習を続ける"], ["Mulai dari Hari 1.", "1日目から始めましょう。"], ["Target Review Hari Ini", "今日の復習目標"], ["Mulai review", "復習を始める"], ["Review tambahan", "追加の復習"], ["Bacaan soal", "読解文"], ["Periksa jawaban", "答えを確認"], ["Buka materi terkait", "関連教材を開く"], ["Soal berikutnya", "次の問題"], ["Lihat hasil review", "復習結果を見る"], ["Progres review tidak bisa disimpan di browser ini.", "このブラウザでは復習の進捗を保存できません。"], ["← Kembali", "← 戻る"], ["Kembali", "戻る"], ["← Sebelumnya", "← 前へ"], ["Sebelumnya", "前へ"], ["Berikutnya →", "次へ →"], ["Berikutnya", "次へ"], ["Lanjut →", "続ける →"], ["Lanjut", "続ける"], ["☰ Materi", "☰ 教材"], ["Materi", "教材"], ["Tampilkan panel materi", "教材パネルを開く"], ["Sembunyikan panel materi", "教材パネルを閉じる"], ["Tutup panel materi", "教材パネルを閉じる"], ["Navigasi materi harian", "毎日の教材の目次"], ["Navigasi bagian", "セクションの移動"], ["Daftar materi", "教材一覧"], ["Bacaan bagian aktif", "選択中の教材"], ["Posisi bacaan", "読書の進捗"], ["Bagian", "セクション"], ["Hari", "日"], ["Hari belajar", "学習日"], ["↔ Geser untuk kolom lainnya", "↔ 横にスクロールして他の列を表示"], ["Tabel materi", "教材の表"], ["Dengarkan", "音声を聞く"], ["Hentikan audio", "音声を止める"], ["Furigana ON", "ふりがな ON"], ["Furigana OFF", "ふりがな OFF"], ["Mulai latihan", "練習を始める"], ["Latihan →", "練習 →"], ["Klik teks Jepang bertanda ▶ untuk mendengarkan. Suara mengikuti perangkat.", "▶ の付いた日本語を押すと、端末の音声で聞けます。"], ["Pengantar", "はじめに"], ["Pola kalimat", "文型"], ["Bentuk kata kerja", "動詞の活用"], ["Bentuk kamus", "辞書形"], ["Kamus", "辞書形"], ["Potensial sopan", "丁寧な可能形"], ["Contoh kalimat", "例文"], ["Contoh", "例"], ["Catatan", "メモ"], ["Bacaan", "読み"], ["Arti", "意味"], ["Arti Indonesia", "インドネシア語の意味"], ["Bentuk", "形"], ["Goresan", "筆順"], ["Jumlah goresan", "画数"], ["Urutan goresan", "筆順"], ["Penanda belajar", "学習状況"], ["Cari kanji, arti, atau bacaan", "漢字・意味・読みで検索"], ["Cari kanji, arti, bacaan, atau contoh", "漢字・意味・読み・例文で検索"], ["Cari kanji, arti, kana, atau romaji", "漢字・意味・仮名・ローマ字で検索"], ["Cari kanji, bacaan, romaji, atau arti Indonesia", "漢字・読み・ローマ字・意味で検索"], ["Cari kata, hiragana, atau arti", "単語・ひらがな・意味で検索"], ["Kelompok", "分類"], ["Semua kelompok", "すべての分類"], ["Semua penanda", "すべての学習状況"], ["Penanda", "学習状況"], ["Hapus filter", "絞り込みを解除"], ["Belum dipelajari", "未学習"], ["Belum dilatih", "未練習"], ["Sedang belajar", "学習中"], ["Lancar", "習得済み"], ["Hiragana", "ひらがな"], ["Katakana", "カタカナ"], ["Buka Dasar Jepang", "日本語の基礎を開く"], ["Baca cerita", "物語を読む"], ["Daftar bab", "章一覧"], ["Pengaturan cerita", "物語の設定"], ["Pilihan kanji", "漢字レベル"], ["Sesuaikan bacaan", "読書設定"], ["Arti & pola kalimat", "意味と文型"], ["Log percakapan", "会話ログ"], ["☰ Log percakapan", "☰ 会話ログ"], ["Suara", "音声"], ["Peta", "地図"], ["Panduan", "ガイド"], ["Petunjuk Nao", "ナオのヒント"], ["Ekspor progres", "進捗をエクスポート"], ["Impor progres", "進捗をインポート"], ["Progres tersimpan di browser", "進捗はブラウザに保存されます"], ["Print / PDF", "印刷・PDF"], ["Cetak / Simpan PDF", "印刷・PDF保存"], ["Buka pratinjau cetak", "印刷プレビューを開く"], ["Cadangkan hasil (JSON)", "結果をバックアップ（JSON）"], ["Cadangkan progres belajar", "学習進捗をバックアップ"], ["Pulihkan cadangan", "バックアップを復元"], ["Alat belajar & cadangan", "学習ツールとバックアップ"], ["Batal", "キャンセル"], ["Simpan", "保存"], ["Ubah nama", "名前を変更"], ["Tutup", "閉じる"], ["Tutup ×", "閉じる ×"], ["Terang", "ライト"], ["Gelap", "ダーク"], ["Sistem", "システム設定"], ["Waktu perangkat", "端末の時刻"], ["Beranda", "ホーム"], ["Belajar", "学習"], ["Selamat belajar lagi!", "学習を再開しましょう！"], ["Satu langkah kecil, setiap hari.", "毎日、小さな一歩を。"], ["Belajar bersama Nao", "ナオと学ぶ"], ["Progres belajarmu", "学習の進捗"], ["Bingung mulai dari mana?", "どこから始めますか？"], ["Nao bantu susun langkah pertamamu.", "ナオが最初の一歩をサポートします。"], ["Buka tutorial →", "ガイドを開く →"], ["Lanjutkan belajar →", "学習を続ける →"], ["Latihan hari ini", "今日の練習"], ["Latihan speaking", "スピーキング練習"], ["Latihan berbicara", "スピーキング練習"], ["Mulai membaca →", "読み始める →"], ["Mulai berbicara →", "話し始める →"], ["Ulangi kosakata", "語彙を復習する"], ["Buka kosakata →", "語彙を開く →"], ["Lihat semua 7 modul", "全7レッスンを見る"], ["Hasil latihan", "練習結果"], ["Mulai dari dasar →", "基礎から始める →"], ["Buka materi level ini →", "このレベルの教材を開く →"], ["Filter Day", "学習日で絞り込む"], ["Semua Day", "すべての学習日"], ["Belum ada hasil untuk level ini.", "このレベルの結果はまだありません。"], ["Urungkan", "元に戻す"], ["Selesai", "完了"], ["selesai", "完了"], ["Tersisa", "残り"], ["Pekerjaan", "仕事"], ["Personal", "個人"], ["Kesehatan", "健康"], ["Sedang", "中"], ["Tinggi", "高"], ["Rendah", "低"], ["Menunggu", "確認待ち"], ["menit latihan aktif", "分の練習"], ["Nilai sudah dihitung", "採点済み"], ["Belum ada jawaban dikirim", "未提出"], ["Belum ada jawaban yang dikirim untuk hari belajar ini.", "この学習日の回答はまだ提出されていません。"], ["Latihan terkirim", "提出済みの練習"], ["Hari hadir", "出席日数"], ["Latihan dikirim", "提出した練習"], ["Waktu aktif", "実際の学習時間"], ["Rata-rata nilai", "平均点"], ["Dihitung satu kali per tanggal", "各日につき一回集計"], ["Termasuk pengulangan", "復習を含む"], ["Dari latihan yang sudah dikirim", "提出済みの練習を集計"], ["Percobaan yang sudah dinilai", "採点済みの練習"], ["Selamat datang.", "ようこそ。"], ["Nama panggilan", "ニックネーム"], ["Isi nama panggilan agar dashboard bisa menyapamu.", "ダッシュボードに表示するニックネームを入力してください。"], ["Maksimal 40 karakter. Nama ini untuk tampilan di browser ini, bukan akun login.", "40文字以内。このブラウザで表示名として使われます。"], ["Masuk ke dashboard", "ダッシュボードを開く"], ["Bantuan teks", "テキストのヒント"], ["▶ Putar ulang", "▶ もう一度聞く"], ["Normal · 1×", "通常速度・1倍"], ["Pelan · 0,72×", "ゆっくり・0.72倍"], ["Benar.", "正解です。"], ["Misi selesai!", "ミッション完了！"], ["Ayo ulas bersama Nao", "ナオと一緒に復習しましょう"], ["✓ Tuntas", "✓ 完了"], ["Ulangi jawaban keliru / kosong", "不正解・未回答の問題を解き直す"], ["Chapter berikutnya →", "次の章へ →"], ["Kembali ke peta", "マップに戻る"], ["Mulai ulang chapter ini", "この章を最初から始める"], ["Tidak ada kartu yang cocok.", "条件に合うカードがありません。"], ["Sesi selesai.", "セッション完了。"], ["Ketuk kartu / tekan Enter untuk membuka.", "カードを押すか Enter キーでめくります。"], ["Belum ada percakapan yang dibuka di chapter ini.", "この章の会話履歴はまだありません。"], ["Ganti pelajaran · Jepang / Inggris", "コースを切り替える・日本語／英語"], ["Buka menu", "メニューを開く"], ["Tutup menu", "メニューを閉じる"], ["Belum lancar membaca kana?", "仮名の読み方を復習しますか？"], ["Arah latihan", "練習の進め方"], ["Pilih jawaban", "答えを選ぶ"], ["Pilih satu jawaban", "答えを一つ選ぶ"], ["Setelah ini", "次のステップ"], ["Bahasa", "言語"], ["Bagian sebelumnya", "前のセクション"], ["Bagian berikutnya", "次のセクション"], ["Studio fokus", "集中学習"], ["Baca, pahami, lalu latih. Satu Day dalam satu waktu.", "読み、理解し、練習する。一日ずつ進めましょう。"], ["Pilih hari belajar", "学習日を選ぶ"], ["45 hari belajar", "45日間の学習"], ["PERJALANAN N4", "N4への学習"], ["Pilih hari, pelajari materinya, lalu kerjakan soal.", "学習日を選び、教材を読んでから問題を解きましょう。"], ["Materi + 40 soal", "教材と40問の練習"], ["RUANG TUMBUH, SETIAP HARI", "毎日少しずつ成長"], ["Sedikit setiap hari.", "毎日少しずつ。"], ["Lebih siap esok hari.", "明日の自信につなげよう。"], ["Lanjutkan perjalanan bahasa Jepangmu, satu materi dalam satu waktu.", "教材を一つずつ進め、日本語学習を続けましょう。"], ["FOKUS BERIKUTNYA", "次のおすすめ教材"], ["Fokus belajar", "学習の目標"], ["Agenda, latihan, dan langkah kecil yang terus bertambah.", "予定と練習を記録し、一歩ずつ進みましょう。"], ["Navigasi cepat", "クイックナビゲーション"], ["Pilih level kanji", "漢字レベルを選ぶ"], ["Portal cerita", "物語ライブラリ"], ["Cerita kecil,", "小さな物語、"], ["dunia yang luas.", "広がる世界。"], ["Kosakata & kanji", "語彙と漢字"], ["Memahami dialog", "会話理解"], ["Menyimak", "聴解"], ["Melengkapi kalimat", "文の穴埋め"], ["Tata bahasa", "文法"], ["Pemahaman bacaan", "読解"], ["Kosa kata", "語彙"], ["Mendengarkan", "聴解"], ["Kanji dan kosakata", "漢字と語彙"], ["Pengetahuan bahasa", "言語知識"], ["Kenali huruf, pahami bunyinya.", "文字とその発音を覚えましょう。"], ["Pilih cerita untuk hari ini.", "今日読む物語を選びましょう。"], ["← Tutup mode baca", "← 閲覧モードを閉じる"], ["Tutup mode baca", "閲覧モードを閉じる"], ["Mode baca per bagian", "セクション別の閲覧モード"], ["Ringkasan & soal", "あらすじと問題"], ["⛶ Layar penuh", "⛶ 全画面"], ["Keluar layar penuh", "全画面を終了"], ["Posisi bagian cerita", "物語の進捗"], ["Pengaturan Nao", "ナオの設定"], ["Ruang belajarmu", "学習スペース"], ["Buka menu navigasi", "ナビゲーションを開く"], ["Navigasi mobile", "モバイルナビゲーション"], ["Menu belajar Inggris", "英語学習メニュー"], ["Plan your day. Track your growth.", "今日の予定を立て、成長を記録しましょう。"], ["FONDASI MEMBACA · OPSIONAL", "読み方の基礎・任意"], ["Mulai dari huruf dasar atau ulangi bagian yang masih tertukar. Materi Day 1 tetap bisa dibuka kapan saja.", "基本の文字から始めるか、迷いやすい部分を復習しましょう。1日目の教材はいつでも開けます。"], ["Cek awal · 10 soal", "事前チェック・10問"], ["Aturan membaca", "読み方のルール"], ["Latihan kana", "仮名の練習"], ["Bagian dasar Jepang", "日本語の基礎のセクション"], ["Detail huruf", "文字の詳細"], ["Contoh kata:", "単語の例："], ["Contoh penggunaan belum tersedia untuk kanji ini.", "この漢字の用例はまだありません。"], ["Animasi goresan belum tersedia untuk kanji ini.", "この漢字の筆順アニメーションはまだありません。"], ["Kanji lainnya", "その他の漢字"], ["ONYOMI", "音読み"], ["KUNYOMI", "訓読み"], ["On’yomi", "音読み"], ["Kun’yomi", "訓読み"], ["7 modul per level · progres terpisah", "各レベル7レッスン・進捗はレベルごとに保存"], ["Progres Inggris tersimpan di browser ini.", "英語コースの進捗はこのブラウザに保存されます。"], ["Penyimpanan gagal. Ekspor cadangan sebelum menutup halaman.", "保存に失敗しました。ページを閉じる前にバックアップを保存してください。"], ["Pratinjau cetak", "印刷プレビュー"], ["Pratinjau belum siap. Tutup pratinjau lalu coba kembali.", "印刷プレビューの準備ができていません。閉じてからもう一度お試しください。"], ["Dokumen belum dapat disiapkan. Coba buka kembali pilihan cetak.", "文書を準備できませんでした。印刷設定を開き直してください。"], ["Siap dicetak. Pilih printer atau Simpan sebagai PDF di jendela cetak.", "印刷の準備ができました。プリンターまたは「PDFとして保存」を選んでください。"], ["Menyiapkan huruf Jepang…", "日本語フォントを準備しています…"], ["Print Dasar Jepang", "日本語の基礎を印刷"], ["Print Jepang 45 Hari", "日本語45日間の教材を印刷"], ["Materi dan Soal", "教材と問題"], ["Soal", "問題"], ["Nama:", "名前："], ["Tanggal:", "日付："], ["Terjemahan", "翻訳"], ["Tampilkan terjemahan", "翻訳を表示"], ["Sembunyikan terjemahan", "翻訳を非表示"], ["DENGARKAN CERITA", "物語を聞く"], ["Ikuti bacaan dengan suara Jepang.", "日本語の音声を聞きながら読みましょう。"], ["CERITA ORISINAL", "オリジナルストーリー"], ["Latihan JLPT", "JLPT対策"], ["PERSIAPAN UJIAN · N5 / N4", "試験対策・N5 / N4"], ["Riwayat latihan", "練習履歴"], ["Pilih paket latihan", "練習セットを選ぶ"], ["Mulai ujian", "試験を始める"], ["Lihat hasil", "結果を見る"], ["Kirim jawaban", "回答を提出"], ["Ulangi latihan", "練習をやり直す"], ["Acak soal", "問題をシャッフル"], ["Sumber", "出典"], ["Level", "レベル"], ["Hiragana & Katakana", "ひらがなとカタカナ"], ["Daftar kosakata", "語彙一覧"], ["Terjemahan Indonesia", "インドネシア語訳"], ["Kembali ke daftar cerita", "物語一覧に戻る"], ["Tema", "テーマ"], ["Pilih hari", "学習日を選ぶ"], ["Pilih level", "レベルを選ぶ"], ["Ukuran kertas", "用紙サイズ"], ["Potret", "縦向き"], ["Lanskap", "横向き"], ["Semua", "すべて"], ["Semua hari", "全日程"], ["Hanya materi", "教材のみ"], ["Hanya soal", "問題のみ"], ["Pilih jenis cetak", "印刷する内容を選ぶ"], ["Latihan pengucapan", "発音練習"], ["Mikrofon", "マイク"], ["🎙 Mulai bicara", "🎙 話し始める"], ["Audio contoh tidak tersedia.", "お手本の音声を利用できません。"], ["Jawaban benar", "正解"], ["Jawaban salah", "不正解"], ["Judul", "タイトル"], ["Arti kata", "単語の意味"], ["Romaji", "ローマ字"], ["Dalam bahasa Indonesia", "インドネシア語"], ["Bahasa antarmuka", "表示言語"], ["Level pelajaran", "学習レベル"], ["Print Kanji", "漢字を印刷"], ["Print Kanji · Tadicoba", "漢字の印刷 · Tadicoba"], ["Dasar Jepang · Focus & Stack · Tadicoba", "日本語の基礎 · Focus & Stack · Tadicoba"], ["Menyiapkan huruf Jepang...", "日本語フォントを準備しています…"], ["Arti: Bahasa Indonesia", "インドネシア語の意味"], ["Pilih lembar", "用紙を選ぶ"], ["Belajar hari ini", "今日の学習"], ["Daftar pelajaran", "レッスン一覧"], ["Lanjutkan membaca", "読み進める"], ["Layar penuh", "全画面"], ["Buka mode baca", "閲覧モードを開く"], ["Baca layar penuh", "全画面で読む"], ["Selanjutnya", "次へ"], ["Mulai dari awal", "最初から始める"], ["Sebelumnya ←", "前へ ←"], ["Putar audio", "音声を再生"], ["Berhenti", "停止"], ["Pilih suara", "音声を選ぶ"], ["Kecepatan", "再生速度"], ["Jumlah soal", "問題数"], ["Waktu tersisa", "残り時間"], ["Mulai", "開始"], ["Coba lagi", "もう一度試す"], ["Lewati", "スキップ"], ["Penjelasan", "解説"], ["Koreksi", "採点"], ["Pengucapan", "発音"], ["Latihan", "練習"], ["Kata", "単語"], ["Kata benda", "名詞"], ["Kata kerja", "動詞"], ["Kata sifat", "形容詞"], ["Partikel", "助詞"], ["Teks bacaan", "読解文"], ["Susunan kalimat", "語順"], ["Hasil", "結果"], ["Pembahasan", "解説"], ["Jawaban", "回答"], ["Benar / Salah", "正解・不正解"], ["Print materi saja per Day", "選んだ日の教材のみ"], ["Print soal saja per Day", "選んだ日の問題のみ"], ["Print materi dan soal per Day", "選んだ日の教材と問題"], ["Print full materi 45 Day", "45日分の教材のみ"], ["Print full soal 45 Day", "45日分の問題のみ"], ["Print full materi dan soal 45 Day", "45日分の教材と問題"], ["Pilih satu hari atau seluruh 45 hari. Materi dan soal disusun ulang khusus untuk kertas.", "1日分または45日分を選べます。教材と問題は印刷用に整形されます。"], ["Cetak seluruh kartu dengan arti, bacaan, romaji, jumlah goresan, dan contoh kalimat.", "意味、読み、ローマ字、画数、例文を含む全カードを印刷します。"], ["Cetak seluruh kartu dengan arti bahasa Indonesia, bacaan, romaji, jumlah goresan.", "インドネシア語の意味、読み、ローマ字、画数を含む全カードを印刷します。"], ["Cetak seluruh kartu dengan arti bahasa Indonesia, bacaan, romaji, jumlah goresan, contoh kalimat, dan contoh kata.", "インドネシア語の意味、読み、ローマ字、画数、例文、単語例を含む全カードを印刷します。"], ["Tambahan · Ringkasan satu halaman per level", "追加・レベルごとに1ページの要約"], ["Orientasi ringkasan", "要約の用紙の向き"], ["Portrait · 13 Dictionary Grid", "縦向き・13 Dictionary Grid"], ["Landscape · 19 Reading Ledger", "横向き・19 Reading Ledger"], ["Menyiapkan huruf dan border…", "文字と枠線を準備しています…"], ["Print Kotoba N5–N1", "N5〜N1の語彙を印刷"], ["Layout 03 · Focus & Stack. Huruf dasar di kiri, dakuten dan gabungan bunyi di kanan. Pilih lembar yang ingin dicetak.", "レイアウト03・Focus & Stack。左に基本の仮名、右に濁音と拗音を配置します。印刷する用紙を選んでください。"], ["Gunakan A4 potret untuk ukuran rancangan asli. Pilih Pas ke halaman bila mengganti ukuran kertas; nonaktifkan header/footer browser. Satu jenis kana per halaman.", "標準はA4縦向きです。用紙サイズを変える場合はページに合わせて拡大縮小し、ブラウザのヘッダーとフッターをオフにしてください。仮名は種類ごとに1ページです。"], ["Pilih seluruh kotoba, satu level, atau cetak dipisah per kelompok. Kata yang terdapat pada beberapa level dicetak sekali dalam mode gabungan. N3–N1 masing-masing memuat 100 kata pilihan awal.", "すべての語彙、レベル別、または分類別に印刷できます。まとめて印刷すると、複数のレベルにある語彙は1回だけ掲載されます。N3〜N1は各レベルの初回選定100語です。"], ["Review terpadu", "総復習"], ["Latihan & absensi belajar · Day 1–45", "練習と出席記録・1〜45日目"], ["Day 1–45 · 40 soal pilihan ganda per hari · nilai otomatis", "1〜45日目・毎日40問の選択問題・自動採点"], ["Selesaikan dan kirim 40 soal untuk mencatat kehadiran hari ini.", "全40問に答えて提出すると、本日の出席が記録されます。"], ["Baca materi Day hari ini sebelum mengerjakan latihan.", "練習を始める前に今日の教材を読みましょう。"], ["Mulai dari Dasar Jepang. Ini pilihan review; Day 1 tetap bisa langsung dipelajari.", "日本語の基礎を復習するか、1日目から直接始められます。"], ["Pilih satu dari empat jawaban pada setiap soal. Hadir setelah 40 jawaban dikirim; tuntas jika nilai ≥80% (target pribadi). Absensi mengikuti tanggal perangkat saat pengiriman.", "各問で四つの選択肢から答えを一つ選びます。全40問を提出すると出席が記録されます。達成目標は80%以上で、出席日は提出時の端末の日付に従います。"], ["Kenali kanji, pahami katanya.", "漢字と単語を覚えましょう。"], ["Temukan cerita berikutnya. Baca dengan furigana, buka terjemahan saat perlu, dan dengarkan suara Jepangnya.", "物語を選びましょう。ふりがなを使って読み、必要に応じて訳を開き、日本語の音声を聞けます。"], ["Coba baca dulu, lalu gunakan furigana atau terjemahan saat diperlukan.", "まず読んでみて、必要に応じてふりがなや訳を使いましょう。"], ["Furigana target disembunyikan pada soal cara baca.", "読み方を問う問題では、出題対象の漢字のふりがなを非表示にします。"], ["Furigana", "ふりがな"], ["Tampilkan furigana", "ふりがなを表示"], ["Sembunyikan furigana", "ふりがなを非表示"], ["Aktif", "オン"], ["Nonaktif", "オフ"], ["Listening", "聴解"]]);
@@ -13694,6 +13911,9 @@ body:has(#flash-pocket[open]){overflow:hidden}
 }
 #flash-pocket .fp-nao{width:min(clamp(65px,20vw,100px),11.44dvh);max-height:none}
 </style></body>
+=======
+</body>
+>>>>>>> 7e07562fef63451b26066135c5c56d8ba73430c2
 <!-- kanji-data license
 MIT License
 
